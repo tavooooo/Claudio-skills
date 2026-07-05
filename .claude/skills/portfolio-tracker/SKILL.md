@@ -28,6 +28,10 @@ Si HANDOFF y git se contradicen, reportar la inconsistencia — no adivinar.
 
 ## Al INICIAR una sesión de trabajo
 
+0. **Lee PRIMERO `docs/obsidian/portfolio/context.md`** — es el contexto compacto
+   (≤200 líneas) que evita re-auditar todo. Solo profundiza en `portfolio/*` o en
+   los repos si la tarea lo requiere. (Convención Obsidian de Gustavo: él hace
+   `git pull` en su PC y ve estas notas en su vault.)
 1. Lee `PERFIL.md`, `PORTFOLIO.md` y `PIPELINE.md`.
 2. Identifica el **sprint activo** y verifica que el trabajo pedido pertenece a él.
    - Si el pedido es de OTRO proyecto: adviértelo ("esto rompe el foco del sprint X")
@@ -35,6 +39,10 @@ Si HANDOFF y git se contradicen, reportar la inconsistencia — no adivinar.
 3. Lee la ficha del proyecto en `proyectos/` antes de tocar código.
 
 ## Al TERMINAR una sesión de trabajo
+
+0. Actualiza `docs/obsidian/portfolio/context.md` (sobreescribir — estado actual,
+   máx 200 líneas) y añade `docs/obsidian/portfolio/sessions/YYYY-MM-DD.md`
+   (append — historial). Plantilla en la skill `obsidian-context` de fitmark.
 
 1. Añade una fila a `metricas/sesiones.csv`:
    `fecha,proyecto,resumen,tokens_entrada,tokens_salida,costo_usd,fuente_costo,notas`

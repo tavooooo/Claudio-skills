@@ -46,6 +46,15 @@ lectura directa del dashboard:
 - Última sesión: <yyyy-mm-dd> · <qué se hizo en una línea>
 ```
 
+## Obsidian (memoria compacta entre sesiones)
+
+- `docs/obsidian/portfolio/context.md` = estado actual en ≤200 líneas. Toda
+  sesión (incluido el loop) lo lee PRIMERO — ahorra tokens al no re-auditar.
+- El loop lo sobreescribe al cerrar cada corrida y añade la nota del día en
+  `docs/obsidian/portfolio/sessions/`.
+- Gustavo lo ve en su vault haciendo `git pull` del repo Claudio-skills en su
+  PC (convención de su skill `obsidian-context`).
+
 ## Gestión
 
 - Pausar: pedir "pausa el loop diario" (deshabilita el trigger sin borrarlo).
