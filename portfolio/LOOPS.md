@@ -34,6 +34,13 @@ Cómo el loop determina "en qué va" cada proyecto:
 Si HANDOFF y git se contradicen (ej: HANDOFF dice "hecho" pero no hay commit),
 el loop lo marca como inconsistencia en el resumen — no adivina.
 
+4. **Tokens automáticos**: hook `Stop` en Kiwiano y fitmark
+   (`.claude/hooks/log-tokens.py`) — tras cada respuesta suma los tokens de la
+   sesión y actualiza `docs/metricas/tokens.csv` del repo (una fila acumulativa
+   por sesión). El loop lee ese CSV desde origin y llena el panel de costos del
+   dashboard. Instalado en la rama `claude/project-portfolio-tracking-ib0574`
+   de ambos repos; los chats de dev deben llevarlo a main (cherry-pick).
+
 **Acuerdo con Gustavo (2026-07-05)**: los chats de desarrollo actualizan el
 HANDOFF al final de cada sesión y lo commitean/pushean — así el loop de la
 mañana siguiente lo ve. Formato sugerido al inicio de cada HANDOFF para
