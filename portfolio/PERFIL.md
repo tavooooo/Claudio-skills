@@ -11,6 +11,13 @@
 - **Email**: tavotasty@gmail.com
 - **Idioma de trabajo**: español (productos en español, mercado inicial Chile/LatAm).
 
+## Rol de ESTA sesión (Claudio-skills / portfolio)
+
+Esta sesión es la **torre de control**, no un lugar de desarrollo. El código de
+Kiwiano y Biohack AI (FitMark) se trabaja en **otros chats en paralelo**. Aquí:
+coordinamos, mantenemos el dashboard, registramos costos y decidimos prioridades.
+No tomar tareas de desarrollo de esos proyectos salvo que Gustavo lo pida explícitamente.
+
 ## Cómo quiero trabajar
 
 1. **Una pipeline concisa, no picotear**: un proyecto activo a la vez, con avances

@@ -8,6 +8,12 @@
 **Un solo proyecto "activo" por sprint.** Los demás quedan en mantenimiento
 (solo bugs críticos). Cada sprint termina con algo demostrable/vendible.
 
+> **Realidad al 2026-07-05**: Gustavo trabaja Kiwiano y Biohack AI en paralelo,
+> cada uno en su propio chat. La pipeline sigue marcando el ORDEN DE PRIORIDAD
+> (qué se cierra primero, qué espera), no una prohibición de tocar dos cosas a
+> la vez. Esta sesión (torre de control) no desarrolla ninguno de los dos —
+> coordina fechas, riesgos y costos entre ambos.
+
 ## Q3 2026 (jul–sep): Kiwiano a la venta + FitMark medible
 
 ### Sprint 1 — Kiwiano vitrina (2026-07-06 → 2026-07-20)
@@ -26,11 +32,15 @@
 - [ ] Términos de servicio + privacidad
 - [ ] Plan de publicidad inicial (Instagram pádel, grupos WhatsApp de clubes)
 
-### Sprint 4 — FitMark pre-monetización (2026-09-01 → 2026-09-30)
+### Sprint 4 — Biohack AI (ex FitMark) pre-monetización (2026-09-01 → 2026-09-30)
 - [ ] Analytics (PostHog o Vercel Analytics) + funnel de onboarding
 - [ ] Rate-limit `/api/chat` (Upstash) — controla el costo de Wallace
-- [ ] Rescatar rama `features-review` (resolver colisión de migración 003)
+- [ ] ⚠️ Reconciliar rama `features-review`: **415 commits divergentes desde 2026-06-08**
+      (ranking, muro social, planes, cuentas gym/coach). No es un merge simple —
+      diagnosticar primero si conviene rebase, cherry-pick selectivo, o reescribir
+      esas features sobre `main` actual.
 - [ ] Definir modelo de precios (freemium: Wallace + logros premium)
+- [ ] Cerrar nombre definitivo del producto (hoy: "Biohack AI", en duda — ver `IDEAS.md`)
 
 ## Q4 2026 (oct–dic): FitMark cobra + Easy Courts se vuelve real
 
