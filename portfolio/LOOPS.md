@@ -18,6 +18,34 @@
 - **Notificación**: push al teléfono solo si hay algo urgente (deadline vencido o
   a ≤3 días, riesgo nuevo); siempre queda el resumen escrito en el chat.
 
+## Fuentes de datos (en este orden)
+
+Cómo el loop determina "en qué va" cada proyecto:
+
+1. **Git = verdad dura** (`git fetch` + `git log` de main y ramas): qué se
+   commiteó realmente, cuándo, y qué ramas divergen. Los commits no mienten.
+2. **HANDOFF.md = verdad narrativa**: `Kiwiano/docs/HANDOFF.md` y
+   `fitmark/HANDOFF.md` son los documentos que Gustavo y sus otros chats
+   mantienen al día (estado, decisiones, pendientes, convenciones). El loop los
+   lee SIEMPRE y son la fuente principal para "fase, avance y próximo paso".
+3. **Roadmaps**: `docs/ROADMAP_PREMIUM.md` (Kiwiano), `ROADMAP.md` (Padel),
+   specs de La-Suiza — para contrastar plan vs realidad.
+
+Si HANDOFF y git se contradicen (ej: HANDOFF dice "hecho" pero no hay commit),
+el loop lo marca como inconsistencia en el resumen — no adivina.
+
+**Acuerdo con Gustavo (2026-07-05)**: los chats de desarrollo actualizan el
+HANDOFF al final de cada sesión y lo commitean/pushean — así el loop de la
+mañana siguiente lo ve. Formato sugerido al inicio de cada HANDOFF para
+lectura directa del dashboard:
+
+```markdown
+## Torre de control
+- Fase: F4 (70%) · Próximo hito: <hito> · Fecha objetivo: <yyyy-mm-dd>
+- Bloqueadores: <lista corta o "ninguno">
+- Última sesión: <yyyy-mm-dd> · <qué se hizo en una línea>
+```
+
 ## Gestión
 
 - Pausar: pedir "pausa el loop diario" (deshabilita el trigger sin borrarlo).

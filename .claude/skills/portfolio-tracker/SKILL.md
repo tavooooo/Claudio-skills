@@ -16,6 +16,16 @@ Fuente de verdad: carpeta `portfolio/` en el repo **Claudio-skills**.
 | `portfolio/metricas/sesiones.csv` | Registro de sesiones: avance + tokens/costo |
 | `portfolio/IDEAS.md` | Estacionamiento de ideas (no interrumpen el sprint) |
 
+## Fuentes de datos para el estado de cada proyecto
+
+1. **Git** (`git fetch` + log de main y ramas) = qué se hizo realmente.
+2. **HANDOFF.md de cada repo** (`Kiwiano/docs/HANDOFF.md`, `fitmark/HANDOFF.md`) =
+   estado narrativo que mantienen Gustavo y sus chats de desarrollo. Leer SIEMPRE
+   antes de rellenar el dashboard; buscar la sección `## Torre de control` si existe.
+3. Roadmaps (`docs/ROADMAP_PREMIUM.md`, `ROADMAP.md`, specs) = plan vs realidad.
+
+Si HANDOFF y git se contradicen, reportar la inconsistencia — no adivinar.
+
 ## Al INICIAR una sesión de trabajo
 
 1. Lee `PERFIL.md`, `PORTFOLIO.md` y `PIPELINE.md`.
