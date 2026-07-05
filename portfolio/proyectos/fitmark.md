@@ -16,11 +16,10 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 
 - ✅ Núcleo maduro: tracker, rutinas, ejercicios, mapa muscular, coach IA, landing con scroll-video, onboarding progresivo.
 - 🟡 `/logros` "en construcción"; `/store` es solo vitrina visual (sin checkout).
-- 🔴 **Rama `claude/features-review` diverge 415 commits desde el init del proyecto (2026-06-08)** —
-  no es un simple feature branch: es una historia paralela completa (ranking, muro social,
-  planes, cuentas gym/coach) construida desde el commit inicial. Reconciliarla con `main`
-  probablemente requiere rebase/cherry-pick selectivo, no un merge directo. Pendiente desde
-  hace ~27 días (al 2026-07-05) — cuanto más se posterga, más cara la reconciliación.
+- 🟡 **Rama `claude/features-review` (415 commits divergentes)**: decisión de Gustavo
+  (2026-07-05) — contiene solo algunas cosas útiles; plan = **rescate selectivo pronto
+  (cherry-pick de lo útil) y luego descartar la rama**. Ya no es reconciliación completa,
+  pero el rescate sigue teniendo fecha objetivo: antes del Sprint 4 (sep).
 - 🟡 Wallace KB RAG (`wallace-kb/`, 262 artículos) sin conectar.
 - ❌ **Monetización: nada** — sin Stripe, "premium" es solo copy.
 - ❌ **Analytics: nada.**

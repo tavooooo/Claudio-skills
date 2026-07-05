@@ -26,7 +26,8 @@
 ## Semáforo de riesgos
 
 - 🔴 **Ningún proyecto genera ingresos aún** — prioridad absoluta: primer flujo de cobro real (Kiwiano F5).
-- 🔴 **`features-review` de Biohack AI diverge 415 commits desde el 08-jun (27 días)** — no es un merge de feature branch normal, es una reconciliación de historial completo del proyecto. Cuanto más se posterga, más caro se pone. Priorizar diagnóstico antes de que crezca más.
+- 🟡 **`features-review` de FitMark**: plan decidido (05-jul) — rescate selectivo de lo útil y descartar la rama. Pendiente ejecutar el rescate (objetivo: antes de sep).
+- 🟠 **Competencia directa detectada**: fierro.app — app de gym con IA en español (fuerza/hipertrofia, PRs, rankings). Analizar pricing y features antes de definir el posicionamiento de FitMark.
 - 🟠 **Kiwiano `Vitrina`** (landing/home/TV) pendiente de merge — activa (última actualización 05-jul), pero corre el riesgo de acumular más deuda de merge cuanto más tiempo viva en paralelo a `main`.
 - 🟠 **Cero analytics en todos los productos** — sin datos de usuarios no hay buenas decisiones de negocio.
 - 🟡 Backups manuales de Supabase en Kiwiano (F1.6 pendiente).

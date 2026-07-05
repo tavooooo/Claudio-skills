@@ -8,27 +8,26 @@
 | 2026-07-05 | Comercializar Navaja Suiza para nicho mochileros WHV | La-Suiza | 2027, si hay ingresos en los otros 3 |
 | 2026-07-05 | Diseñar "loops" (chequeos autónomos) para que Claude ayude sin supervisión constante | portfolio | En definición — ver pregunta abierta abajo |
 
-## Brainstorm de nombre — FitMark / "Biohack AI"
+## Brainstorm de nombre — FitMark / "Biohack AI" (verificado en web el 2026-07-05)
 
-"Biohack AI" no lo convence del todo a Gustavo. El producto: tracker de fuerza
-mobile-first + coach IA (Wallace) + mapa muscular + logros. Ideas para evaluar:
+Disponibilidad chequeada contra apps de fitness existentes:
 
-- **Wallace** — capitalizar el activo con más personalidad que ya tiene el producto
-  (el coach). Directo, memorable, ya genera cariño en quien lo prueba.
-- **Marca** — juego con "FitMark" (marcar tu marca personal / tu PR). Corto, en
-  español, fácil de decir en LatAm.
-- **Forjado** — connota entrenamiento de fuerza + construcción de algo (el cuerpo,
-  el hábito). Tono más serio/aspiracional que "biohack".
-- **Repite** (o **Repz**) — juega con repeticiones/series; funciona bien como nombre
-  de app corto y con dominio disponible más probable que "Biohack AI".
-- **Hipertrofia** — literal, técnico, con autoridad en el nicho fitness serio
-  (puede sonar denso para el usuario casual).
-- Si se mantiene la línea "IA + fitness": evitar "Biohack" solo si el público real
-  es más "gym bro / hipertrofia" que "biohacker silicon-valley" — el nombre debe
-  hablarle a quien realmente va a pagar la suscripción.
+| Candidato | Estado | Nota |
+|---|---|---|
+| **Ferro** ⭐ | 🟢 Libre entre apps | Solo choca con un fabricante de máquinas (ferrogym.com). Logo natural: ficha de tabla periódica "Fe" |
+| **Wallace** ⭐ | 🟢 Libre en fitness | Capitaliza el coach que ya existe; marca humana estilo "Alfred" |
+| Férreo | 🟢 Probablemente libre | Variante de respaldo de Ferro ("voluntad férrea") |
+| Tensor | 🔴 Tomado | tensorfit.com |
+| Fierro | 🔴 Tomado | fierro.app — ⚠️ además es COMPETENCIA directa: app de gym con IA en español, PRs, rankings |
+| Overload | 🔴 Tomado | OverLoad en App Store |
+| Gymetric | 🔴 Tomado | GyMetric en Google Play |
 
-**Pendiente**: decidir con Gustavo el público objetivo exacto (¿biohacker tech? ¿gym
-regular?) antes de cerrar nombre — el nombre correcto depende de a quién le habla.
+**Recomendación**: producto = **Ferro**, coach = **Wallace** ("Ferro, con Wallace adentro").
+Antes de cerrar: verificar dominio (ferro.fit / ferro.app / getferro.app), nombre en
+App Store/Play Store, y registro de marca en Chile (INAPI) y NZ.
+
+**⚠️ Inteligencia competitiva**: fierro.app es un competidor directo en español
+(IA + fuerza/hipertrofia + PRs + rankings). Estudiarlo: pricing, features, reviews.
 
 ## ~~Pregunta abierta — loops autónomos~~ ✅ Resuelto 2026-07-05
 
