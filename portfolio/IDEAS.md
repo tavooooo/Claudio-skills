@@ -30,10 +30,8 @@ mobile-first + coach IA (Wallace) + mapa muscular + logros. Ideas para evaluar:
 **Pendiente**: decidir con Gustavo el público objetivo exacto (¿biohacker tech? ¿gym
 regular?) antes de cerrar nombre — el nombre correcto depende de a quién le habla.
 
-## Pregunta abierta — loops autónomos
+## ~~Pregunta abierta — loops autónomos~~ ✅ Resuelto 2026-07-05
 
-Gustavo quiere que Claude ayude "de manera más autónoma" vía loops/rutinas
-programadas. Antes de construir esto se necesita definir: qué dispara el loop
-(¿cada cuánto?), qué debe hacer Claude en cada disparo (¿solo actualizar el
-dashboard? ¿revisar PRs? ¿avisar si algo se atrasa?), y a quién avisa (¿mensaje en
-esta sesión? ¿push al teléfono?). Ver pregunta hecha a Gustavo el 2026-07-05.
+Gustavo decidió: loop **diario** (08:00 NZ), con los 3 niveles de alcance
+(revisar+avisar, coordinación, y avance autónomo en proyectos en pausa), push al
+teléfono si es urgente + resumen siempre en el chat. Implementado — ver `LOOPS.md`.
