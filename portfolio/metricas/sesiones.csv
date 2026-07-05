@@ -1,3 +1,4 @@
 fecha,proyecto,resumen,tokens_entrada,tokens_salida,costo_usd,fuente_costo,notas
 2026-07-05,portfolio,"Auditoría inicial de los 4 proyectos + creación del sistema de tracking",,,,pendiente,"Primera sesión del sistema; registrar costo desde la app/consola"
 2026-07-05,portfolio,"Dashboard visual (artifact) + corrección de riesgos reales via git log (Vitrina, features-review) + brainstorm nombre FitMark",,,,pendiente,"Rol de esta sesion definido como torre de control, no desarrollo"
+2026-07-05,portfolio,"Intel competitiva fierro.app (incompleta) → lanzamiento FitMark adelantado a 31-ago; plan de contenido en redes (CONTENIDO.md); naming aparcado; dashboard v2 con calendario semanal",,,,pendiente,"Decision estrategica: salir primero"

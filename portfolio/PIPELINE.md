@@ -32,15 +32,23 @@
 - [ ] Términos de servicio + privacidad
 - [ ] Plan de publicidad inicial (Instagram pádel, grupos WhatsApp de clubes)
 
-### Sprint 4 — Biohack AI (ex FitMark) pre-monetización (2026-09-01 → 2026-09-30)
-- [ ] Analytics (PostHog o Vercel Analytics) + funnel de onboarding
-- [ ] Rate-limit `/api/chat` (Upstash) — controla el costo de Wallace
-- [ ] ⚠️ Reconciliar rama `features-review`: **415 commits divergentes desde 2026-06-08**
-      (ranking, muro social, planes, cuentas gym/coach). No es un merge simple —
-      diagnosticar primero si conviene rebase, cherry-pick selectivo, o reescribir
-      esas features sobre `main` actual.
-- [ ] Definir modelo de precios (freemium: Wallace + logros premium)
-- [ ] Cerrar nombre definitivo del producto (hoy: "Biohack AI", en duda — ver `IDEAS.md`)
+### ⚡ Carrera FitMark (jul–ago, EN PARALELO a los sprints Kiwiano — se trabaja en su propio chat)
+
+> Ajuste 2026-07-05: fierro.app (competencia directa) está incompleta — sin pagos,
+> librería 404, rutinas flojas. Decisión de Gustavo: **salir primero**. El lanzamiento
+> público de FitMark se adelanta de sept a **agosto**, y el contenido en redes parte YA.
+
+- [ ] Rescate selectivo de `features-review` (solo lo útil, luego descartar la rama) — jul
+- [ ] Analytics (PostHog o Vercel Analytics) + rate-limit `/api/chat` (Upstash) — jul
+- [ ] Definir feature-set de lanzamiento (¿qué entra y qué se corta?) — jul
+- [ ] Contenido en redes desde la semana del 06-jul (ver `CONTENIDO.md`) — continuo
+- [ ] 🎯 **Lanzamiento público (gratis) — fin de agosto**, antes de que fierro complete su app
+- [ ] Nombre definitivo: aparcado, decidir antes del lanzamiento (deadline dura: 15-ago)
+
+### Sprint 4 — FitMark monetización temprana (2026-09-01 → 2026-09-30)
+- [ ] Modelo de precios freemium (Wallace + features premium) — la competencia es
+      gratis: monetizar por VALOR (coach IA, librería, mapa muscular), no por básicos
+- [ ] Stripe subscripciones
 
 ## Q4 2026 (oct–dic): FitMark cobra + Easy Courts se vuelve real
 

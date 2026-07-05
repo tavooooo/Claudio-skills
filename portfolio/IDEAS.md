@@ -22,12 +22,13 @@ Disponibilidad chequeada contra apps de fitness existentes:
 | Overload | 🔴 Tomado | OverLoad en App Store |
 | Gymetric | 🔴 Tomado | GyMetric en Google Play |
 
-**Recomendación**: producto = **Ferro**, coach = **Wallace** ("Ferro, con Wallace adentro").
-Antes de cerrar: verificar dominio (ferro.fit / ferro.app / getferro.app), nombre en
-App Store/Play Store, y registro de marca en Chile (INAPI) y NZ.
+**Estado 2026-07-05: APARCADO por decisión de Gustavo** — ni Ferro ni Wallace lo
+convencieron. Hay tiempo para pensarlo; la prioridad ahora es lanzar antes que la
+competencia. Cuando se retome: verificar dominio, App Store/Play Store, INAPI (Chile)
+e IPONZ (NZ) del candidato final. FitMark sigue como nombre provisorio de trabajo.
 
-**⚠️ Inteligencia competitiva**: fierro.app es un competidor directo en español
-(IA + fuerza/hipertrofia + PRs + rankings). Estudiarlo: pricing, features, reviews.
+**⚠️ Inteligencia competitiva — fierro.app** (investigado por Gustavo, 2026-07-05):
+ver ficha completa en `proyectos/fitmark.md` § Competencia.
 
 ## ~~Pregunta abierta — loops autónomos~~ ✅ Resuelto 2026-07-05
 

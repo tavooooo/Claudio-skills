@@ -33,4 +33,21 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 5. Reconciliar `features-review` (diagnóstico primero: 415 commits divergentes, no un merge trivial).
 6. Cerrar nombre definitivo del producto (ver brainstorm en `IDEAS.md`).
 
+## Competencia — fierro.app (vigilancia activa)
+
+Investigación de Gustavo (2026-07-05, probando la app directamente):
+
+- **También está en construcción**: sin planes de pago, todo gratis por ahora.
+- **Rutinas precargadas flojas**: mal manejo de descansos, explicaciones de
+  ejercicios pobres.
+- **Librería de ejercicios rota**: da error 404 — no existe todavía.
+
+**Nuestras ventajas hoy**: librería de 152 ejercicios funcionando, mapa muscular
+SVG/3D, coach IA (Wallace) operativo, deploy estable en Vercel.
+
+**Implicancia estratégica**: hay una VENTANA — salir públicamente antes de que
+fierro complete su producto. La carrera es por la librería + experiencia de
+entrenamiento, no por el precio (ellos son gratis). Revisar fierro.app en cada
+loop semanal para detectar sus avances.
+
 **Docs internas**: `HANDOFF.md` (actualizado 2026-07-04), `docs/STACK.md`, `AGENTS.md` (reglas UI de contraste y overlays — respetar siempre).
