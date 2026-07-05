@@ -17,11 +17,11 @@
 ## Q3 2026 (jul–sep): Kiwiano a la venta + FitMark medible
 
 ### Sprint 1 — Kiwiano vitrina (2026-07-06 → 2026-07-20)
-- [ ] Rescatar/mergear rama Vitrina: F4.1 landing pública, F4.2 home rediseñado, F4.3 modo TV
-- [ ] Backups automáticos Supabase (F1.6)
-- **Entregable**: kiwiano con landing pública navegable.
+- [x] ✅ Rescatar/mergear rama Vitrina — **HECHO 05-jul, 15 días antes** (landing con 3 hooks, precios en pelotas, mocks bilingües, story real)
+- [ ] Backups automáticos Supabase (F1.6) — única tarea restante del sprint
+- **Entregable**: kiwiano con landing pública navegable. ✅ CUMPLIDO
 
-### Sprint 2 — Kiwiano monetización F5 (2026-07-21 → 2026-08-15)
+### Sprint 2 — Kiwiano monetización F5 (adelantado: ya en curso → 2026-08-10, fecha fijada por el chat de dev)
 - [ ] Stripe + planes Free / Club / Pro
 - [ ] Onboarding self-service para clubes (hoy es solo superadmin)
 - [ ] Analytics básico (eventos: registro club, torneo creado, upgrade)

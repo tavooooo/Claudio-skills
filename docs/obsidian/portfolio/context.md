@@ -22,8 +22,8 @@ NO desarrolla — Kiwiano y FitMark se trabajan en otros chats en paralelo.
 
 | Proyecto | Estado | Próximo hito | Deadline |
 |---|---|---|---|
-| **Kiwiano** (torneos pádel multi-club) | F4 70%, activo en otro chat | Mergear rama Vitrina (landing+home+TV) | 20-jul |
-| **FitMark** (tracker fuerza + coach IA Wallace; nombre por definir) | 80%, carrera al lanzamiento | Rescate features-review + feature-set | 🎯 lanzamiento gratis **31-ago** |
+| **Kiwiano** (torneos pádel multi-club) | ✅ F4 completa (Vitrina mergeada 05-jul, 15 días antes) | F5 Stripe: saldo de pelotas + membresía | **10-ago** |
+| **FitMark** (tracker fuerza + coach IA Wallace; nombre por definir) | 85% — funcional punta a punta + QA de 5 auditores (05-jul) | Definir free vs premium | 🎯 lanzamiento gratis **31-ago** |
 | **Easy Courts** (repo Padel; arriendo canchas B2B) | Demo mock completa, en pausa | Etapa 1: DB real + auth | 15-dic |
 | **Navaja Suiza** (repo La-Suiza; PWA personal) | Completa local, congelada | — | 2027 |
 
@@ -68,8 +68,10 @@ NO desarrolla — Kiwiano y FitMark se trabajan en otros chats en paralelo.
 
 ## Próximos pasos (para la siguiente sesión de torre de control)
 
-1. Verificar que los chats de dev adoptaron el bloque "Torre de control" en main.
-2. Primera corrida del loop diario (05-jul 20:00 UTC) — revisar que funcionó.
-3. Cuando Gustavo pase costos de tokens → llenar CSV y activar panel de costos.
-4. Guiones de reels de la semana 1 cuando los pida (ver CONTENIDO.md).
-5. Naming FitMark: retomar antes del 15-ago.
+1. ✅ Bloques "Torre de control" adoptados en main por ambos chats (verificado 05-jul).
+2. ✅ Primera corrida del loop OK (05-jul): detectó merge de Vitrina y QA de FitMark.
+3. Vigilar: backups Supabase Kiwiano (vence 20-jul), free vs premium FitMark.
+4. Cuando Gustavo pase costos de tokens → llenar CSV y activar panel de costos.
+5. Guiones de reels de la semana 1 cuando los pida (ver CONTENIDO.md).
+6. Naming FitMark: retomar antes del 15-ago.
+7. Trabajo autónomo hecho en Padel: .env.example creado (faltaba, docs lo referencian).

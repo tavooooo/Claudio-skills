@@ -12,9 +12,14 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado
+## Estado (actualizado 2026-07-05 por el loop, desde HANDOFF main — 85%)
 
 - ✅ Núcleo maduro: tracker, rutinas, ejercicios, mapa muscular, coach IA, landing con scroll-video, onboarding progresivo.
+- ✅ **05-jul**: PRs con celebración de récords, plantillas de rutina y peso corporal,
+  guía de primeros pasos, admin de usuarios, y **QA profundo con 5 auditores paralelos
+  (48 hallazgos, ~25 arreglados: bucle de redirects, falsos récords, TZ Chile, seguridad admin)**.
+  El chat de dev declara la app "funcional de punta a punta y auditada".
+- 🎯 Próximo hito (según HANDOFF): **definir free vs premium**.
 - 🟡 `/logros` "en construcción"; `/store` es solo vitrina visual (sin checkout).
 - 🟡 **Rama `claude/features-review` (415 commits divergentes)**: decisión de Gustavo
   (2026-07-05) — contiene solo algunas cosas útiles; plan = **rescate selectivo pronto
