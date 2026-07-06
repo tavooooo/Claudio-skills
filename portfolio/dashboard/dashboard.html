@@ -645,29 +645,119 @@
     document.getElementById("kpi-tokens-sub").textContent = nf.format(tIn + tOut) + " tokens en " + con + " proyecto(s)";
   }
 
-  /* ---------- Fondo: circuitos ---------- */
+  /* ---------- Fondo: recreación fiel de la imagen de Gustavo ----------
+     Circuitos con quiebres a 45° concentrados en los BORDES laterales,
+     puntas con nodo luminoso, malla hexagonal tenue en parches,
+     destello esquina superior derecha, centro negro y vacío para la UI. */
   const cv = document.getElementById("circuits"), cx = cv.getContext("2d");
   function drawCircuits() {
-    const w = cv.width = innerWidth * devicePixelRatio, h = cv.height = innerHeight * devicePixelRatio;
+    const dpr = devicePixelRatio;
+    const w = cv.width = innerWidth * dpr, h = cv.height = innerHeight * dpr;
     cx.clearRect(0, 0, w, h);
-    cx.lineWidth = devicePixelRatio;
-    let seed = 42;
+    let seed = 1337;
     const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-    for (let i = 0; i < 26; i++) {
-      let x = rnd() * w, y = rnd() * h;
-      const teal = rnd() > 0.5;
-      cx.strokeStyle = teal ? "rgba(53,240,188,0.05)" : "rgba(79,216,240,0.04)";
-      cx.fillStyle = teal ? "rgba(53,240,188,0.13)" : "rgba(79,216,240,0.10)";
+
+    // base: negro verdoso muy profundo
+    const base = cx.createLinearGradient(0, 0, 0, h);
+    base.addColorStop(0, "#040A0A"); base.addColorStop(1, "#030708");
+    cx.fillStyle = base; cx.fillRect(0, 0, w, h);
+
+    // parches de malla hexagonal (muy tenue, como en la imagen)
+    function hexPatch(cxp, cyp, cols, rows, r, alpha) {
+      cx.strokeStyle = "rgba(53,240,188," + alpha + ")";
+      cx.lineWidth = 0.7 * dpr;
+      const dx = r * 1.732, dy = r * 1.5;
+      for (let i = 0; i < cols; i++) for (let j = 0; j < rows; j++) {
+        const x = cxp + i * dx + (j % 2) * dx / 2, y = cyp + j * dy;
+        cx.beginPath();
+        for (let k = 0; k <= 6; k++) {
+          const a = Math.PI / 6 + k * Math.PI / 3;
+          const px = x + r * Math.cos(a), py = y + r * Math.sin(a);
+          k === 0 ? cx.moveTo(px, py) : cx.lineTo(px, py);
+        }
+        cx.stroke();
+      }
+    }
+    hexPatch(w * 0.04, h * 0.02, 6, 4, 26 * dpr, 0.028);
+    hexPatch(w * 0.30, h * 0.82, 7, 3, 24 * dpr, 0.022);
+    hexPatch(w * 0.78, h * 0.10, 6, 4, 25 * dpr, 0.030);
+    hexPatch(w * 0.70, h * 0.72, 5, 3, 27 * dpr, 0.022);
+
+    // trazas de circuito: nacen en los bordes laterales, avanzan con
+    // horizontales y quiebres a 45°, terminan en nodo luminoso
+    function traza(izq) {
+      const y0 = rnd() * h;
+      let x = izq ? -20 * dpr : w + 20 * dpr, y = y0;
+      const dir = izq ? 1 : -1;
+      const bright = 0.10 + rnd() * 0.30;
+      cx.strokeStyle = "rgba(64,235,190," + bright * 0.55 + ")";
+      cx.lineWidth = (rnd() > 0.8 ? 1.4 : 0.9) * dpr;
       cx.beginPath(); cx.moveTo(x, y);
-      const segs = 3 + Math.floor(rnd() * 4);
+      const segs = 2 + Math.floor(rnd() * 4);
+      // límite: nunca invadir el centro (35%-65%)
+      const limite = izq ? w * (0.16 + rnd() * 0.16) : w * (0.84 - rnd() * 0.16);
       for (let s = 0; s < segs; s++) {
-        const len = (40 + rnd() * 160) * devicePixelRatio;
-        if (rnd() > 0.5) x += rnd() > 0.5 ? len : -len; else y += rnd() > 0.5 ? len : -len;
-        cx.lineTo(x, y);
+        const len = (50 + rnd() * 200) * dpr;
+        if (rnd() > 0.45) {
+          x += dir * len;
+          if (izq ? x > limite : x < limite) x = limite;
+          cx.lineTo(x, y);
+        } else { // quiebre 45°
+          const d = (20 + rnd() * 70) * dpr * (rnd() > 0.5 ? 1 : -1);
+          x += dir * Math.abs(d); y += d;
+          if (izq ? x > limite : x < limite) x = limite;
+          cx.lineTo(x, y);
+        }
       }
       cx.stroke();
-      cx.beginPath(); cx.arc(x, y, 2.2 * devicePixelRatio, 0, 7); cx.fill();
+      // nodo luminoso en la punta
+      const nr = (1.6 + rnd() * 2.2) * dpr;
+      const halo = cx.createRadialGradient(x, y, 0, x, y, nr * 6);
+      halo.addColorStop(0, "rgba(120,255,215," + bright + ")");
+      halo.addColorStop(1, "rgba(120,255,215,0)");
+      cx.fillStyle = halo; cx.beginPath(); cx.arc(x, y, nr * 6, 0, 7); cx.fill();
+      cx.fillStyle = "rgba(190,255,235," + Math.min(1, bright * 2.4) + ")";
+      cx.beginPath(); cx.arc(x, y, nr, 0, 7); cx.fill();
+      // anillo ocasional (como los conectores de la imagen)
+      if (rnd() > 0.65) {
+        cx.strokeStyle = "rgba(120,255,215," + bright * 0.8 + ")";
+        cx.lineWidth = 0.8 * dpr;
+        cx.beginPath(); cx.arc(x, y, nr * 2.4, 0, 7); cx.stroke();
+      }
     }
+    for (let i = 0; i < 22; i++) traza(true);
+    for (let i = 0; i < 26; i++) traza(false);
+
+    // polvo de partículas
+    for (let i = 0; i < 90; i++) {
+      cx.fillStyle = "rgba(140,255,220," + (0.02 + rnd() * 0.06) + ")";
+      cx.beginPath(); cx.arc(rnd() * w, rnd() * h, (0.5 + rnd()) * dpr, 0, 7); cx.fill();
+    }
+
+    // destello esquina superior derecha (con rayos)
+    const fx = w * 0.985, fy = -h * 0.02;
+    const flare = cx.createRadialGradient(fx, fy, 0, fx, fy, w * 0.30);
+    flare.addColorStop(0, "rgba(110,255,215,0.34)");
+    flare.addColorStop(0.25, "rgba(60,220,180,0.12)");
+    flare.addColorStop(1, "rgba(60,220,180,0)");
+    cx.fillStyle = flare; cx.fillRect(0, 0, w, h);
+    cx.save(); cx.translate(fx, fy);
+    for (let i = 0; i < 7; i++) {
+      const a = Math.PI * 0.5 + (i - 3) * 0.13 + rnd() * 0.05;
+      const L = w * (0.10 + rnd() * 0.16);
+      const ray = cx.createLinearGradient(0, 0, Math.cos(a) * L, Math.sin(a) * L);
+      ray.addColorStop(0, "rgba(150,255,225,0.20)"); ray.addColorStop(1, "rgba(150,255,225,0)");
+      cx.strokeStyle = ray; cx.lineWidth = (1 + rnd() * 1.6) * dpr;
+      cx.beginPath(); cx.moveTo(0, 0); cx.lineTo(Math.cos(a) * L, Math.sin(a) * L); cx.stroke();
+    }
+    cx.restore();
+
+    // viñeta: mantiene el centro y las esquinas inferiores bien oscuros
+    const vig = cx.createRadialGradient(w / 2, h / 2, h * 0.18, w / 2, h / 2, h * 0.95);
+    vig.addColorStop(0, "rgba(2,5,6,0.55)");
+    vig.addColorStop(0.5, "rgba(2,5,6,0.12)");
+    vig.addColorStop(1, "rgba(2,5,6,0.35)");
+    cx.fillStyle = vig; cx.fillRect(0, 0, w, h);
   }
   drawCircuits();
   addEventListener("resize", drawCircuits);
