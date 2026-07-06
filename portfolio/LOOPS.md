@@ -15,9 +15,13 @@ data a GitHub**. Causas reales:
    **no puede hacer fetch** de archivos externos → el loop debe hornear los
    números dentro del HTML (array `COSTOS`) al regenerar.
 
-**Decisión pendiente de Gustavo** (ver IDEAS.md): (A) reporte manual del uso
-desde la consola de Claude, o (B) construir un pipeline a rama `metrics` que no
-despliegue. Por ahora el panel de costos muestra "esperando hook" — es honesto.
+**Decisión de Gustavo (2026-07-06): Opción A — reporte manual.** Gustavo mira
+el uso real en la consola de Claude / su suscripción cuando quiera, me pasa los
+números por proyecto y los horneo en el array `COSTOS` del dashboard. El panel
+muestra "ESPERANDO DATOS" hasta que reporte, y "REPORTADO" cuando hay cifras.
+No se construye la tubería automática (Opción B) por ahora: queda como mejora
+futura si el volumen de sesiones lo justifica. El hook `log-tokens.py` sigue en
+main de ambos repos pero es inerte para el dashboard (no cierra el ciclo).
 
 ## Loop diario — torre de control
 
