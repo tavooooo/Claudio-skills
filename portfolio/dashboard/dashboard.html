@@ -215,22 +215,19 @@
   .mini-due.critical { color: var(--critical); border-color: rgba(255,98,87,.45); }
   .mini-due.ok { color: var(--faint); }
 
-  /* Desktop: la mesa se ancla abajo del Resumen, RESERVANDO su alto para no
-     superponerse al contenido de arriba (el bug "amontonado" de la v7). */
+  /* Desktop: la mesa FLUYE anclada al fondo del Resumen (flex, margin-top:auto).
+     Al ser parte del flujo, el navegador GARANTIZA que nunca se superponga al
+     contenido de arriba — en cualquier alto de pantalla. (JS mueve el dock
+     dentro de #v-resumen para que esto funcione.) */
   @media (min-width: 981px) {
-    body.tab-resumen { overflow: hidden; height: 100vh; }
-    body.tab-resumen main.main { padding-bottom: 300px; }
+    /* min-height + flex: en pantallas altas la mesa se ancla al fondo sin scroll;
+       en pantallas bajas el contenido excede y aparece scroll natural (sin cortar
+       ni superponer nada). */
+    body.tab-resumen main.main { min-height: 100vh; display: flex; flex-direction: column; }
+    body.tab-resumen #v-resumen.active { flex: 1 1 auto; display: flex; flex-direction: column; min-height: 0; }
     body.tab-resumen main.main > footer { display: none; }
-    .dock {
-      position: fixed; left: var(--sidebar-w); right: 0; bottom: 0; z-index: 35;
-      display: flex; justify-content: center;
-      padding: 0 2.4rem 1.1rem 3.0rem;
-      perspective: 2400px; perspective-origin: 50% 8%;
-      pointer-events: none; /* solo los hijos interactivos capturan clicks */
-    }
-    .dock .mesa { pointer-events: auto; width: 100%; max-width: 1560px; transform: rotateX(6deg); transform-origin: 50% 100%; }
-    .view#v-resumen:not(.active) ~ .dock,
-    body:not(.tab-resumen) .dock { display: none; }
+    #v-resumen > .dock { margin-top: auto; display: flex; justify-content: center; perspective: 2400px; perspective-origin: 50% 8%; padding-top: 0.6rem; }
+    #v-resumen > .dock .mesa { width: 100%; max-width: 1560px; transform: rotateX(6deg); transform-origin: 50% 100%; }
   }
   @media (max-width: 980px) {
     .dock .mesa { flex-direction: column; }
@@ -654,6 +651,15 @@
 (function () {
   "use strict";
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- Mover la mesa DENTRO de la vista Resumen ----------
+     Así fluye en el layout (flex-bottom) y nunca se superpone al contenido,
+     en vez de flotar fija encima. */
+  (function () {
+    const dockEl = document.getElementById("dock");
+    const resumen = document.getElementById("v-resumen");
+    if (dockEl && resumen) resumen.appendChild(dockEl);
+  })();
 
   /* ---------- Navegación por pestañas ---------- */
   const TITULOS = {
