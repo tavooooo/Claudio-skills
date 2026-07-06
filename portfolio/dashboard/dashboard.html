@@ -813,25 +813,34 @@
       const th = rnd() * Math.PI * 2, ph = Math.acos(2 * rnd() - 1), r = 120 + rnd() * 60;
       n.x = r * Math.sin(ph) * Math.cos(th); n.y = r * Math.sin(ph) * Math.sin(th); n.z = r * Math.cos(ph);
     });
-    for (let it = 0; it < 220; it++) {
+    // Simulación estable: repulsión ~1/d², resortes LINEALES (∝ d-rest, no ∝ d²),
+    // centrado suave, y paso amortiguado con clamp → nunca diverge a NaN.
+    const REST = 82, clamp = v => v < -22 ? -22 : v > 22 ? 22 : v;
+    for (let it = 0; it < 320; it++) {
       nodos.forEach(a => { a.fx = 0; a.fy = 0; a.fz = 0; });
       for (let i = 0; i < nodos.length; i++) for (let j = i + 1; j < nodos.length; j++) {
         const a = nodos[i], b = nodos[j];
         let dx = a.x - b.x, dy = a.y - b.y, dz = a.z - b.z;
-        const d2 = dx * dx + dy * dy + dz * dz + 0.01, f = 5200 / d2;
-        const d = Math.sqrt(d2); dx /= d; dy /= d; dz /= d;
+        const d2 = dx * dx + dy * dy + dz * dz + 1;
+        const d = Math.sqrt(d2), f = 4200 / d2;
+        dx /= d; dy /= d; dz /= d;
         a.fx += dx * f; a.fy += dy * f; a.fz += dz * f;
         b.fx -= dx * f; b.fy -= dy * f; b.fz -= dz * f;
       }
       aristas.forEach(([p, q]) => {
         const a = nodos[idx[p]], b = nodos[idx[q]];
         let dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z;
-        const d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1, f = (d - 85) * 0.012;
+        const d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1, f = (d - REST) * 0.05;
         dx /= d; dy /= d; dz /= d;
-        a.fx += dx * f * d; a.fy += dy * f * d; a.fz += dz * f * d;
-        b.fx -= dx * f * d; b.fy -= dy * f * d; b.fz -= dz * f * d;
+        a.fx += dx * f; a.fy += dy * f; a.fz += dz * f;
+        b.fx -= dx * f; b.fy -= dy * f; b.fz -= dz * f;
       });
-      nodos.forEach(n => { if (n.id !== "torre") { n.x += n.fx * 0.9; n.y += n.fy * 0.9; n.z += n.fz * 0.9; } });
+      // centrado suave hacia el origen para mantener el grafo acotado
+      nodos.forEach(n => { if (n.id !== "torre") { n.fx += -n.x * 0.0035; n.fy += -n.y * 0.0035; n.fz += -n.z * 0.0035; } });
+      nodos.forEach(n => {
+        if (n.id === "torre") return;
+        n.x += clamp(n.fx * 0.85); n.y += clamp(n.fy * 0.85); n.z += clamp(n.fz * 0.85);
+      });
     }
     return idx;
   }
