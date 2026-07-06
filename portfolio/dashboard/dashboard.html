@@ -90,7 +90,19 @@
 
   h2 { display: flex; align-items: baseline; gap: 0.7rem; font-size: 1rem; font-weight: 650; letter-spacing: 0.04em; margin: 1.8rem 0 0.9rem; }
   h2:first-child { margin-top: 0; }
-  h2::before { content: "▮"; color: var(--neon); font-size: 0.75rem; text-shadow: 0 0 12px rgba(53,240,188,.7); }
+  h2::before { content: "▮"; color: var(--neon); font-size: 0.75rem; text-shadow: 0 0 12px rgba(53,240,188,.7); animation: livePulse 2.6s ease-in-out infinite; }
+  /* latido tipo "heartbeat" para que el marcador se vea vivo (sistema activo) */
+  @keyframes livePulse {
+    0%   { opacity: .38; text-shadow: 0 0 3px rgba(53,240,188,.25); }
+    9%   { opacity: 1;   text-shadow: 0 0 14px rgba(53,240,188,.85); }
+    18%  { opacity: .55; text-shadow: 0 0 6px rgba(53,240,188,.4); }
+    27%  { opacity: 1;   text-shadow: 0 0 12px rgba(53,240,188,.75); }
+    45%  { opacity: .38; text-shadow: 0 0 3px rgba(53,240,188,.25); }
+    100% { opacity: .38; text-shadow: 0 0 3px rgba(53,240,188,.25); }
+  }
+  /* desfase entre columnas y secciones → no laten todos a la vez */
+  .cols-2 > div:last-child h2::before { animation-delay: .9s; }
+  #v-costos h2::before, #v-carrera h2::before { animation-delay: .5s; }
   h2 .count { font-family: var(--mono); font-size: 0.64rem; color: var(--faint); font-weight: 400; letter-spacing: 0.1em; }
 
   .panel {
@@ -282,6 +294,7 @@
   @media (prefers-reduced-motion: reduce) {
     .view { animation: none; }
     .pstatus.live::before { animation: none; }
+    h2::before { animation: none; opacity: 1; }
   }
 </style>
 
