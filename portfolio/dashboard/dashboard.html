@@ -1,9 +1,9 @@
 <title>Torre de Control — Portfolio de Gustavo</title>
 <style>
   /* ============================================================
-     TORRE DE CONTROL v12 — Kiwiano F5.1 cobro mergeado (74%),
-     FitMark Wallace 2.0 (90%), costos por reporte manual (Opción A).
-     Fondo real (fondo.jpg),
+     TORRE DE CONTROL v13 — costos automáticos vía hook (1 dato por
+     sesión, el loop lee tokens.csv de cada repo). Kiwiano F5.1 cobro
+     mergeado (74%), FitMark Wallace 2.0 (90%). Fondo real (fondo.jpg),
      gráfico circular multi-anillo 3D, dock fijo abajo ("mesa") en
      Resumen, mini-grafo esquina superior, grafo 3D con física estable.
      ============================================================ */
@@ -349,7 +349,7 @@
           <span class="chip critical"><b>🏁</b> Lanza FitMark 31·ago · <em id="dias-lanzamiento">—</em></span>
           <span class="chip good"><b>✓</b> Kiwiano F5.1 cobro mergeado</span>
           <span class="chip critical"><b>⚠</b> fierro.app: librería 404 hoy</span>
-          <span class="chip"><b>🪙</b> <span id="kpi-tokens">costos: reporte manual (Opción A)</span></span>
+          <span class="chip"><b>🪙</b> <span id="kpi-tokens">costos: auto vía hook (esperando 1er cierre)</span></span>
         </div>
         <div class="mini-graph" id="mini-graph-btn">
           <div class="mini-graph-label">GRAFO DEL PORTFOLIO <span>ver todo →</span></div>
@@ -548,18 +548,18 @@
           </div>
         </div>
         <div>
-          <h2>Cómo se llena <span class="count">REPORTE MANUAL · OPCIÓN A</span></h2>
+          <h2>Cómo se llena <span class="count">AUTOMÁTICO · 1 DATO POR SESIÓN</span></h2>
           <div class="panel feed">
-            <div class="feed-item"><span class="feed-when">1</span><span>Gustavo mira el uso real en la <b>consola de Claude</b> (o su suscripción) cuando quiera</span></div>
-            <div class="feed-item"><span class="feed-when">2</span><span>Me pasa los números por proyecto y los <b>horneo</b> en este panel</span></div>
-            <div class="feed-item"><span class="feed-when">3</span><span class="meh">El hook automático no cierra solo: contenedores efímeros + <code style="font-family:var(--mono);color:var(--neon-dim);font-size:.72rem">main</code> auto-despliega + CSP del artifact bloquea fetch</span></div>
+            <div class="feed-item"><span class="feed-when">1</span><span>Hook <code style="font-family:var(--mono);color:var(--neon-dim);font-size:.72rem">Stop</code> suma los tokens tras cada respuesta y actualiza <b>docs/metricas/tokens.csv</b> (ya vivo en main)</span></div>
+            <div class="feed-item"><span class="feed-when">2</span><span>El <b>commit de cierre</b> del chat de dev (el que ya sube el HANDOFF) se lleva el CSV — cero deploys extra</span></div>
+            <div class="feed-item"><span class="feed-when">3</span><span>El loop de la mañana lee los CSV de los 5 repos y <b>hornea</b> los números aquí</span></div>
             <div class="feed-item"><span class="feed-when">nota</span><span class="meh">Con suscripción no pagas por token: el USD te dice cuánto VALDRÍA y qué proyecto consume más motor</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v12 · KIWIANO F5.1 COBRO MERGEADO · FITMARK WALLACE 2.0 · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v13 · COSTOS AUTO VÍA HOOK (1 DATO/SESIÓN) · KIWIANO 74% · FITMARK 90% · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -735,7 +735,7 @@
     });
   });
 
-  /* ---------- Costos (reporte manual — Opción A; horneo los números que reporta Gustavo) ---------- */
+  /* ---------- Costos (automático: el loop lee docs/metricas/tokens.csv de cada repo y hornea aquí) ---------- */
   const PRECIOS = { in: 5, out: 25 };
   const COSTOS = [
     { nombre: "Kiwiano",      color: "var(--kiwiano)", sesiones: null, tin: null, tout: null },
@@ -758,8 +758,8 @@
       '<td class="num">' + (hay ? nf.format(p.tout) : "—") + "</td>" +
       '<td class="num">' + (hay ? '<b class="good">$' + usd.toFixed(2) + "</b>" : "—") + "</td>" +
       "<td>" + (hay
-        ? '<span class="good" style="font-family:var(--mono);font-size:.66rem">REPORTADO</span>'
-        : '<span style="color:var(--faint);font-family:var(--mono);font-size:.66rem">ESPERANDO DATOS</span>') + "</td>";
+        ? '<span class="good" style="font-family:var(--mono);font-size:.66rem">AUTO ✓</span>'
+        : '<span style="color:var(--faint);font-family:var(--mono);font-size:.66rem">ESPERANDO 1ER CIERRE</span>') + "</td>";
     tbody.appendChild(tr);
   });
   if (con > 0) {

@@ -2,26 +2,48 @@
 
 > Definido con Gustavo el 2026-07-05.
 
-## ⚠️ Estado del tracking de tokens (hallazgo 2026-07-05)
+## 💰 Tracking de tokens — AUTOMÁTICO por sesión (decidido 2026-07-06)
 
-El hook `log-tokens.py` YA está en `main` de Kiwiano y fitmark, pero **no llega
-data a GitHub**. Causas reales:
-1. Las sesiones de Claude Code web corren en **contenedores efímeros**: el hook
-   escribe `docs/metricas/tokens.csv` localmente al terminar, pero nadie lo
-   commitea, y el contenedor se recicla → el archivo se pierde antes de subirse.
-2. **No se puede auto-pushear** el CSV a `main` porque `main` **auto-despliega
-   en Vercel** en ambos repos → cada cierre de sesión gatillaría un deploy basura.
-3. Aunque el CSV llegara, el dashboard es un artifact con CSP estricta que
-   **no puede hacer fetch** de archivos externos → el loop debe hornear los
-   números dentro del HTML (array `COSTOS`) al regenerar.
+**Decisión de Gustavo (2026-07-06):** costos automáticos, sin reporte manual.
+La captura ya funciona; el nudo era el transporte, y se resuelve **haciendo que
+el CSV viaje en el commit de cierre que los chats de dev ya pushean** (el del
+HANDOFF). Cero deploys extra, cero push por consulta.
 
-**Decisión de Gustavo (2026-07-06): Opción A — reporte manual.** Gustavo mira
-el uso real en la consola de Claude / su suscripción cuando quiera, me pasa los
-números por proyecto y los horneo en el array `COSTOS` del dashboard. El panel
-muestra "ESPERANDO DATOS" hasta que reporte, y "REPORTADO" cuando hay cifras.
-No se construye la tubería automática (Opción B) por ahora: queda como mejora
-futura si el volumen de sesiones lo justifica. El hook `log-tokens.py` sigue en
-main de ambos repos pero es inerte para el dashboard (no cierra el ciclo).
+### Cómo funciona (las 3 piezas)
+1. **Captura (ya viva en main):** el hook `Stop` `log-tokens.py` lee el
+   transcript tras cada respuesta, suma tokens de entrada (input + cache
+   creation + cache read) y salida, y reescribe **una fila acumulativa por
+   sesión** en `docs/metricas/tokens.csv`. Es un archivo diminuto (≈KB) — la
+   memoria NUNCA fue el problema.
+2. **Transporte (la pieza que faltaba):** el chat de dev, al cerrar la sesión,
+   incluye `docs/metricas/tokens.csv` en el **mismo commit** con que ya sube el
+   HANDOFF. Como ese push ya ocurría, **no añade ningún deploy nuevo**.
+   → Regla para los chats de dev, ver más abajo.
+3. **Horneado (lado del loop, este chat):** cada mañana el loop lee el CSV de
+   cada repo y llena el array `COSTOS` del dashboard.
+
+### Procedimiento del loop para llenar `COSTOS`
+Por cada repo con hook (Kiwiano, fitmark; luego Padel/La-Suiza si se instala):
+```
+git show origin/main:docs/metricas/tokens.csv   # si no existe, aún no hubo cierre → dejar en null
+```
+- **sesiones** = nº de filas (cada fila es una sesión distinta).
+- **tin** = suma de `tokens_entrada_acum`; **tout** = suma de `tokens_salida_acum`.
+- Cargar `{ sesiones, tin, tout }` en la entrada del proyecto en `COSTOS`
+  (dashboard.html). El USD lo calcula solo el JS a tarifa Opus 4.8 ($5/$25 por M).
+- Sin CSV → dejar `null`: el panel muestra "ESPERANDO 1ER CIERRE"; con datos, "AUTO ✓".
+
+### ⚠️ Regla para los chats de dev de Kiwiano y fitmark (pegar en su rutina de cierre)
+> Al cerrar la sesión, además de commitear/pushear el HANDOFF, incluí el CSV de
+> tokens en el mismo commit:
+> ```
+> git add docs/HANDOFF.md docs/metricas/tokens.csv
+> git commit -m "docs: HANDOFF + métricas de tokens de la sesión"
+> git push
+> ```
+> (Kiwiano tiene el HANDOFF en `docs/HANDOFF.md`; fitmark en `HANDOFF.md` raíz —
+> ajustar la ruta, el CSV siempre es `docs/metricas/tokens.csv`.)
+> Best-effort: si la sesión muere sin cerrar, esa sesión no reporta. Es aceptable.
 
 ## Loop diario — torre de control
 
@@ -56,11 +78,11 @@ Si HANDOFF y git se contradicen (ej: HANDOFF dice "hecho" pero no hay commit),
 el loop lo marca como inconsistencia en el resumen — no adivina.
 
 4. **Tokens automáticos**: hook `Stop` en Kiwiano y fitmark
-   (`.claude/hooks/log-tokens.py`) — tras cada respuesta suma los tokens de la
-   sesión y actualiza `docs/metricas/tokens.csv` del repo (una fila acumulativa
-   por sesión). El loop lee ese CSV desde origin y llena el panel de costos del
-   dashboard. Instalado en la rama `claude/project-portfolio-tracking-ib0574`
-   de ambos repos; los chats de dev deben llevarlo a main (cherry-pick).
+   (`.claude/hooks/log-tokens.py`) — **ya en main de ambos** — tras cada
+   respuesta suma los tokens y actualiza `docs/metricas/tokens.csv` (una fila
+   acumulativa por sesión). El loop lo lee desde origin y hornea el panel de
+   costos. El único requisito humano es que el chat de dev incluya el CSV en su
+   commit de cierre (ver la sección "Tracking de tokens" arriba).
 
 **Acuerdo con Gustavo (2026-07-05)**: los chats de desarrollo actualizan el
 HANDOFF al final de cada sesión y lo commitean/pushean — así el loop de la
