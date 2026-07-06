@@ -1,13 +1,13 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-07-05** · Actualizar en cada sesión de trabajo.
+> Última actualización: **2026-07-06** · Actualizar en cada sesión de trabajo.
 
 ## Estado global
 
 | Proyecto | Fase | Avance | ¿Comercializable hoy? | Bloqueador principal | Próximo hito | Deadline |
 |---|---|---|---|---|---|---|
-| **Kiwiano** | ✅ F4 completada (Vitrina mergeada 05-jul, 15 días antes) → F5 | 🟢 Alto — **activo, en otro chat** | Casi — landing pública LISTA, falta cobro | Sin monetización aún (F5 recién parte) | F5 Stripe: saldo de pelotas + membresía | **2026-08-10** (fecha del chat de dev) |
-| **FitMark** (nombre por definir) | Carrera al lanzamiento (85%) — funcional de punta a punta y auditada | 🟢 Alto — **activo, en otro chat** | Casi — falta definir free vs premium | Nombre definitivo pendiente (deadline dura 15-ago) | Definir free vs premium | 🎯 Lanzamiento gratis **2026-08-31** |
+| **Kiwiano** | F5.1 monetización **mergeada a main (06-jul)** — pelotas + planes + billing UI + membresía $40 NZD | 🟢 Alto — **activo, en otro chat** | Casi — máquina de cobro construida, falta Stripe real | F5.2 Stripe real + correr migración `012_billing.sql` (Tavo) | F5.2 Stripe: pago real (hoy manual→superadmin acredita) | **2026-08-10** (fecha del chat de dev) |
+| **FitMark** (nombre por definir) | Carrera al lanzamiento (90%) — freemium 5/5 cableado + Wallace 2.0 | 🟢 Alto — **activo, en otro chat** | Casi — freemium listo con **cobro simulado**, falta pasarela real | Pasarela de pago real + nombre definitivo (15-ago) | Pasarela de pago real | 🎯 Lanzamiento gratis **2026-08-31** |
 | **Easy Courts** | Etapa 0 (demo mock completa) | 🟡 Medio — en pausa | No — nada persiste | Todo es mock: sin DB real, sin auth real, admin sin protección | Etapa 1: Postgres + Prisma + auth real | 2026-12-15 |
 | **Navaja Suiza** | Fase 1 completa (local-only) | 🟢 Alto — congelado | N/A (personal) | Sin nube (Supabase scaffolded, inactivo) | Mantener; evaluar comercializar en 2027 | — |
 
@@ -25,16 +25,18 @@
 
 ## Semáforo de riesgos
 
-- 🔴 **Ningún proyecto genera ingresos aún** — prioridad absoluta: primer flujo de cobro real (Kiwiano F5).
+- 🔴 **Ningún proyecto genera ingresos reales aún** — pero la máquina de cobro ya existe en ambos:
+  Kiwiano F5.1 (pelotas + planes + billing UI, cobro manual) mergeado 06-jul; FitMark freemium 5/5
+  cableado 06-jul con **cobro simulado**. Falta cerrar con pasarela real (Kiwiano Stripe F5.2, FitMark pasarela).
 - 🔴 **Carrera con fierro.app**: competidor directo pero incompleto (sin pagos, librería 404, rutinas flojas — verificado por Gustavo 05-jul). Decisión: FitMark sale primero — lanzamiento público adelantado a **fin de agosto**. Vigilar fierro.app semanalmente.
 - 🟠 **Contenido en redes parte esta semana** (ver `CONTENIDO.md`) — construir audiencia antes del lanzamiento; sin distribución no hay carrera que ganar.
-- 🟡 **`features-review` de FitMark**: rescate selectivo de lo útil y descartar la rama (decidido 05-jul; ejecutar en julio).
+- 🟡 **`features-review` de FitMark** (06-jul: 415 commits adelante / 67 main adelante): rescate selectivo de lo útil y descartar la rama (decidido 05-jul; ejecutar en julio). La divergencia sigue grande y no baja — mientras más se demore el cherry-pick, más caro el rescate (incluye Wallace KB de 262 artículos).
 - 🟡 **Nombre definitivo aparcado** — deadline dura 15-ago (antes del lanzamiento público).
-- ✅ ~~Kiwiano `Vitrina` pendiente de merge~~ — **RESUELTO 05-jul**: mergeada a main con landing completa (3 hooks, precios en pelotas, mocks bilingües). Sprint 1 completado 15 días antes de fecha.
-- 🟡 Backups automáticos Supabase de Kiwiano (F1.6) siguen pendientes — era la otra tarea del Sprint 1 (vence 20-jul).
+- ✅ ~~Kiwiano `Vitrina` pendiente de merge~~ — **RESUELTO 05-jul**: mergeada a main con landing completa. Sprint 1 completado 15 días antes de fecha.
+- ✅ ~~Máquina de cobro de Kiwiano~~ — **F5.1 mergeada 06-jul** (pelotas, planes, billing UI club+superadmin, membresía $40 NZD). Falta F5.2 Stripe real + correr migración `012_billing.sql` (bloqueador en manos de Tavo).
+- 🟡 Backups automáticos Supabase de Kiwiano (F1.6) siguen pendientes (vence **20-jul**).
 - 🟠 **Cero analytics en todos los productos** — sin datos de usuarios no hay buenas decisiones de negocio.
-- 🟡 Backups manuales de Supabase en Kiwiano (F1.6 pendiente).
-- 🟡 **Nombre de Biohack AI sin cerrar** — riesgo de seguir construyendo marca/copy sobre un nombre que se va a cambiar.
+- 🟡 **Nombre de FitMark sin cerrar** — riesgo de seguir construyendo marca/copy sobre un nombre que se va a cambiar (deadline 15-ago).
 
 ## Definición de "comercializable" (checklist por producto)
 

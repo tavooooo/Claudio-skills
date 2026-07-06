@@ -22,10 +22,11 @@
 - **Entregable**: kiwiano con landing pública navegable. ✅ CUMPLIDO
 
 ### Sprint 2 — Kiwiano monetización F5 (adelantado: ya en curso → 2026-08-10, fecha fijada por el chat de dev)
-- [ ] Stripe + planes Free / Club / Pro
+- [x] ✅ **F5.1 mergeada 06-jul**: sistema de pelotas (ledger + débito/reembolso + caja de bienvenida) + planes + billing UI (club + superadmin) + panel de cobros + membresía $40 NZD
+- [ ] **F5.2 Stripe pago real** (hoy es manual: superadmin acredita) + correr migración `012_billing.sql` en Supabase (Tavo)
 - [ ] Onboarding self-service para clubes (hoy es solo superadmin)
 - [ ] Analytics básico (eventos: registro club, torneo creado, upgrade)
-- **Entregable**: 🎯 **primer producto cobrable del portfolio** (beta comercial 15-ago).
+- **Entregable**: 🎯 **primer producto cobrable del portfolio** (beta comercial 15-ago). Máquina de cobro ✅ construida; falta go-live de Stripe.
 
 ### Sprint 3 — Kiwiano primeros clientes (2026-08-16 → 2026-08-31)
 - [ ] Piloto con 2–3 clubes reales (NZ y/o Chile)
@@ -38,9 +39,10 @@
 > librería 404, rutinas flojas. Decisión de Gustavo: **salir primero**. El lanzamiento
 > público de FitMark se adelanta de sept a **agosto**, y el contenido en redes parte YA.
 
-- [ ] Rescate selectivo de `features-review` (solo lo útil, luego descartar la rama) — jul
+- [ ] Rescate selectivo de `features-review` (solo lo útil, luego descartar la rama) — jul · **06-jul: divergencia 415/67, sin bajar**
 - [ ] Analytics (PostHog o Vercel Analytics) + rate-limit `/api/chat` (Upstash) — jul
-- [ ] Definir feature-set de lanzamiento (¿qué entra y qué se corta?) — jul
+- [x] ✅ **Definir feature-set + freemium (06-jul)**: FREE 5/5/10 vs PREMIUM $5,99/mes cableado con cobro simulado; falta pasarela real
+- [ ] Pasarela de pago real para el freemium (hoy simulado) — antes del lanzamiento
 - [ ] Contenido en redes desde la semana del 06-jul (ver `CONTENIDO.md`) — continuo
 - [ ] 🎯 **Lanzamiento público (gratis) — fin de agosto**, antes de que fierro complete su app
 - [ ] Nombre definitivo: aparcado, decidir antes del lanzamiento (deadline dura: 15-ago)

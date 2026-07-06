@@ -12,28 +12,31 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-05 por el loop, desde HANDOFF main — 85%)
+## Estado (actualizado 2026-07-06 por el loop, desde git main — 90%)
 
 - ✅ Núcleo maduro: tracker, rutinas, ejercicios, mapa muscular, coach IA, landing con scroll-video, onboarding progresivo.
 - ✅ **05-jul**: PRs con celebración de récords, plantillas de rutina y peso corporal,
   guía de primeros pasos, admin de usuarios, y **QA profundo con 5 auditores paralelos
   (48 hallazgos, ~25 arreglados: bucle de redirects, falsos récords, TZ Chile, seguridad admin)**.
-  El chat de dev declara la app "funcional de punta a punta y auditada".
-- 🎯 Próximo hito (según HANDOFF): **definir free vs premium**.
+- ✅ **06-jul — Freemium 5/5 cableado**: FREE (5 rutinas · 5 ejercicios propios · 10 msgs
+  Wallace/mes) vs **PREMIUM $5,99/mes · $39,99/año** con gates en servidor + candados en UI
+  + página `/premium`. **El cobro está SIMULADO** (modo prueba para admin) — falta pasarela real.
+- ✅ **06-jul — Tanda UX**: coma decimal en inputs de peso, reordenar ejercicios/rutinas con flechas, calendario pulido.
+- ✅ **06-jul — Wallace 2.0**: datos reales del usuario, avatar-cara, chat premium y presencia en sesión.
+- 🎯 Próximo hito: **pasarela de pago REAL** (hoy simulada) + cerrar nombre definitivo (15-ago).
 - 🟡 `/logros` "en construcción"; `/store` es solo vitrina visual (sin checkout).
-- 🟡 **Rama `claude/features-review` (415 commits divergentes)**: decisión de Gustavo
-  (2026-07-05) — contiene solo algunas cosas útiles; plan = **rescate selectivo pronto
-  (cherry-pick de lo útil) y luego descartar la rama**. Ya no es reconciliación completa,
-  pero el rescate sigue teniendo fecha objetivo: antes del Sprint 4 (sep).
-- 🟡 Wallace KB RAG (`wallace-kb/`, 262 artículos) sin conectar.
-- ❌ **Monetización: nada** — sin Stripe, "premium" es solo copy.
+- 🟡 **Rama `claude/features-review` (06-jul: 415 commits adelante / 67 main adelante)**:
+  decisión de Gustavo (2026-07-05) — plan = **rescate selectivo (cherry-pick de lo útil) y
+  luego descartar la rama**. Objetivo: antes del Sprint 4 (sep). La divergencia sigue grande —
+  cuanto más se demore el rescate, más caro será.
+- 🟡 Wallace KB RAG (`wallace-kb/`, 262 artículos) sin conectar (vive en features-review).
 - ❌ **Analytics: nada.**
 
 ## Brechas para comercializar
 
 1. Analytics + funnel (¿la gente termina el onboarding? ¿usa Wallace?).
 2. Rate-limit `/api/chat` (Upstash) — sin esto el coach IA es un costo sin techo.
-3. Modelo de precios freemium + Stripe subscripciones.
+3. ~~Modelo de precios freemium~~ ✅ cableado (06-jul) — falta **pasarela de pago real** (hoy simulada).
 4. `ADMIN_EMAILS` en Vercel y quitar fallback hardcodeado en `src/lib/admin.ts`.
 5. Reconciliar `features-review` (diagnóstico primero: 415 commits divergentes, no un merge trivial).
 6. Cerrar nombre definitivo del producto (ver brainstorm en `IDEAS.md`).
