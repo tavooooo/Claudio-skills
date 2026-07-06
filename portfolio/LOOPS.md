@@ -2,6 +2,23 @@
 
 > Definido con Gustavo el 2026-07-05.
 
+## ⚠️ Estado del tracking de tokens (hallazgo 2026-07-05)
+
+El hook `log-tokens.py` YA está en `main` de Kiwiano y fitmark, pero **no llega
+data a GitHub**. Causas reales:
+1. Las sesiones de Claude Code web corren en **contenedores efímeros**: el hook
+   escribe `docs/metricas/tokens.csv` localmente al terminar, pero nadie lo
+   commitea, y el contenedor se recicla → el archivo se pierde antes de subirse.
+2. **No se puede auto-pushear** el CSV a `main` porque `main` **auto-despliega
+   en Vercel** en ambos repos → cada cierre de sesión gatillaría un deploy basura.
+3. Aunque el CSV llegara, el dashboard es un artifact con CSP estricta que
+   **no puede hacer fetch** de archivos externos → el loop debe hornear los
+   números dentro del HTML (array `COSTOS`) al regenerar.
+
+**Decisión pendiente de Gustavo** (ver IDEAS.md): (A) reporte manual del uso
+desde la consola de Claude, o (B) construir un pipeline a rama `metrics` que no
+despliegue. Por ahora el panel de costos muestra "esperando hook" — es honesto.
+
 ## Loop diario — torre de control
 
 - **Trigger**: `trig_01TFHhGouJWbbPKjoS9JQz1H` · cron `0 20 * * *` (20:00 UTC = 08:00 NZST)
