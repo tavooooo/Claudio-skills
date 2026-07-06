@@ -10,8 +10,8 @@
     --sidebar-w: 216px;
     --bg: #04090B;
     /* vidrio más claro / blanquecino, per referencia FitMark */
-    --glass: rgba(196, 222, 216, 0.15);
-    --glass-hi: rgba(224, 242, 235, 0.30);
+    --glass: rgba(196, 222, 216, 0.09);
+    --glass-hi: rgba(224, 242, 235, 0.19);
     --line: rgba(180, 235, 218, 0.16);
     --line-hi: rgba(120, 245, 205, 0.42);
     --text: #F2FAF6;
@@ -64,8 +64,8 @@
   .nav-item { display: flex; align-items: center; gap: 0.7rem; padding: 0.62rem 0.8rem; border-radius: 12px; font-size: 0.85rem; color: var(--muted); cursor: pointer; border: 1px solid transparent; background: none; width: 100%; font-family: var(--font); text-align: left; transition: all .18s; }
   .nav-item .ico { width: 1.2rem; text-align: center; filter: grayscale(0.5) brightness(0.9); }
   .nav-item:hover { color: var(--text); background: rgba(53,240,188,0.05); }
-  .nav-item.active { color: var(--neon); background: rgba(53,240,188,0.09); border-color: var(--line-hi); box-shadow: 0 6px 18px -8px rgba(53,240,188,0.35), inset 0 1px 0 rgba(255,255,255,0.07); text-shadow: 0 0 12px rgba(53,240,188,.5); }
-  .nav-item.active .ico { filter: drop-shadow(0 0 6px rgba(53,240,188,.8)); }
+  .nav-item.active { color: var(--text); background: rgba(228,244,238,0.14); border-color: rgba(232,248,242,0.30); box-shadow: 0 8px 20px -10px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.24); text-shadow: none; }
+  .nav-item.active .ico { filter: drop-shadow(0 0 5px rgba(238,252,247,.55)); }
   .side-status { margin-top: auto; padding: 0.85rem 0.9rem; border-radius: 14px; background: var(--glass); border: 1px solid var(--line); font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--faint); line-height: 1.9; }
   .side-status b { color: var(--neon); }
   .avatar { margin-top: 0.7rem; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); border: 1px solid var(--line); border-radius: 100px; padding: 0.4rem 0.85rem; text-align: center; }
@@ -143,8 +143,8 @@
   /* ============ DOCK FIJO ABAJO ("mesa") — solo escritorio ============ */
   .dock { margin-top: 1.6rem; }
   .mesa {
-    position: relative; border-radius: 22px; padding: 1.5rem 1.6rem 1.3rem;
-    min-height: 320px;
+    position: relative; border-radius: 22px; padding: 1.1rem 1.5rem 1.05rem;
+    min-height: 0;
     background: linear-gradient(92deg, rgba(22,38,38,0.80) 0%, rgba(70,120,110,0.46) 100%);
     border: 1.5px solid rgba(150,225,205,0.30);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -163,11 +163,13 @@
 
   .ring-pad { flex: 0 0 auto; text-align: center; padding-top: 0.2rem; }
   @media (min-width: 981px) { .ring-pad { margin-left: 1.6rem; } }
-  .rings-wrap { position: relative; width: 180px; height: 180px; margin: 0 auto; }
+  .rings-wrap { position: relative; width: 156px; height: 156px; margin: 0 auto; }
+  /* SIN filtro CSS: drop-shadow se rasteriza desfasado dentro del transform 3D.
+     El glow se logra con un arco-halo detrás (stacked strokes), 100% geométrico. */
   .rings-wrap svg.rings-svg { width: 100%; height: 100%; overflow: visible; }
   .ring-track { fill: none; stroke: rgba(255,255,255,0.08); }
-  .ring-arc { fill: none; stroke-linecap: round; transition: stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1); filter: drop-shadow(0 0 5px currentColor); }
-  .ring-arc.total { filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 22px currentColor); }
+  .ring-halo { fill: none; stroke-linecap: round; opacity: 0.28; transition: stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1); }
+  .ring-arc { fill: none; stroke-linecap: round; transition: stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1); }
   .ring-center { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; pointer-events: none; }
   .ring-total { font-family: var(--mono); font-size: 2.1rem; font-weight: 800; color: var(--neon); text-shadow: 0 0 22px rgba(53,240,188,.55); line-height: 1; }
   .ring-total small { font-size: 1.05rem; font-weight: 600; }
@@ -201,19 +203,20 @@
   .mini-due.critical { color: var(--critical); border-color: rgba(255,98,87,.45); }
   .mini-due.ok { color: var(--faint); }
 
-  /* Desktop: la mesa queda FIJA abajo, con inclinación 3D */
+  /* Desktop: la mesa se ancla abajo del Resumen, RESERVANDO su alto para no
+     superponerse al contenido de arriba (el bug "amontonado" de la v7). */
   @media (min-width: 981px) {
     body.tab-resumen { overflow: hidden; height: 100vh; }
-    body.tab-resumen main.main { padding-bottom: 2rem; }
+    body.tab-resumen main.main { padding-bottom: 300px; }
     body.tab-resumen main.main > footer { display: none; }
     .dock {
       position: fixed; left: var(--sidebar-w); right: 0; bottom: 0; z-index: 35;
       display: flex; justify-content: center;
       padding: 0 2.4rem 1.1rem 3.0rem;
-      perspective: 1900px; perspective-origin: 50% 0%;
+      perspective: 2400px; perspective-origin: 50% 8%;
       pointer-events: none; /* solo los hijos interactivos capturan clicks */
     }
-    .dock .mesa { pointer-events: auto; width: 100%; max-width: 1560px; transform: rotateX(8deg); transform-origin: 50% 100%; }
+    .dock .mesa { pointer-events: auto; width: 100%; max-width: 1560px; transform: rotateX(6deg); transform-origin: 50% 100%; }
     .view#v-resumen:not(.active) ~ .dock,
     body:not(.tab-resumen) .dock { display: none; }
   }
@@ -560,11 +563,11 @@
             <circle class="ring-track" cx="130" cy="130" r="97" stroke-width="8"/>
             <circle class="ring-track" cx="130" cy="130" r="118" stroke-width="13"/>
             <g transform="rotate(-90 130 130)">
-              <circle class="ring-arc" data-pct="70" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
-              <circle class="ring-arc" data-pct="85" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
-              <circle class="ring-arc" data-pct="35" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
-              <circle class="ring-arc" data-pct="90" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
-              <circle class="ring-arc total" data-pct="70" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
+              <circle class="ring-arc" data-pct="70" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
+              <circle class="ring-arc" data-pct="85" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
+              <circle class="ring-arc" data-pct="35" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
+              <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
+              <circle class="ring-arc total" data-pct="70" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
@@ -586,7 +589,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="70" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="70" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
             </svg>
             <div class="mini-pct">70%</div>
           </div>
@@ -598,7 +601,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="85" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="85" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
             </svg>
             <div class="mini-pct">85%</div>
           </div>
@@ -610,7 +613,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="35" r="27" stroke-width="6" style="stroke:var(--courts);color:var(--courts)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="35" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--courts);color:var(--courts)"/></g>
             </svg>
             <div class="mini-pct">35%</div>
           </div>
@@ -622,7 +625,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="90" r="27" stroke-width="6" style="stroke:var(--suiza);color:var(--suiza)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="90" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--suiza);color:var(--suiza)"/></g>
             </svg>
             <div class="mini-pct">90%</div>
           </div>
@@ -690,11 +693,26 @@
     dl.appendChild(div);
   });
 
-  /* ---------- Anillos: animación genérica (grande + mini) ---------- */
+  /* ---------- Anillos: halo geométrico + animación (grande + mini) ----------
+     Por cada arco creamos un "halo" (mismo arco, más ancho y translúcido) DETRÁS,
+     para simular glow neón sin usar filtros CSS (que se desfasan en 3D). */
   document.querySelectorAll(".ring-arc[data-pct]").forEach(el => {
     const r = parseFloat(el.getAttribute("r")), c = 2 * Math.PI * r, pct = +el.dataset.pct;
+    const w = parseFloat(el.getAttribute("stroke-width")) || 8;
+    // halo detrás (clon translúcido y más grueso)
+    const halo = el.cloneNode(false);
+    halo.setAttribute("class", "ring-halo");
+    halo.removeAttribute("data-pct");
+    halo.setAttribute("stroke-width", w + (el.classList.contains("total") ? 12 : 8));
+    halo.style.strokeDasharray = c; halo.style.strokeDashoffset = c;
+    el.parentNode.insertBefore(halo, el);
+    // animación de ambos
     el.style.strokeDasharray = c; el.style.strokeDashoffset = c;
-    requestAnimationFrame(() => { el.style.strokeDashoffset = c * (1 - pct / 100); });
+    requestAnimationFrame(() => {
+      const off = c * (1 - pct / 100);
+      el.style.strokeDashoffset = off;
+      halo.style.strokeDashoffset = off;
+    });
   });
 
   /* ---------- Costos (autollenado por el loop) ---------- */
