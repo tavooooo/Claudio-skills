@@ -2,12 +2,21 @@
 """Hook Stop: suma los tokens de la sesión y los anota en docs/metricas/tokens.csv.
 
 Corre automáticamente después de cada respuesta de Claude (ver .claude/settings.json).
-La fila de cada sesión es ACUMULATIVA (se reemplaza, no se duplica).
+La fila de cada sesión es ACUMULATIVA (se reemplaza, no se duplica). El loop diario
+de la torre de control (repo Claudio-skills) lee este CSV desde origin para el
+panel de costos del dashboard.
+
+El CSV se escribe SIEMPRE en la raíz del repo (resuelta desde la ubicación de este
+script, no desde el CWD): en entornos multi-repo el hook puede correr con el CWD en
+otra carpeta, y una ruta relativa dejaba el archivo fuera del repo (o no lo creaba).
 """
 import json
 import os
 import sys
 from datetime import date
+
+# <repo>/.claude/hooks/log-tokens.py → subir dos niveles llega a la raíz del repo.
+REPO_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 
 def main() -> None:
     try:
@@ -40,7 +49,7 @@ def main() -> None:
     if tokens_in == 0 and tokens_out == 0:
         return
 
-    csv_path = os.path.join("docs", "metricas", "tokens.csv")
+    csv_path = os.path.join(REPO_ROOT, "docs", "metricas", "tokens.csv")
     os.makedirs(os.path.dirname(csv_path), exist_ok=True)
     header = "fecha,session,tokens_entrada_acum,tokens_salida_acum"
     rows = []
