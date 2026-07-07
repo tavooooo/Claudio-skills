@@ -23,10 +23,13 @@ HANDOFF). Cero deploys extra, cero push por consulta.
    cada repo y llena el array `COSTOS` del dashboard.
 
 ### Procedimiento del loop para llenar `COSTOS`
-Por cada repo con hook (Kiwiano, fitmark; luego Padel/La-Suiza si se instala):
-```
-git show origin/main:docs/metricas/tokens.csv   # si no existe, aún no hubo cierre → dejar en null
-```
+El hook está instalado en los **4 repos**. Ojo con la RAMA de donde se lee el CSV:
+- **Kiwiano** y **fitmark** (dev activo en otros chats → van a main):
+  `git show origin/main:docs/metricas/tokens.csv`
+- **Padel (Easy Courts)** y **La-Suiza (Navaja Suiza)** (en pausa, se trabajan en su
+  rama): `git show origin/claude/project-portfolio-tracking-ib0574:docs/metricas/tokens.csv`
+
+Si el archivo no existe todavía → aún no hubo cierre con el CSV → dejar el proyecto en `null`.
 - **sesiones** = nº de filas (cada fila es una sesión distinta).
 - **tin** = suma de `tokens_entrada_acum`; **tout** = suma de `tokens_salida_acum`.
 - Cargar `{ sesiones, tin, tout }` en la entrada del proyecto en `COSTOS`

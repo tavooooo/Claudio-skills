@@ -512,7 +512,7 @@
 
     <!-- ========== VISTA: GRAFO ========== -->
     <section class="view" id="v-grafo">
-      <h2>Grafo del portfolio <span class="count">ARRASTRA PARA GIRAR · ESTILO OBSIDIAN 3D</span></h2>
+      <h2>Grafo del portfolio <span class="count">ARRASTRA UN NODO PARA MOVERLO · EL FONDO PARA GIRAR · 3D VIVO</span></h2>
       <div class="panel" id="graph-panel">
         <canvas id="graph"></canvas>
         <div class="graph-hud">NODOS: CONOCIMIENTO · PROYECTOS · RIESGOS</div>
@@ -559,7 +559,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v13 · COSTOS AUTO VÍA HOOK (1 DATO/SESIÓN) · KIWIANO 74% · FITMARK 90% · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v14 · GRAFO 3D VIVO (ARRASTRA NODOS) · COSTOS AUTO VÍA HOOK · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -805,43 +805,68 @@
   ];
   const COLORES = { core: "#35F0BC", doc: "#4FD8F0", proj: "#9BE15D", risk: "#FF6257" };
 
+  // Constantes de física compartidas por el pre-asentado y la simulación viva
+  // (mismas constantes → el grafo abre en equilibrio, sin salto). REST/REP más
+  // altos que antes = más aire entre nodos.
+  const PHYS = { REST: 116, REP: 7000, SPRING: 0.045, CENTER: 0.0022, DAMP: 0.88, MAXSTEP: 24 };
+  const clampStep = v => v < -PHYS.MAXSTEP ? -PHYS.MAXSTEP : v > PHYS.MAXSTEP ? PHYS.MAXSTEP : v;
+
+  function computeForces(nodos, aristas, idx) {
+    for (let i = 0; i < nodos.length; i++) { const a = nodos[i]; a.fx = 0; a.fy = 0; a.fz = 0; }
+    // repulsión ~1/d² (todos contra todos)
+    for (let i = 0; i < nodos.length; i++) for (let j = i + 1; j < nodos.length; j++) {
+      const a = nodos[i], b = nodos[j];
+      let dx = a.x - b.x, dy = a.y - b.y, dz = a.z - b.z;
+      const d2 = dx * dx + dy * dy + dz * dz + 1, d = Math.sqrt(d2), f = PHYS.REP / d2;
+      dx /= d; dy /= d; dz /= d;
+      a.fx += dx * f; a.fy += dy * f; a.fz += dz * f;
+      b.fx -= dx * f; b.fy -= dy * f; b.fz -= dz * f;
+    }
+    // resortes LINEALES por arista (∝ d-REST)
+    aristas.forEach(([p, q]) => {
+      const a = nodos[idx[p]], b = nodos[idx[q]];
+      let dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z;
+      const d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1, f = (d - PHYS.REST) * PHYS.SPRING;
+      dx /= d; dy /= d; dz /= d;
+      a.fx += dx * f; a.fy += dy * f; a.fz += dz * f;
+      b.fx -= dx * f; b.fy -= dy * f; b.fz -= dz * f;
+    });
+    // centrado suave hacia el origen para mantener el grafo acotado
+    nodos.forEach(n => { if (n.id !== "torre") { n.fx += -n.x * PHYS.CENTER; n.fy += -n.y * PHYS.CENTER; n.fz += -n.z * PHYS.CENTER; } });
+  }
+
+  // Un paso de simulación VIVA (velocidad + amortiguación). `pin` = índice del nodo
+  // agarrado con el puntero: no se integra (lo fija el usuario), pero sus resortes
+  // arrastran a los vecinos → todo el menjunje reacciona, estilo Obsidian.
+  function stepPhysics(nodos, aristas, idx, pin) {
+    computeForces(nodos, aristas, idx);
+    for (let i = 0; i < nodos.length; i++) {
+      const n = nodos[i];
+      if (n.id === "torre" || i === pin) { n.vx = 0; n.vy = 0; n.vz = 0; continue; }
+      n.vx = (n.vx + n.fx * 0.06) * PHYS.DAMP;
+      n.vy = (n.vy + n.fy * 0.06) * PHYS.DAMP;
+      n.vz = (n.vz + n.fz * 0.06) * PHYS.DAMP;
+      n.x += clampStep(n.vx); n.y += clampStep(n.vy); n.z += clampStep(n.vz);
+    }
+  }
+
   function layout3D(nodos, aristas) {
     const idx = {}; nodos.forEach((n, i) => idx[n.id] = i);
     let seed = 7;
     const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
     nodos.forEach(n => {
+      n.vx = 0; n.vy = 0; n.vz = 0;
       if (n.id === "torre") { n.x = 0; n.y = 0; n.z = 0; return; }
-      const th = rnd() * Math.PI * 2, ph = Math.acos(2 * rnd() - 1), r = 120 + rnd() * 60;
+      const th = rnd() * Math.PI * 2, ph = Math.acos(2 * rnd() - 1), r = 150 + rnd() * 90;
       n.x = r * Math.sin(ph) * Math.cos(th); n.y = r * Math.sin(ph) * Math.sin(th); n.z = r * Math.cos(ph);
     });
-    // Simulación estable: repulsión ~1/d², resortes LINEALES (∝ d-rest, no ∝ d²),
-    // centrado suave, y paso amortiguado con clamp → nunca diverge a NaN.
-    const REST = 82, clamp = v => v < -22 ? -22 : v > 22 ? 22 : v;
-    for (let it = 0; it < 320; it++) {
-      nodos.forEach(a => { a.fx = 0; a.fy = 0; a.fz = 0; });
-      for (let i = 0; i < nodos.length; i++) for (let j = i + 1; j < nodos.length; j++) {
-        const a = nodos[i], b = nodos[j];
-        let dx = a.x - b.x, dy = a.y - b.y, dz = a.z - b.z;
-        const d2 = dx * dx + dy * dy + dz * dz + 1;
-        const d = Math.sqrt(d2), f = 4200 / d2;
-        dx /= d; dy /= d; dz /= d;
-        a.fx += dx * f; a.fy += dy * f; a.fz += dz * f;
-        b.fx -= dx * f; b.fy -= dy * f; b.fz -= dz * f;
+    // Pre-asentado sobreamortiguado hasta el equilibrio (mismas fuerzas que la sim viva).
+    for (let it = 0; it < 380; it++) {
+      computeForces(nodos, aristas, idx);
+      for (let i = 0; i < nodos.length; i++) {
+        const n = nodos[i]; if (n.id === "torre") continue;
+        n.x += clampStep(n.fx * 0.85); n.y += clampStep(n.fy * 0.85); n.z += clampStep(n.fz * 0.85);
       }
-      aristas.forEach(([p, q]) => {
-        const a = nodos[idx[p]], b = nodos[idx[q]];
-        let dx = b.x - a.x, dy = b.y - a.y, dz = b.z - a.z;
-        const d = Math.sqrt(dx * dx + dy * dy + dz * dz) || 1, f = (d - REST) * 0.05;
-        dx /= d; dy /= d; dz /= d;
-        a.fx += dx * f; a.fy += dy * f; a.fz += dz * f;
-        b.fx -= dx * f; b.fy -= dy * f; b.fz -= dz * f;
-      });
-      // centrado suave hacia el origen para mantener el grafo acotado
-      nodos.forEach(n => { if (n.id !== "torre") { n.fx += -n.x * 0.0035; n.fy += -n.y * 0.0035; n.fz += -n.z * 0.0035; } });
-      nodos.forEach(n => {
-        if (n.id === "torre") return;
-        n.x += clamp(n.fx * 0.85); n.y += clamp(n.fy * 0.85); n.z += clamp(n.fz * 0.85);
-      });
     }
     return idx;
   }
@@ -852,36 +877,62 @@
     const gx = canvas.getContext("2d");
     let yaw = opts.yaw0 || 0.5, pitch = opts.pitch0 || 0.18;
     const autoYaw = reduced ? 0 : (opts.autoYaw != null ? opts.autoYaw : 0.0018);
-    let dragging = false, lx = 0, ly = 0, hover = -1, proj = [];
+    let dragging = false, grabbed = -1, lx = 0, ly = 0, hover = -1, proj = [];
+    const live = opts.interactive !== false;   // el grafo grande simula en vivo (arrastre de nodos)
+    const cam = { cy: 1, sy: 0, cp: 1, sp: 0, K: 1, cxm: 0, cym: 0 };
     function size() {
       const r = canvas.getBoundingClientRect();
       if (r.width > 0) { canvas.width = r.width * devicePixelRatio; canvas.height = (opts.fixedHeight || r.height) * devicePixelRatio; }
     }
     size();
-    if (opts.interactive !== false) {
-      canvas.addEventListener("pointerdown", e => { dragging = true; lx = e.clientX; ly = e.clientY; canvas.setPointerCapture(e.pointerId); });
+    function pick(e) {
+      const r = canvas.getBoundingClientRect();
+      const mx = (e.clientX - r.left) * devicePixelRatio, my = (e.clientY - r.top) * devicePixelRatio;
+      let best = 26 * devicePixelRatio, hit = -1;
+      proj.forEach((p, i) => { const d = Math.hypot(p.px - mx, p.py - my); if (d < best) { best = d; hit = i; } });
+      return { mx, my, hit };
+    }
+    if (live) {
+      canvas.addEventListener("pointerdown", e => {
+        canvas.setPointerCapture(e.pointerId);
+        const { hit } = pick(e);
+        if (hit >= 0) { grabbed = hit; canvas.style.cursor = "grabbing"; }   // agarra un nodo
+        else { dragging = true; lx = e.clientX; ly = e.clientY; }            // o gira toda la escena
+      });
       canvas.addEventListener("pointermove", e => {
-        if (dragging) {
+        if (grabbed >= 0) {
+          // desproyecta el puntero al mundo 3D manteniendo la profundidad del nodo
+          const r = canvas.getBoundingClientRect();
+          const mx = (e.clientX - r.left) * devicePixelRatio, my = (e.clientY - r.top) * devicePixelRatio;
+          const p = proj[grabbed]; if (!p) return;
+          const x1 = (mx - cam.cxm) / (p.s * cam.K), y2 = (my - cam.cym) / (p.s * cam.K), z2 = p.z;
+          const y = y2 * cam.cp + z2 * cam.sp, z1 = -y2 * cam.sp + z2 * cam.cp;
+          const nn = nodos[grabbed];
+          nn.x = x1 * cam.cy - z1 * cam.sy; nn.y = y; nn.z = x1 * cam.sy + z1 * cam.cy;
+          nn.vx = 0; nn.vy = 0; nn.vz = 0;
+        } else if (dragging) {
           yaw += (e.clientX - lx) * 0.006; pitch += (e.clientY - ly) * 0.005;
           pitch = Math.max(-1.4, Math.min(1.4, pitch)); lx = e.clientX; ly = e.clientY;
         } else {
-          const r = canvas.getBoundingClientRect();
-          const mx = (e.clientX - r.left) * devicePixelRatio, my = (e.clientY - r.top) * devicePixelRatio;
-          hover = -1; let best = 24 * devicePixelRatio;
-          proj.forEach((p, i) => { const d = Math.hypot(p.px - mx, p.py - my); if (d < best) { best = d; hover = i; } });
+          const { hit } = pick(e); hover = hit;
+          canvas.style.cursor = hit >= 0 ? "grab" : "default";
         }
       });
-      canvas.addEventListener("pointerup", () => dragging = false);
-      canvas.addEventListener("pointerleave", () => { dragging = false; hover = -1; });
+      const end = () => { dragging = false; grabbed = -1; canvas.style.cursor = "default"; };
+      canvas.addEventListener("pointerup", end);
+      canvas.addEventListener("pointercancel", end);
+      canvas.addEventListener("pointerleave", () => { end(); hover = -1; });
     }
     function render() {
       const w = canvas.width, h = canvas.height;
       if (w > 0) {
         const cxm = w / 2, cym = h / 2;
-        if (!dragging) yaw += autoYaw;
+        if (live) stepPhysics(nodos, aristas, idx, grabbed);
+        if (!dragging && grabbed < 0) yaw += autoYaw;
         gx.clearRect(0, 0, w, h);
         const cy = Math.cos(yaw), sy = Math.sin(yaw), cp = Math.cos(pitch), sp = Math.sin(pitch);
         const F = 420, K = devicePixelRatio * (opts.scale || 1.5);
+        cam.cy = cy; cam.sy = sy; cam.cp = cp; cam.sp = sp; cam.K = K; cam.cxm = cxm; cam.cym = cym;
         proj = nodos.map(n => {
           const x1 = n.x * cy + n.z * sy, z1 = -n.x * sy + n.z * cy;
           const y2 = n.y * cp - z1 * sp, z2 = n.y * sp + z1 * cp;
@@ -920,11 +971,11 @@
   }
 
   const grande = makeGraphRenderer(document.getElementById("graph"),
-    NODOS_BASE.map(n => Object.assign({}, n)), ARISTAS, { fixedHeight: 560 });
+    NODOS_BASE.map(n => Object.assign({}, n)), ARISTAS, { fixedHeight: 560, scale: 1.25 });
   window.sizeGraph = grande.size;
 
   makeGraphRenderer(document.getElementById("mini-graph-canvas"),
     NODOS_BASE.map(n => Object.assign({}, n)), ARISTAS,
-    { fixedHeight: 178, scale: 0.34, autoYaw: 0.0026, interactive: false, minimal: true, fontSize: 8.5, yaw0: 1.1, pitch0: 0.32 });
+    { fixedHeight: 178, scale: 0.28, autoYaw: 0.0026, interactive: false, minimal: true, fontSize: 8.5, yaw0: 1.1, pitch0: 0.32 });
 })();
 </script>
