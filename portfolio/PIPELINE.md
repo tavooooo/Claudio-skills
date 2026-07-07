@@ -22,8 +22,8 @@
 - **Entregable**: kiwiano con landing pública navegable. ✅ CUMPLIDO
 
 ### Sprint 2 — Kiwiano monetización F5 (adelantado: ya en curso → 2026-08-10, fecha fijada por el chat de dev)
-- [x] ✅ **F5.1 mergeada 06-jul**: sistema de pelotas (ledger + débito/reembolso + caja de bienvenida) + planes + billing UI (club + superadmin) + panel de cobros + membresía $40 NZD
-- [ ] **F5.2 Stripe pago real** (hoy es manual: superadmin acredita) + correr migración `012_billing.sql` en Supabase (Tavo)
+- [x] ✅ **F5.1 mergeada 06-jul, EN PRODUCCIÓN**: sistema de pelotas + planes + billing UI + panel de cobros + membresía $40 NZD + saldo visible a jugadores + recordatorio de vencimiento
+- [ ] **F5.2 Stripe Checkout** — ✍️ codeado (07-jul) y en pruebas en Vitrina · 🔑 **bloqueado por Tavo**: crear webhook en Stripe + pegar `sk_test_`/`whsec_` en Vercel → probar pago test → merge con claves live
 - [ ] Onboarding self-service para clubes (hoy es solo superadmin)
 - [ ] Analytics básico (eventos: registro club, torneo creado, upgrade)
 - **Entregable**: 🎯 **primer producto cobrable del portfolio** (beta comercial 15-ago). Máquina de cobro ✅ construida; falta go-live de Stripe.

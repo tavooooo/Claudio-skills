@@ -382,7 +382,7 @@
           <span class="chip good"><b>⚡</b> 2/4 proyectos activos</span>
           <span class="chip warn"><b>🎯</b> Stripe F5 · <em id="dias-stripe">—</em></span>
           <span class="chip critical"><b>🏁</b> Lanza FitMark 31·ago · <em id="dias-lanzamiento">—</em></span>
-          <span class="chip good"><b>✓</b> Kiwiano F5.1 cobro mergeado</span>
+          <span class="chip good"><b>✓</b> Stripe codeado · faltan claves (Tavo)</span>
           <span class="chip critical"><b>⚠</b> fierro.app: librería 404 hoy</span>
           <span class="chip"><b>🪙</b> <span id="kpi-tokens">costos: auto vía hook (esperando 1er cierre)</span></span>
         </div>
@@ -396,18 +396,19 @@
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
           <div class="panel feed">
-            <div class="feed-item"><span class="feed-when">06·jul</span><span><span class="good">✓ Kiwiano:</span> F5.1 monetización MERGEADA — pelotas + planes + billing UI + membresía $40 NZD (falta Stripe real)</span></div>
-            <div class="feed-item"><span class="feed-when">06·jul</span><span><span class="good">✓ FitMark:</span> Wallace 2.0 — datos reales, avatar-cara, chat premium y presencia en sesión</span></div>
-            <div class="feed-item"><span class="feed-when">06·jul</span><span><span class="good">✓ FitMark:</span> Freemium 5/5 cableado (FREE vs PREMIUM $5,99/mes) — sube a 90%, cobro simulado</span></div>
-            <div class="feed-item"><span class="feed-when">05·jul</span><span><span class="good">✓ Kiwiano:</span> Vitrina MERGEADA — F4 completa 15 días antes de fecha</span></div>
-            <div class="feed-item"><span class="feed-when">05·jul</span><span><span class="bad">⚠ Intel:</span> fierro.app identificada como competencia directa — incompleta hoy</span></div>
+            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="good">✓ Kiwiano:</span> Stripe Checkout CODEADO (en pruebas) — 🔑 espera que Tavo cree el webhook + pegue claves en Vercel</span></div>
+            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="good">✓ Kiwiano:</span> F5.1 en producción + saldo de pelotas para jugadores + recordatorio de vencimiento + UX premium (a11y)</span></div>
+            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="good">✓ FitMark:</span> 91% — Wallace conversacional, rendimiento (queries paralelas, skeletons), reordenar con drag ⋮⋮</span></div>
+            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="good">✓ Sistema:</span> tubería de tokens FUNCIONANDO — ambos repos reportan (panel Costos en AUTO)</span></div>
+            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="bad">⚠ FitMark:</span> features-review diverge más (main 67→90 adelante) — el rescate se encarece</span></div>
           </div>
         </div>
         <div>
           <h2>Próximos 3 hitos <span class="count">EN ORDEN</span></h2>
           <div class="panel feed">
+            <div class="feed-item"><span class="feed-when">YA</span><span class="meh">🔑 Tavo: webhook en Stripe + claves en Vercel → desbloquea la prueba de pago</span></div>
             <div class="feed-item"><span class="feed-when">20·jul</span><span>Backups automáticos Supabase (Kiwiano F1.6)</span></div>
-            <div class="feed-item"><span class="feed-when">10·ago</span><span class="meh">F5.2 Stripe real Kiwiano — primer dinero real del portfolio</span></div>
+            <div class="feed-item"><span class="feed-when">10·ago</span><span class="meh">Stripe live Kiwiano — primer dinero real del portfolio</span></div>
             <div class="feed-item"><span class="feed-when">15·ago</span><span class="bad">Nombre definitivo de FitMark (deadline dura, antes del lanzamiento)</span></div>
           </div>
         </div>
@@ -424,12 +425,12 @@
               <span class="pstatus live">ACTIVO · OTRO CHAT</span>
               <span class="ptag">Torneos y ranking de pádel multi-club · kiwiano.vercel.app</span>
             </div>
-            <div class="task"><span>Vitrina mergeada: landing + precios en pelotas + TV</span><span class="task-date done">✓ 05·jul</span></div>
-            <div class="task"><span>F5.1 monetización: pelotas + planes + billing UI + membresía $40 NZD</span><span class="task-date done">✓ 06·jul</span></div>
-            <div class="task"><span>F5.2 Stripe real + correr migración 012 (Tavo)</span><span class="task-date warn">10·ago</span></div>
+            <div class="task"><span>F5.1 monetización EN PRODUCCIÓN (+ saldo jugadores, recordatorio vencimiento)</span><span class="task-date done">✓ 07·jul</span></div>
+            <div class="task"><span>F5.2 Stripe Checkout codeado en Vitrina — en pruebas</span><span class="task-date done">✓ 07·jul</span></div>
+            <div class="task"><span>🔑 Tavo: webhook en Stripe + claves sk_test/whsec en Vercel</span><span class="task-date critical">YA</span></div>
             <div class="task"><span>Backups automáticos Supabase (F1.6)</span><span class="task-date ok">20·jul</span></div>
             <div class="task"><span>Onboarding self-service de clubes · Analytics</span><span class="task-date ok">ago</span></div>
-            <div class="pfoot">Stack: Next.js 16 · Supabase · Zustand · Realtime. F1–F4 ✅ · <b>F5.1 cobro mergeado ✅</b> · falta Stripe real (F5.2). <b>Primer dinero: 10·ago.</b></div>
+            <div class="pfoot">Stack: Next.js 16 · Supabase · Zustand · Realtime. F1–F4 ✅ · F5 al 80% — checkout escrito, <b>solo falta que Tavo ponga las claves</b>. <b>Primer dinero: 10·ago.</b></div>
           </div>
           <div class="panel pcard" style="--pc: var(--courts)">
             <div class="pcard-head">
@@ -595,7 +596,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v19 · REFLEJO EN U (SIGUE LA CURVA DEL MARCO) · MESA PC MÁS TRASLÚCIDA · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v20 · KIWIANO STRIPE EN PRUEBAS (77%) · FITMARK 91% · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -610,11 +611,11 @@
             <circle class="ring-track" cx="130" cy="130" r="97" stroke-width="8"/>
             <circle class="ring-track" cx="130" cy="130" r="118" stroke-width="13"/>
             <g transform="rotate(-90 130 130)">
-              <circle class="ring-arc" data-pct="74" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
-              <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
+              <circle class="ring-arc" data-pct="77" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
+              <circle class="ring-arc" data-pct="91" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
               <circle class="ring-arc" data-pct="35" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
               <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
-              <circle class="ring-arc total" data-pct="72" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
+              <circle class="ring-arc total" data-pct="73" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
             <!-- backdrop del número central: sin esto los anillos pisan el "72%" -->
             <circle cx="130" cy="130" r="50" fill="rgba(5,14,12,0.55)"/>
@@ -622,12 +623,12 @@
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
           <div class="ring-center">
-            <div><div class="ring-total">72<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
+            <div><div class="ring-total">73<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
           </div>
         </div>
         <div class="ring-legend">
-          <span><i style="background:var(--kiwiano);color:var(--kiwiano)"></i>Kiwiano 74%</span>
-          <span><i style="background:var(--fitmark);color:var(--fitmark)"></i>FitMark 90%</span>
+          <span><i style="background:var(--kiwiano);color:var(--kiwiano)"></i>Kiwiano 77%</span>
+          <span><i style="background:var(--fitmark);color:var(--fitmark)"></i>FitMark 91%</span>
           <span><i style="background:var(--courts);color:var(--courts)"></i>Courts 35%</span>
           <span><i style="background:var(--suiza);color:var(--suiza)"></i>Suiza 90%</span>
         </div>
@@ -639,11 +640,11 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="74" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="77" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
             </svg>
-            <div class="mini-pct">74%</div>
+            <div class="mini-pct">77%</div>
           </div>
-          <div class="mini-next">F5.2 Stripe real + correr migración 012</div>
+          <div class="mini-next">Stripe codeado ✓ — Tavo: webhook + claves en Vercel</div>
           <span class="mini-due warn">10·AGO</span>
         </div>
         <div class="mini-pad" style="--pc: var(--fitmark)">
@@ -651,9 +652,9 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="90" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="91" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
             </svg>
-            <div class="mini-pct">90%</div>
+            <div class="mini-pct">91%</div>
           </div>
           <div class="mini-next">Pasarela de pago real → lanzamiento gratis</div>
           <span class="mini-due critical">31·AGO</span>
@@ -789,7 +790,7 @@
     // Datos reales de docs/metricas/tokens.csv de cada repo (leídos por el loop 07-jul).
     // OJO: tin incluye lecturas de caché a precio de entrada plena → USD sobreestimado.
     { nombre: "Kiwiano",      color: "var(--kiwiano)", sesiones: 1, tin: 1460036287, tout: 3897408 },
-    { nombre: "FitMark",      color: "var(--fitmark)", sesiones: 1, tin: 1309327476, tout: 3349318 },
+    { nombre: "FitMark",      color: "var(--fitmark)", sesiones: 1, tin: 1311089246, tout: 3361872 },
     { nombre: "Easy Courts",  color: "var(--courts)",  sesiones: null, tin: null, tout: null },
     { nombre: "Navaja Suiza", color: "var(--suiza)",   sesiones: null, tin: null, tout: null },
   ];

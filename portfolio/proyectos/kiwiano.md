@@ -20,8 +20,13 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
   crear torneo + reembolso al cancelar + caja de 24 de bienvenida) + planes + **billing UI
   club y superadmin** + panel de cobros en /superadmin + membresía **$40 NZD** con precios
   desde constantes + torneos de prueba restringidos a superadmin + billing hardening.
-- 🟡 **F5.2 pendiente**: **Stripe pago real** (hoy el cobro es manual→superadmin acredita) +
-  correr migración `012_billing.sql` en Supabase (tarea de Tavo). Fecha objetivo: **2026-08-10**.
+- 🟢 **F5.2 Stripe Checkout CODEADO (07-jul), en pruebas en Vitrina**: acción de checkout +
+  webhook `/api/stripe/webhook` + botón "Pagar con tarjeta", todo opt-in por env vars
+  (sin claves = la app sigue igual). También: saldo de pelotas visible para jugadores,
+  recordatorio de vencimiento de membresía, pase de UX premium (a11y, touch targets).
+- 🔑 **Bloqueador EN MANOS DE TAVO**: crear el webhook endpoint en Stripe (Sandbox) y pegar
+  `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET` en Vercel → probar pago con tarjeta test
+  en preview → merge a main con claves live. Fecha objetivo: **2026-08-10**.
 - ❌ **F6 growth sin empezar**: categorías, inscripción online, notificaciones, multi-deporte.
 
 ## Brechas para comercializar
