@@ -1,9 +1,9 @@
 ---
-name: attacking-problems
+name: fableSkill
 description: Use when starting any non-trivial task or deliverable, when the request is vague about where or how the result will be used, and again before handing results to the user — reports, dashboards, single-file HTML, scripts, or multi-step builds that may be opened on phones, chat previews, or email.
 ---
 
-# Attacking Problems
+# Fable Skill — Attacking Problems
 
 ## Overview
 
