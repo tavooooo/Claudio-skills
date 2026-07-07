@@ -528,8 +528,8 @@
     <section class="view" id="v-costos">
       <h2>Costo por proyecto <span class="count">TOKENS → USD · TARIFA API OFICIAL</span></h2>
       <div class="panel scroll-x">
-        <table class="htable" id="cost-table" style="min-width: 720px;">
-          <thead><tr><th>Proyecto</th><th>Sesiones</th><th class="num">Tokens entrada</th><th class="num">Tokens salida</th><th class="num">USD equivalente*</th><th>Estado</th></tr></thead>
+        <table class="htable" id="cost-table" style="min-width: 820px;">
+          <thead><tr><th>Proyecto</th><th>Sesiones</th><th class="num">Tokens entrada</th><th class="num">Tokens salida</th><th class="num">USD tarifa plena</th><th class="num">USD est. real*</th><th>Estado</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -553,13 +553,14 @@
             <div class="feed-item"><span class="feed-when">1</span><span>Hook <code style="font-family:var(--mono);color:var(--neon-dim);font-size:.72rem">Stop</code> suma los tokens tras cada respuesta y actualiza <b>docs/metricas/tokens.csv</b> (ya vivo en main)</span></div>
             <div class="feed-item"><span class="feed-when">2</span><span>El <b>commit de cierre</b> del chat de dev (el que ya sube el HANDOFF) se lleva el CSV — cero deploys extra</span></div>
             <div class="feed-item"><span class="feed-when">3</span><span>El loop de la mañana lee los CSV de los 5 repos y <b>hornea</b> los números aquí</span></div>
-            <div class="feed-item"><span class="feed-when">nota</span><span class="meh">Con suscripción no pagas por token: el USD te dice cuánto VALDRÍA y qué proyecto consume más motor</span></div>
+            <div class="feed-item"><span class="feed-when">*</span><span class="meh"><b>USD est. real</b>: el CSV suma toda la entrada junta, pero medido en una sesión real (07·jul, 305M tokens) el <b>90,8% es lectura de caché</b> ($0.50/M, no $5/M) y solo 0,06% entrada fresca → tarifa efectiva ≈ $1.03/M. "Tarifa plena" es el techo teórico sin caché.</span></div>
+            <div class="feed-item"><span class="feed-when">nota</span><span class="meh">Con suscripción no pagas por token: sirve para comparar qué proyecto consume más motor y ver la tendencia</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v15 · PRIMEROS DATOS REALES DE TOKENS (KIWIANO + FITMARK, 07·JUL) · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v16 · COSTOS CON ESTIMACIÓN REAL (CACHÉ SEPARADA, MEDIDA EMPÍRICA) · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -737,6 +738,15 @@
 
   /* ---------- Costos (automático: el loop lee docs/metricas/tokens.csv de cada repo y hornea aquí) ---------- */
   const PRECIOS = { in: 5, out: 25 };
+  /* Estimación real: el CSV suma toda la entrada junta, pero medido en una sesión
+     real de Claude Code (torre, 07-jul, 305M tokens): 0,06% entrada fresca ($5/M),
+     9,12% escritura de caché ($6.25/M), 90,82% LECTURA de caché ($0.50/M).
+     → tarifa efectiva de entrada ≈ $1.027/M (no $5/M). Salida siempre $25/M. */
+  const RATIO = { fresh: 0.0006, cwrite: 0.0912, cread: 0.9082 };
+  const P_REAL = { fresh: 5, cwrite: 6.25, cread: 0.50, out: 25 };
+  const usdReal = (tin, tout) =>
+    tin / 1e6 * (RATIO.fresh * P_REAL.fresh + RATIO.cwrite * P_REAL.cwrite + RATIO.cread * P_REAL.cread)
+    + tout / 1e6 * P_REAL.out;
   const COSTOS = [
     // Datos reales de docs/metricas/tokens.csv de cada repo (leídos por el loop 07-jul).
     // OJO: tin incluye lecturas de caché a precio de entrada plena → USD sobreestimado.
@@ -752,21 +762,23 @@
     const hay = p.tin != null;
     if (hay) { tIn += p.tin; tOut += p.tout; con++; }
     const usd = hay ? (p.tin / 1e6 * PRECIOS.in + p.tout / 1e6 * PRECIOS.out) : null;
+    const usdR = hay ? usdReal(p.tin, p.tout) : null;
     const tr = document.createElement("tr");
     tr.innerHTML =
       '<td><span class="dot" style="color:' + p.color + '"></span>' + p.nombre + "</td>" +
       "<td>" + (hay ? p.sesiones : "—") + "</td>" +
       '<td class="num">' + (hay ? nf.format(p.tin) : "—") + "</td>" +
       '<td class="num">' + (hay ? nf.format(p.tout) : "—") + "</td>" +
-      '<td class="num">' + (hay ? '<b class="good">$' + usd.toFixed(2) + "</b>" : "—") + "</td>" +
+      '<td class="num">' + (hay ? '<span style="color:var(--faint)">$' + usd.toFixed(2) + "</span>" : "—") + "</td>" +
+      '<td class="num">' + (hay ? '<b class="good">$' + usdR.toFixed(2) + "</b>" : "—") + "</td>" +
       "<td>" + (hay
         ? '<span class="good" style="font-family:var(--mono);font-size:.66rem">AUTO ✓</span>'
         : '<span style="color:var(--faint);font-family:var(--mono);font-size:.66rem">ESPERANDO 1ER CIERRE</span>') + "</td>";
     tbody.appendChild(tr);
   });
   if (con > 0) {
-    const usdT = tIn / 1e6 * PRECIOS.in + tOut / 1e6 * PRECIOS.out;
-    document.getElementById("kpi-tokens").innerHTML = "<b>$" + usdT.toFixed(2) + "</b> USD eq. · " + con + " proyecto(s)";
+    const usdRT = usdReal(tIn, tOut);
+    document.getElementById("kpi-tokens").innerHTML = "<b>$" + usdRT.toFixed(0) + "</b> USD est. real · " + con + " proyecto(s)";
   }
 
   /* ---------- Grafo 3D: motor reutilizable (grande + mini) ---------- */
