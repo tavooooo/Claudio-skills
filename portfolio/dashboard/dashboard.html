@@ -559,7 +559,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v14 · GRAFO 3D VIVO (ARRASTRA NODOS) · COSTOS AUTO VÍA HOOK · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v15 · PRIMEROS DATOS REALES DE TOKENS (KIWIANO + FITMARK, 07·JUL) · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -738,8 +738,10 @@
   /* ---------- Costos (automático: el loop lee docs/metricas/tokens.csv de cada repo y hornea aquí) ---------- */
   const PRECIOS = { in: 5, out: 25 };
   const COSTOS = [
-    { nombre: "Kiwiano",      color: "var(--kiwiano)", sesiones: null, tin: null, tout: null },
-    { nombre: "FitMark",      color: "var(--fitmark)", sesiones: null, tin: null, tout: null },
+    // Datos reales de docs/metricas/tokens.csv de cada repo (leídos por el loop 07-jul).
+    // OJO: tin incluye lecturas de caché a precio de entrada plena → USD sobreestimado.
+    { nombre: "Kiwiano",      color: "var(--kiwiano)", sesiones: 1, tin: 1460036287, tout: 3897408 },
+    { nombre: "FitMark",      color: "var(--fitmark)", sesiones: 1, tin: 1309327476, tout: 3349318 },
     { nombre: "Easy Courts",  color: "var(--courts)",  sesiones: null, tin: null, tout: null },
     { nombre: "Navaja Suiza", color: "var(--suiza)",   sesiones: null, tin: null, tout: null },
   ];
