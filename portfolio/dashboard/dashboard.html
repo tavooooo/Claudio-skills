@@ -184,9 +184,9 @@
   .ring-halo { fill: none; stroke-linecap: round; opacity: 0.28; transition: stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1); }
   .ring-arc { fill: none; stroke-linecap: round; transition: stroke-dashoffset 1.3s cubic-bezier(.2,.8,.2,1); }
   .ring-center { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; pointer-events: none; }
-  .ring-total { font-family: var(--mono); font-size: 2.1rem; font-weight: 800; color: var(--neon); text-shadow: 0 0 22px rgba(53,240,188,.55); line-height: 1; }
-  .ring-total small { font-size: 1.05rem; font-weight: 600; }
-  .ring-total-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--muted); margin-top: 0.3rem; }
+  .ring-total { font-family: var(--mono); font-size: 1.85rem; font-weight: 800; color: var(--neon); text-shadow: 0 0 4px rgba(0,0,0,.95), 0 0 18px rgba(53,240,188,.5); line-height: 1; }
+  .ring-total small { font-size: 0.95rem; font-weight: 600; }
+  .ring-total-label { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em; color: var(--text); opacity: .75; margin-top: 0.28rem; text-shadow: 0 0 4px rgba(0,0,0,.9); }
   .ring-name { font-weight: 700; font-size: 0.92rem; margin-top: 0.7rem; }
   .ring-sub { font-size: 0.68rem; color: var(--faint); margin-bottom: 0.5rem; }
   .ring-legend { display: flex; gap: 0.7rem; flex-wrap: wrap; justify-content: center; font-family: var(--mono); font-size: 0.6rem; color: var(--muted); max-width: 230px; margin: 0 auto; }
@@ -198,12 +198,12 @@
     border-radius: 16px; text-align: center;
     background: linear-gradient(168deg, rgba(226,244,238,0.13), rgba(150,190,182,0.05));
     border: 1.4px solid color-mix(in srgb, var(--pc) 55%, var(--line));
-    box-shadow: 0 20px 34px -16px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.18), 0 0 22px -8px color-mix(in srgb, var(--pc) 55%, transparent);
+    box-shadow: 0 28px 44px -14px rgba(0,0,0,0.88), 0 10px 18px -8px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.18), 0 0 26px -6px color-mix(in srgb, var(--pc) 60%, transparent);
     transition: transform .2s, box-shadow .2s;
   }
   .mini-pad::after {
     content: ""; position: absolute; left: 14%; right: 14%; bottom: -14px; height: 20px;
-    background: var(--pc); filter: blur(16px); opacity: 0.3; border-radius: 50%; z-index: -1;
+    background: var(--pc); filter: blur(16px); opacity: 0.38; border-radius: 50%; z-index: -1;
   }
   .mini-pad:hover { transform: translateY(-4px); }
   .mini-head { display: flex; justify-content: center; align-items: center; gap: 0.4rem; font-weight: 750; font-size: 0.86rem; margin-bottom: 0.35rem; }
@@ -231,8 +231,11 @@
     #v-resumen > .dock .mesa { width: 100%; max-width: 1560px; transform: rotateX(6deg); transform-origin: 50% 100%; }
   }
   @media (max-width: 980px) {
-    .dock .mesa { flex-direction: column; }
+    .dock .mesa { flex-direction: column; align-items: center; }
     .ring-pad { margin: 0 auto; }
+    /* centrar la fila de tarjetas y cada tarjeta dentro de ella */
+    .mini-pads-row { flex: 1 1 auto; width: 100%; justify-content: center; }
+    .mini-pad { flex: 1 1 44%; max-width: 250px; }
   }
 
   /* ============ tarjetas de proyecto detalladas (vista Proyectos) ============ */
@@ -560,7 +563,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v16 · COSTOS CON ESTIMACIÓN REAL (CACHÉ SEPARADA, MEDIDA EMPÍRICA) · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v17 · MESA MÓVIL: % LEGIBLE + TARJETAS CENTRADAS CON SOMBRA · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -581,6 +584,9 @@
               <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
               <circle class="ring-arc total" data-pct="72" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
+            <!-- backdrop del número central: sin esto los anillos pisan el "72%" -->
+            <circle cx="130" cy="130" r="50" fill="rgba(5,14,12,0.55)"/>
+            <circle cx="130" cy="130" r="41" fill="rgba(4,12,10,0.88)"/>
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
           <div class="ring-center">
