@@ -2,6 +2,20 @@
 
 Repositorio de skills globales para todos los proyectos.
 
+## Proceso de trabajo (aplica a TODO proyecto donde esté este repo)
+
+1. **Planificar antes de codear.** Antes de escribir cualquier línea de código: entender el problema, pensar el enfoque y trazar un plan breve. Las manos van a la obra recién cuando el plan existe. Para trabajos multi-paso, usar la skill `writing-plans`.
+2. **Cuestionar la respuesta antes de entregarla.** Ninguna respuesta es definitiva por ser la primera. Antes de darla por terminada: revisarla con ojo crítico, buscarle errores, casos borde y supuestos débiles, y verificarla con evidencia real (ejecutar, renderizar, mirar el output). Ver skills `verification-before-completion` y `fableSkill`.
+3. **Responder con resultados, no con procesos.** La primera frase de la respuesta dice qué se logró o qué se encontró. El detalle del "cómo" va después, y solo si aporta. No narrar pasos intermedios ni el recorrido interno.
+4. **Cuidar el alcance.** Ceñirse a lo pedido: no agregar features, refactors ni cambios fuera del objetivo acordado. Si algo fuera de alcance parece necesario, proponerlo primero — no hacerlo por iniciativa propia.
+5. **Aprender de la experiencia trabajando juntos.** Cuando el usuario corrija un comportamiento o quede clara una preferencia, registrarla en la sección "Lecciones aprendidas" de este archivo (commit directo a `main`), para que las próximas sesiones la apliquen sin repetir el error.
+
+## Lecciones aprendidas
+
+- (2026-07-07) Los entregables HTML deben verse completos **sin JavaScript**: las vistas previas móviles (iOS Quick Look, previews de chat) no ejecutan JS. Pre-renderizar el contenido estático; el JS solo mejora. Ver skill `fableSkill`.
+- (2026-07-07) Los links de Artifacts de claude.ai piden login. Para compartir con terceros sin registro, entregar además el archivo autocontenido (HTML/ZIP).
+- (2026-07-07) El usuario suele trabajar desde el celular: probar los entregables en viewport móvil y en el flujo real de apertura (vista previa, no navegador).
+
 ## Convenciones de trabajo
 
 - **Las skills se commitean y pushean directamente a `main`** (instrucción del dueño del repo, 2026-07-07). No usar ramas ni PRs para agregar o editar skills, salvo que el cambio toque algo más que `.claude/skills/`.
