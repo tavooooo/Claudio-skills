@@ -35,3 +35,17 @@ ver ficha completa en `proyectos/fitmark.md` § Competencia.
 Gustavo decidió: loop **diario** (08:00 NZ), con los 3 niveles de alcance
 (revisar+avisar, coordinación, y avance autónomo en proyectos en pausa), push al
 teléfono si es urgente + resumen siempre en el chat. Implementado — ver `LOOPS.md`.
+
+## 🎨 Ilustraciones de ejercicios con IA local (anotado 2026-07-07)
+
+Idea de Gustavo: generar las ilustraciones del avatar haciendo cada ejercicio
+(152) con modelos de imagen gratis.
+
+- **Piloto**: build.nvidia.com (créditos gratis ~1k-5k) SOLO para validar estilo —
+  su licencia es de evaluación, no sirve para assets de producción.
+- **Producción**: correr local en el PC de Gustavo (GPU NVIDIA 8GB+ VRAM):
+  FLUX.1-schnell (Apache 2.0, comercial OK) o SDXL. FLUX.1-dev NO (no comercial).
+- **Receta de consistencia**: LoRA del avatar (20-30 imgs de entrenamiento) +
+  ControlNet/OpenPose con esqueletos de poses reales → mismo personaje, técnica correcta.
+- **Dimensión**: ~300 finales (2 poses × 152 ejercicios), ~2.000 generaciones con
+  descartes, ~4-8 h de GPU local. Pendiente: confirmar GPU del PC de Gustavo.
