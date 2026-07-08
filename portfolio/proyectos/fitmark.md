@@ -36,10 +36,12 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 - ✅ **06-jul — Wallace 2.0**: datos reales del usuario, avatar-cara, chat premium y presencia en sesión.
 - 🎯 Próximo hito: **pasarela de pago REAL** (hoy simulada) + cerrar nombre definitivo (15-ago).
 - 🟡 `/logros` "en construcción"; `/store` es solo vitrina visual (sin checkout).
-- 🟠 **Rama `claude/features-review` (08-jul: 415 adelante / main 67→90→129 adelante — SIGUE CRECIENDO)**:
-  decisión de Gustavo (2026-07-05) — plan = **rescate selectivo (cherry-pick de lo útil) y
-  luego descartar la rama**. Objetivo: antes del Sprint 4 (sep). Cada día de dev activo
-  en main encarece el rescate.
+- ✅ **Rama `claude/features-review` — DECISIÓN FINAL (08-jul): se DESCARTA y se reconstruye
+  desde cero en main.** A 129 commits de divergencia el rescate salía más caro que rehacer limpio.
+  **A reconstruir** (lo que había en la rama): ranking · red social/feed · planes · cuentas
+  gym/coach · chat. ⚠️ **Salvar antes de borrar**: `wallace-kb/` (262 artículos = contenido,
+  no código; `wallace-wiki.wkml` ~550KB + `indice-wallace.html`) — exportarlo evita reescribir
+  los artículos. Ejecuta el chat de dev de FitMark (borrar rama + salvar KB).
 - 🟡 Wallace KB RAG (`wallace-kb/`, 262 artículos) sin conectar (vive en features-review).
 - ❌ **Analytics: nada.**
 
@@ -49,7 +51,7 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 2. Rate-limit `/api/chat` (Upstash) — sin esto el coach IA es un costo sin techo.
 3. ~~Modelo de precios freemium~~ ✅ cableado (06-jul) — falta **pasarela de pago real** (hoy simulada).
 4. `ADMIN_EMAILS` en Vercel y quitar fallback hardcodeado en `src/lib/admin.ts`.
-5. Reconciliar `features-review` (diagnóstico primero: 415 commits divergentes, no un merge trivial).
+5. ~~Reconciliar `features-review`~~ ✅ decidido 08-jul: **descartar y reconstruir desde cero** (ranking, red social, planes, cuentas gym/coach, chat). Salvar el `wallace-kb/` (contenido) antes de borrar la rama.
 6. Cerrar nombre definitivo del producto (ver brainstorm en `IDEAS.md`).
 7. 🎨 **Ilustraciones de ejercicios con IA local** (tarea anotada 07-jul): avatar consistente
    demostrando los 152 ejercicios, generado en el notebook RTX 16GB de Gustavo con

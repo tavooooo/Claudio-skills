@@ -55,3 +55,21 @@ Idea de Gustavo: generar las ilustraciones del avatar haciendo cada ejercicio
   (tandas nocturnas, notebook enchufado y ventilado). LoRA del avatar entrenable
   local. Plan: piloto 5 ejercicios en build.nvidia.com → ComfyUI local → LoRA →
   producción de las 152.
+
+## 🔁 Reconstrucción de features-review (FitMark) — desde cero (decidido 2026-07-08)
+
+La rama `claude/features-review` se DESCARTA (129 commits divergentes; rehacer
+limpio < cherry-pick). Inventario de lo que tenía, para reconstruir en `main`
+cuando toque (Sprint 4, monetización/social, sep):
+
+- **Ranking** entre usuarios/amigos.
+- **Red social / feed** (seguir, publicar, ver actividad).
+- **Planes** (tiers premium más allá del freemium actual 5/5).
+- **Cuentas de gym / coach** (roles distintos al usuario normal).
+- **Chat**.
+
+⚠️ **Salvar ANTES de borrar la rama** (esto NO se reconstruye, es contenido):
+`wallace-kb/` → `wallace-wiki.wkml` (~550KB, 262 artículos) + `indice-wallace.html`
++ `resumen-wallace-kb.html` + `README.md`. Exportarlos a un lugar seguro (o a
+main bajo `wallace-kb/`) evita reescribir 262 artículos a mano. Lo hace el chat
+de dev de FitMark en el mismo movimiento en que borra la rama.

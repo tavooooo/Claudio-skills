@@ -45,7 +45,7 @@ Orden de prioridad real tras F5.2: **F5.2 → F7.1 → F7.2 → F7.3 → F6** (F
 > librería 404, rutinas flojas. Decisión de Gustavo: **salir primero**. El lanzamiento
 > público de FitMark se adelanta de sept a **agosto**, y el contenido en redes parte YA.
 
-- [ ] Rescate selectivo de `features-review` (solo lo útil, luego descartar la rama) — jul · **06-jul: divergencia 415/67, sin bajar**
+- [x] ✅ **`features-review` DECIDIDO (08-jul): descartar y reconstruir desde cero** — a 129 commits de divergencia, rehacer limpio < cherry-pick. Reconstruir en main: ranking, red social/feed, planes, cuentas gym/coach, chat. Salvar `wallace-kb/` (contenido, no código) antes de borrar. Lo ejecuta el chat de dev de FitMark.
 - [ ] Analytics (PostHog o Vercel Analytics) + rate-limit `/api/chat` (Upstash) — jul
 - [x] ✅ **Definir feature-set + freemium (06-jul)**: FREE 5/5/10 vs PREMIUM $5,99/mes cableado con cobro simulado; falta pasarela real
 - [ ] Pasarela de pago real para el freemium (hoy simulado) — antes del lanzamiento
