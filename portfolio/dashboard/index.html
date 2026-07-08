@@ -200,6 +200,15 @@
   }
   .tb-row:hover { background: rgba(255,255,255,0.07); }
   .tb-row:active { transform: scale(0.99); }
+  .tb-handle {
+    flex: 0 0 auto; align-self: stretch; display: grid; place-items: center; min-width: 20px;
+    color: var(--faint); cursor: grab; font-size: 0.95rem; line-height: 0.5; letter-spacing: -2px;
+    touch-action: none; user-select: none; -webkit-user-select: none; transition: color .15s;
+  }
+  .tb-handle:hover { color: var(--muted); }
+  .tb-handle:active { cursor: grabbing; }
+  .tb-row.dragging { opacity: 0.95; background: rgba(120,240,205,0.12); box-shadow: 0 14px 30px -10px rgba(0,0,0,0.75); transform: scale(1.01); }
+  .tb-row.dragging .tb-handle { color: var(--neon); }
   .tb-check {
     width: 22px; height: 22px; flex: 0 0 auto; border-radius: 6px; border: 1.8px solid var(--pc, #7fe);
     display: grid; place-items: center; font-size: 0.82rem; font-weight: 900; color: #04120e; transition: background .15s;
@@ -467,7 +476,7 @@
           <span class="tb-count" id="tb-count">—</span>
         </div>
         <div class="tb-list" id="tb-list"></div>
-        <div class="tb-foot">Tocá una tarea para marcarla hecha · las completadas desaparecen al día siguiente</div>
+        <div class="tb-foot">Arrastrá ⋮⋮ para reordenar · tocá para marcar hecha · las completadas desaparecen al día siguiente</div>
       </div>
 
       <div class="cols-2" style="margin-top:1.4rem;">
@@ -675,7 +684,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v23 · TABLERO DE TAREAS TICKEABLE (se limpian al día siguiente) · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v24 · TAREAS REORDENABLES (arrastrá ⋮⋮) + infra FitMark/Kiwiano · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -899,50 +908,107 @@
     document.getElementById("kpi-tokens").innerHTML = "<b>$" + usdRT.toFixed(0) + "</b> USD est. real · " + con + " proyecto(s)";
   }
 
-  /* ---------- Tablero de tareas de Gustavo (localStorage; las hechas se van al día siguiente) ----------
-     El loop mantiene este array: agrega tareas nuevas y quita las obsoletas. Cada tarea
-     necesita un id ESTABLE (el tick se guarda por id). prio = orden (1 = más urgente). */
+  /* ---------- Tablero de tareas de Gustavo ----------
+     - tick por fila (localStorage 'torre_tareas_v1'); las hechas se ven tachadas hoy y
+       desaparecen al día siguiente.
+     - orden manual arrastrando el handle ⋮⋮ (localStorage 'torre_tareas_orden_v1').
+     El loop mantiene el array TAREAS (ids ESTABLES); 'orden' solo fija el orden inicial. */
   const TAREAS = [
-    { id:"kiw-stripe-keys",     proyecto:"Kiwiano", color:"var(--kiwiano)", prio:1, due:"YA",     dueClass:"now",
+    { id:"kiw-stripe-keys",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:1,  due:"YA",        dueClass:"now",
       texto:"Crear el webhook en Stripe + pegar las claves (sk_test / whsec) en Vercel — desbloquea el 1er cobro" },
-    { id:"fm-descartar-featrev",proyecto:"FitMark", color:"var(--fitmark)", prio:2, due:"YA",     dueClass:"now",
+    { id:"fm-descartar-featrev",proyecto:"FitMark", color:"var(--fitmark)", orden:2,  due:"YA",        dueClass:"now",
       texto:"Pegar en el chat de FitMark la instrucción: salvar el Wallace KB + borrar features-review" },
-    { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    prio:3, due:"",       dueClass:"",
+    { id:"fm-region-check",     proyecto:"FitMark", color:"var(--fitmark)", orden:3,  due:"rápido",    dueClass:"soon",
+      texto:"Verificar que Vercel y Supabase de FitMark estén en la MISMA región (baja la latencia ya)" },
+    { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    orden:4,  due:"",          dueClass:"",
       texto:"Conectar el dashboard a Vercel (Root: portfolio/dashboard) para instalarlo como app en el teléfono" },
-    { id:"kiw-backups-f16",     proyecto:"Kiwiano", color:"var(--kiwiano)", prio:4, due:"20·jul", dueClass:"soon",
+    { id:"kiw-backups-f16",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:5,  due:"20·jul",    dueClass:"soon",
       texto:"Activar los backups automáticos de Supabase (F1.6)" },
-    { id:"fm-nombre",           proyecto:"FitMark", color:"var(--fitmark)", prio:5, due:"15·ago", dueClass:"soon",
-      texto:"Decidir el nombre definitivo de FitMark (deadline duro antes del lanzamiento)" },
-    { id:"fm-ilustraciones",    proyecto:"FitMark", color:"var(--fitmark)", prio:6, due:"jul-ago",dueClass:"",
+    { id:"fm-nombre",           proyecto:"FitMark", color:"var(--fitmark)", orden:6,  due:"15·ago",    dueClass:"soon",
+      texto:"Decidir el nombre definitivo de FitMark" },
+    { id:"fm-dominio",          proyecto:"FitMark", color:"var(--fitmark)", orden:7,  due:"pre-lanzam", dueClass:"soon",
+      texto:"Conseguir el dominio propio de FitMark (antes del lanzamiento)" },
+    { id:"kiw-dominio",         proyecto:"Kiwiano", color:"var(--kiwiano)", orden:8,  due:"",          dueClass:"",
+      texto:"Conseguir/confirmar el dominio propio de Kiwiano" },
+    { id:"fm-vps",              proyecto:"FitMark", color:"var(--fitmark)", orden:9,  due:"pre-lanzam", dueClass:"soon",
+      texto:"Evaluar un VPS para FitMark antes del lanzamiento (¿mejor que Vercel+Supabase?)" },
+    { id:"infra-migrar-eval",   proyecto:"Torre",   color:"var(--neon)",    orden:10, due:"",          dueClass:"",
+      texto:"Evaluar Vercel+Supabase vs. migrar todo (FitMark y Kiwiano): costo de migración + si mejora la velocidad" },
+    { id:"fm-loader-anim",      proyecto:"FitMark", color:"var(--fitmark)", orden:11, due:"",          dueClass:"",
+      texto:"Animación de carga: sombra haciendo squat 180k que sube según carga la página (dinámica)" },
+    { id:"fm-ilustraciones",    proyecto:"FitMark", color:"var(--fitmark)", orden:12, due:"jul-ago",   dueClass:"",
       texto:"Piloto de ilustraciones IA (5 ejercicios) en el PC con ComfyUI + FLUX" },
   ];
-  const TB_KEY = "torre_tareas_v1";
+  const TB_KEY = "torre_tareas_v1", TB_ORDER_KEY = "torre_tareas_orden_v1";
   const tbToday = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); };
   const tbLoad = () => { try { return JSON.parse(localStorage.getItem(TB_KEY) || "{}"); } catch(e) { return {}; } };
   const tbSave = s => { try { localStorage.setItem(TB_KEY, JSON.stringify(s)); } catch(e) {} };
+  const tbSaveOrder = a => { try { localStorage.setItem(TB_ORDER_KEY, JSON.stringify(a)); } catch(e) {} };
+  function tbOrder() {  // lista completa de ids: primero el orden guardado, luego lo nuevo por 'orden'
+    let saved = []; try { saved = JSON.parse(localStorage.getItem(TB_ORDER_KEY) || "[]"); } catch(e) {}
+    const ids = TAREAS.map(t => t.id);
+    const inSaved = saved.filter(id => ids.includes(id));
+    const rest = TAREAS.slice().sort((a,b) => a.orden - b.orden).map(t => t.id).filter(id => !inSaved.includes(id));
+    return [...inSaved, ...rest];
+  }
+  const byId = {}; TAREAS.forEach(t => byId[t.id] = t);
+  let tbDragMoved = false;
+
   function tbRender() {
     const list = document.getElementById("tb-list"); if (!list) return;
     const state = tbLoad(), today = tbToday();
-    // visibles = pendientes + las que marcaste HOY (para verlas tachadas el resto del día)
-    const visibles = TAREAS.filter(t => !state[t.id] || state[t.id] === today).sort((a,b) => a.prio - b.prio);
+    const visibles = tbOrder().map(id => byId[id]).filter(t => t && (!state[t.id] || state[t.id] === today));
     list.innerHTML = "";
     let pend = 0;
-    visibles.forEach(t => {
+    visibles.forEach((t, i) => {
       const doneToday = state[t.id] === today;
       if (!doneToday) pend++;
       const row = document.createElement("div");
       row.className = "tb-row" + (doneToday ? " done" : "");
+      row.dataset.id = t.id;
       row.style.setProperty("--pc", t.color);
       row.innerHTML =
+        '<span class="tb-handle" title="Arrastrá para reordenar">⋮⋮</span>' +
         '<span class="tb-check"></span>' +
-        '<span class="tb-prio">' + t.prio + '</span>' +
+        '<span class="tb-prio">' + (i + 1) + '</span>' +
         '<span class="tb-proj">' + t.proyecto + '</span>' +
         '<span class="tb-text">' + t.texto + '</span>' +
         (t.due ? '<span class="tb-due ' + (t.dueClass || "") + '">' + t.due + '</span>' : '');
-      row.addEventListener("click", () => {
+      // tick (ignora clicks en el handle o justo después de arrastrar)
+      row.addEventListener("click", e => {
+        if (e.target.closest(".tb-handle")) return;
+        if (tbDragMoved) { tbDragMoved = false; return; }
         const s = tbLoad();
         if (s[t.id] === today) delete s[t.id]; else s[t.id] = today;
         tbSave(s); tbRender();
+      });
+      // arrastre desde el handle (pointer events → funciona con dedo y mouse)
+      row.querySelector(".tb-handle").addEventListener("pointerdown", e => {
+        e.preventDefault(); e.stopPropagation();
+        tbDragMoved = false;
+        row.classList.add("dragging");
+        row.setPointerCapture(e.pointerId);
+        const move = ev => {
+          tbDragMoved = true;
+          const others = [...list.querySelectorAll(".tb-row:not(.dragging)")];
+          const after = others.find(r => ev.clientY < r.getBoundingClientRect().top + r.offsetHeight / 2);
+          if (after) list.insertBefore(row, after); else list.appendChild(row);
+        };
+        const up = () => {
+          row.classList.remove("dragging");
+          row.removeEventListener("pointermove", move);
+          row.removeEventListener("pointerup", up);
+          row.removeEventListener("pointercancel", up);
+          // fusiona el nuevo orden visible dentro del orden global y re-renderiza
+          const domIds = [...list.querySelectorAll(".tb-row")].map(r => r.dataset.id);
+          const vis = new Set(domIds); let vi = 0;
+          const merged = tbOrder().map(id => vis.has(id) ? domIds[vi++] : id);
+          tbSaveOrder(merged);
+          tbRender();
+        };
+        row.addEventListener("pointermove", move);
+        row.addEventListener("pointerup", up);
+        row.addEventListener("pointercancel", up);
       });
       list.appendChild(row);
     });
