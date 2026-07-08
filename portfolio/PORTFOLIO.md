@@ -1,13 +1,13 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-07-07** · Actualizar en cada sesión de trabajo.
+> Última actualización: **2026-07-08** · Actualizar en cada sesión de trabajo.
 
 ## Estado global
 
 | Proyecto | Fase | Avance | ¿Comercializable hoy? | Bloqueador principal | Próximo hito | Deadline |
 |---|---|---|---|---|---|---|
 | **Kiwiano** | F5 monetización **80%** — F5.1 en producción; **F5.2 Stripe Checkout codeado (Vitrina), EN PRUEBAS** | 🟢 Alto — **activo, en otro chat** | Casi — checkout escrito, falta probarlo con claves | **Tavo**: crear webhook en Stripe + pegar `sk_test_`/`whsec_` en Vercel | Prueba de pago con tarjeta test en preview → merge a main con claves live | **2026-08-10** (fecha del chat de dev) |
-| **FitMark** (nombre por definir) | Carrera al lanzamiento (**91%**) — Wallace conversacional + rendimiento + drag unificado | 🟢 Alto — **activo, en otro chat** | Casi — freemium listo con **cobro simulado**, falta pasarela real | Pasarela de pago real + nombre definitivo (15-ago) | Pasarela de pago real | 🎯 Lanzamiento gratis **2026-08-31** |
+| **FitMark** (nombre por definir) | Carrera al lanzamiento (**91%**) — íconos musculares en toda la app, calendario semanal, medallas retroactivas, Wallace con fallback | 🟢 Alto — **activo, en otro chat** | Casi — freemium listo con **cobro simulado**, falta pasarela real | Pasarela de pago real + nombre definitivo (15-ago) | Pasarela de pago real | 🎯 Lanzamiento gratis **2026-08-31** |
 | **Easy Courts** | Etapa 0 (demo mock completa) | 🟡 Medio — en pausa | No — nada persiste | Todo es mock: sin DB real, sin auth real, admin sin protección | Etapa 1: Postgres + Prisma + auth real | 2026-12-15 |
 | **Navaja Suiza** | Fase 1 completa (local-only) | 🟢 Alto — congelado | N/A (personal) | Sin nube (Supabase scaffolded, inactivo) | Mantener; evaluar comercializar en 2027 | — |
 
@@ -30,7 +30,7 @@
   cableado 06-jul con **cobro simulado**. Falta cerrar con pasarela real (Kiwiano Stripe F5.2, FitMark pasarela).
 - 🔴 **Carrera con fierro.app**: competidor directo pero incompleto (sin pagos, librería 404, rutinas flojas — verificado por Gustavo 05-jul). Decisión: FitMark sale primero — lanzamiento público adelantado a **fin de agosto**. Vigilar fierro.app semanalmente.
 - 🟠 **Contenido en redes parte esta semana** (ver `CONTENIDO.md`) — construir audiencia antes del lanzamiento; sin distribución no hay carrera que ganar.
-- 🟠 **`features-review` de FitMark — la divergencia CRECE** (07-jul: main pasó de 67 a **90 commits adelante**; la rama sigue con 415): rescate selectivo y descartar (decidido 05-jul; ejecutar en julio). Cada día de dev activo en main encarece el cherry-pick (incluye Wallace KB de 262 artículos).
+- 🟠 **`features-review` de FitMark — la divergencia SIGUE CRECIENDO** (08-jul: main **129 commits adelante**, venía de 90 el 07-jul y 67 el 06-jul; la rama sigue con 415): rescate selectivo y descartar (decidido 05-jul; ejecutar en julio). Cada día de dev activo en main encarece el cherry-pick (incluye Wallace KB de 262 artículos). Si sigue esta pendiente, conviene decidir pronto qué se rescata o dar la rama por perdida.
 - 🟡 **Nombre definitivo aparcado** — deadline dura 15-ago (antes del lanzamiento público).
 - ✅ ~~Kiwiano `Vitrina` pendiente de merge~~ — **RESUELTO 05-jul**: mergeada a main con landing completa. Sprint 1 completado 15 días antes de fecha.
 - ✅ ~~Máquina de cobro de Kiwiano~~ — **F5.1 en producción** (pelotas, planes, billing UI, membresía $40 NZD, saldo visible a jugadores, recordatorio de vencimiento). **F5.2 Stripe Checkout codeado y en pruebas** — 🔑 bloqueado por Tavo: crear webhook en Stripe Sandbox + `STRIPE_SECRET_KEY`/`STRIPE_WEBHOOK_SECRET` en Vercel.

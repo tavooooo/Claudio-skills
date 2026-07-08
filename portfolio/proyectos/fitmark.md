@@ -12,13 +12,18 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-07 por el loop, desde git main — 91%)
+## Estado (actualizado 2026-07-08 por el loop, desde git main — 91%)
 
+- ✅ **08-jul**: **íconos musculares en toda la app** (MuscleIcon/RoutineMuscleIcon desde
+  los trazados reales del mapa, fuente única `lib/data/musclePaths.ts`; precisión por porción
+  con el código de color del mapa) · **calendario con vista semanal nueva** + íconos en las
+  celdas · modal de rutina rehecho (una página, pantalla completa en móvil) · renombrar
+  sesiones (sobre todo las libres) · **medallas retroactivas** (antes nunca aparecían;
+  "Logros"→"Medallas") · Wallace con **fallback de proveedor** (Gemini→Groq) · varios fixes
+  responsive (progreso y chat ya no se ensanchan en el teléfono).
 - ✅ **07-jul**: Wallace conversacional (burbujas separadas, typeo ~26cps), tarjetas de
-  ejercicio colapsables + **reordenar unificado** (handle ⋮⋮ en móvil, drag nativo en PC),
-  y **auditoría de rendimiento**: queries en paralelo (Promise.all), auth cacheada por
-  request, skeletons de carga en /coach, /progress y /macros. Wallace 2.0 usa Gemini
-  Flash-Lite con KB y referencias.
+  ejercicio colapsables + **reordenar unificado** (handle ⋮⋮ móvil, drag nativo PC), y
+  **auditoría de rendimiento**: queries en paralelo, auth cacheada, skeletons.
 
 - ✅ Núcleo maduro: tracker, rutinas, ejercicios, mapa muscular, coach IA, landing con scroll-video, onboarding progresivo.
 - ✅ **05-jul**: PRs con celebración de récords, plantillas de rutina y peso corporal,
@@ -31,7 +36,7 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 - ✅ **06-jul — Wallace 2.0**: datos reales del usuario, avatar-cara, chat premium y presencia en sesión.
 - 🎯 Próximo hito: **pasarela de pago REAL** (hoy simulada) + cerrar nombre definitivo (15-ago).
 - 🟡 `/logros` "en construcción"; `/store` es solo vitrina visual (sin checkout).
-- 🟠 **Rama `claude/features-review` (07-jul: 415 adelante / main 67→90 adelante — CRECE)**:
+- 🟠 **Rama `claude/features-review` (08-jul: 415 adelante / main 67→90→129 adelante — SIGUE CRECIENDO)**:
   decisión de Gustavo (2026-07-05) — plan = **rescate selectivo (cherry-pick de lo útil) y
   luego descartar la rama**. Objetivo: antes del Sprint 4 (sep). Cada día de dev activo
   en main encarece el rescate.

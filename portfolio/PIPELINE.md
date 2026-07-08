@@ -28,6 +28,12 @@
 - [ ] Analytics básico (eventos: registro club, torneo creado, upgrade)
 - **Entregable**: 🎯 **primer producto cobrable del portfolio** (beta comercial 15-ago). Máquina de cobro ✅ construida; falta go-live de Stripe.
 
+### F7 Kiwiano "En Vivo" (planificado 08-jul — roadmap proyectado por Tavo)
+Orden de prioridad real tras F5.2: **F5.2 → F7.1 → F7.2 → F7.3 → F6** (F6 Crecimiento es continuo, por eso va al final).
+- [ ] **F7.1 Marcador en vivo** — puntaje punto a punto editable desde fuera de la cancha, en vivo en modo TV, alimenta el ranking. Riesgo BAJO. Candidato a ir **justo después de F5.2** (en los torneos ya se juega con puntos/sets, solo falta anotarlos).
+- [ ] **F7.2 Streaming del partido** — cámara→WHIP→Cloudflare Stream, plan Pro/créditos. Riesgo MEDIO (costo). **DIFERIDO a post-monetización** ("cuando ya estemos generando").
+- [ ] **F7.3** — (ver HANDOFF de Kiwiano). Diferido.
+
 ### Sprint 3 — Kiwiano primeros clientes (2026-08-16 → 2026-08-31)
 - [ ] Piloto con 2–3 clubes reales (NZ y/o Chile)
 - [ ] Términos de servicio + privacidad

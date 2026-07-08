@@ -27,7 +27,10 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
 - 🔑 **Bloqueador EN MANOS DE TAVO**: crear el webhook endpoint en Stripe (Sandbox) y pegar
   `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET` en Vercel → probar pago con tarjeta test
   en preview → merge a main con claves live. Fecha objetivo: **2026-08-10**.
-- ❌ **F6 growth sin empezar**: categorías, inscripción online, notificaciones, multi-deporte.
+- 🗺️ **F7 "En Vivo" planificado (08-jul)**: F7.1 marcador punto a punto en vivo (modo TV,
+  alimenta ranking, riesgo bajo — candidato justo tras F5.2) → F7.2 streaming del partido
+  (Cloudflare Stream, diferido a post-monetización) → F7.3. Orden real: F5.2→F7.1→F7.2→F7.3→F6.
+- ❌ **F6 crecimiento (continuo, va al final)**: categorías, inscripción online, notificaciones, multi-deporte.
 
 ## Brechas para comercializar
 
