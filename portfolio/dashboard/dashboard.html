@@ -153,6 +153,58 @@
   .cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
   @media (max-width: 900px) { .cols-2 { grid-template-columns: 1fr; } }
 
+  /* ============ TABLERO DE TAREAS (Resumen, arriba de todo) ============ */
+  .task-board {
+    position: relative; margin-bottom: 1.4rem; border-radius: 18px; padding: 1rem 1.15rem 0.85rem;
+    background: linear-gradient(150deg, rgba(20,38,34,0.86), rgba(11,20,18,0.92));
+    border: 1.5px solid rgba(120,240,205,0.36);
+    box-shadow: 0 18px 46px -20px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.12),
+                0 0 46px -18px rgba(80,240,205,0.5);
+    animation: tbGlow 3.6s ease-in-out infinite;
+  }
+  @keyframes tbGlow {
+    0%,100% { box-shadow: 0 18px 46px -20px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.12), 0 0 40px -22px rgba(80,240,205,0.45); }
+    50%     { box-shadow: 0 18px 46px -20px rgba(0,0,0,0.85), inset 0 1px 0 rgba(255,255,255,0.12), 0 0 54px -12px rgba(80,240,205,0.7); }
+  }
+  .task-board::before {
+    content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; border-radius: 4px;
+    background: linear-gradient(var(--neon), var(--fitmark)); box-shadow: 0 0 14px var(--neon);
+  }
+  .tb-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; padding-left: 0.4rem; }
+  .tb-title { display: flex; align-items: center; gap: 0.45rem; font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text); }
+  .tb-title b { color: var(--neon); text-shadow: 0 0 12px rgba(53,240,188,.5); }
+  .tb-count { font-family: var(--mono); font-size: 0.66rem; color: var(--warn); }
+  .tb-list { display: flex; flex-direction: column; gap: 0.5rem; }
+  .tb-row {
+    display: flex; align-items: center; gap: 0.7rem; padding: 0.62rem 0.7rem; border-radius: 11px;
+    background: rgba(255,255,255,0.035); border: 1px solid var(--line);
+    border-left: 3px solid var(--pc, #35F0BC); cursor: pointer; transition: background .16s, opacity .2s, transform .12s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .tb-row:hover { background: rgba(255,255,255,0.07); }
+  .tb-row:active { transform: scale(0.99); }
+  .tb-check {
+    width: 22px; height: 22px; flex: 0 0 auto; border-radius: 6px; border: 1.8px solid var(--pc, #7fe);
+    display: grid; place-items: center; font-size: 0.82rem; font-weight: 900; color: #04120e; transition: background .15s;
+  }
+  .tb-row.done .tb-check { background: var(--pc, #35F0BC); }
+  .tb-row.done .tb-check::after { content: "✓"; }
+  .tb-prio { font-family: var(--mono); font-size: 0.68rem; font-weight: 800; min-width: 1.4em; text-align: center; color: #050b09; background: var(--pc, #35F0BC); border-radius: 6px; padding: 0.08rem 0.3rem; }
+  .tb-proj { font-family: var(--mono); font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--pc, #7fe); min-width: 4.6em; }
+  .tb-text { flex: 1; font-size: 0.85rem; line-height: 1.32; }
+  .tb-due { font-family: var(--mono); font-size: 0.62rem; padding: 0.12rem 0.5rem; border-radius: 100px; border: 1px solid var(--line); white-space: nowrap; color: var(--faint); }
+  .tb-due.now { color: var(--critical); border-color: rgba(255,98,87,.5); font-weight: 700; }
+  .tb-due.soon { color: var(--warn); border-color: rgba(255,184,77,.4); }
+  .tb-row.done { opacity: 0.45; }
+  .tb-row.done .tb-text { text-decoration: line-through; }
+  .tb-foot { margin-top: 0.75rem; padding-left: 0.4rem; font-family: var(--mono); font-size: 0.6rem; color: var(--faint); }
+  .tb-empty { padding: 1rem; text-align: center; color: var(--muted); font-size: 0.86rem; }
+  @media (prefers-reduced-motion: reduce) { .task-board { animation: none; } }
+  @media (max-width: 560px) {
+    .tb-proj { display: none; }
+    .tb-text { font-size: 0.82rem; }
+  }
+
   /* ============ DOCK FIJO ABAJO ("mesa") — solo escritorio ============ */
   .dock { margin-top: 1.6rem; }
   .mesa {
@@ -392,6 +444,15 @@
         </div>
       </div>
 
+      <div class="task-board" id="task-board">
+        <div class="tb-head">
+          <div class="tb-title">⚡ <b>Tus tareas</b> · por prioridad</div>
+          <span class="tb-count" id="tb-count">—</span>
+        </div>
+        <div class="tb-list" id="tb-list"></div>
+        <div class="tb-foot">Tocá una tarea para marcarla hecha · las completadas desaparecen al día siguiente</div>
+      </div>
+
       <div class="cols-2" style="margin-top:1.4rem;">
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
@@ -597,7 +658,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v22 · FEATURES-REVIEW DESCARTADA (rehacer desde cero) · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v23 · TABLERO DE TAREAS TICKEABLE (se limpian al día siguiente) · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -820,6 +881,59 @@
     const usdRT = usdReal(tIn, tOut);
     document.getElementById("kpi-tokens").innerHTML = "<b>$" + usdRT.toFixed(0) + "</b> USD est. real · " + con + " proyecto(s)";
   }
+
+  /* ---------- Tablero de tareas de Gustavo (localStorage; las hechas se van al día siguiente) ----------
+     El loop mantiene este array: agrega tareas nuevas y quita las obsoletas. Cada tarea
+     necesita un id ESTABLE (el tick se guarda por id). prio = orden (1 = más urgente). */
+  const TAREAS = [
+    { id:"kiw-stripe-keys",     proyecto:"Kiwiano", color:"var(--kiwiano)", prio:1, due:"YA",     dueClass:"now",
+      texto:"Crear el webhook en Stripe + pegar las claves (sk_test / whsec) en Vercel — desbloquea el 1er cobro" },
+    { id:"fm-descartar-featrev",proyecto:"FitMark", color:"var(--fitmark)", prio:2, due:"YA",     dueClass:"now",
+      texto:"Pegar en el chat de FitMark la instrucción: salvar el Wallace KB + borrar features-review" },
+    { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    prio:3, due:"",       dueClass:"",
+      texto:"Conectar el dashboard a Vercel (Root: portfolio/dashboard) para instalarlo como app en el teléfono" },
+    { id:"kiw-backups-f16",     proyecto:"Kiwiano", color:"var(--kiwiano)", prio:4, due:"20·jul", dueClass:"soon",
+      texto:"Activar los backups automáticos de Supabase (F1.6)" },
+    { id:"fm-nombre",           proyecto:"FitMark", color:"var(--fitmark)", prio:5, due:"15·ago", dueClass:"soon",
+      texto:"Decidir el nombre definitivo de FitMark (deadline duro antes del lanzamiento)" },
+    { id:"fm-ilustraciones",    proyecto:"FitMark", color:"var(--fitmark)", prio:6, due:"jul-ago",dueClass:"",
+      texto:"Piloto de ilustraciones IA (5 ejercicios) en el PC con ComfyUI + FLUX" },
+  ];
+  const TB_KEY = "torre_tareas_v1";
+  const tbToday = () => { const d = new Date(); return d.getFullYear() + "-" + String(d.getMonth()+1).padStart(2,"0") + "-" + String(d.getDate()).padStart(2,"0"); };
+  const tbLoad = () => { try { return JSON.parse(localStorage.getItem(TB_KEY) || "{}"); } catch(e) { return {}; } };
+  const tbSave = s => { try { localStorage.setItem(TB_KEY, JSON.stringify(s)); } catch(e) {} };
+  function tbRender() {
+    const list = document.getElementById("tb-list"); if (!list) return;
+    const state = tbLoad(), today = tbToday();
+    // visibles = pendientes + las que marcaste HOY (para verlas tachadas el resto del día)
+    const visibles = TAREAS.filter(t => !state[t.id] || state[t.id] === today).sort((a,b) => a.prio - b.prio);
+    list.innerHTML = "";
+    let pend = 0;
+    visibles.forEach(t => {
+      const doneToday = state[t.id] === today;
+      if (!doneToday) pend++;
+      const row = document.createElement("div");
+      row.className = "tb-row" + (doneToday ? " done" : "");
+      row.style.setProperty("--pc", t.color);
+      row.innerHTML =
+        '<span class="tb-check"></span>' +
+        '<span class="tb-prio">' + t.prio + '</span>' +
+        '<span class="tb-proj">' + t.proyecto + '</span>' +
+        '<span class="tb-text">' + t.texto + '</span>' +
+        (t.due ? '<span class="tb-due ' + (t.dueClass || "") + '">' + t.due + '</span>' : '');
+      row.addEventListener("click", () => {
+        const s = tbLoad();
+        if (s[t.id] === today) delete s[t.id]; else s[t.id] = today;
+        tbSave(s); tbRender();
+      });
+      list.appendChild(row);
+    });
+    const cnt = document.getElementById("tb-count");
+    if (cnt) cnt.textContent = pend > 0 ? (pend + " pendiente" + (pend > 1 ? "s" : "")) : "todo hecho ✓";
+    if (!visibles.length) list.innerHTML = '<div class="tb-empty">Sin tareas pendientes 🎉</div>';
+  }
+  tbRender();
 
   /* ---------- Grafo 3D: motor reutilizable (grande + mini) ---------- */
   const NODOS_BASE = [
