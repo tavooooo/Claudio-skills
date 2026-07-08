@@ -43,6 +43,7 @@
 - [ ] Analytics (PostHog o Vercel Analytics) + rate-limit `/api/chat` (Upstash) — jul
 - [x] ✅ **Definir feature-set + freemium (06-jul)**: FREE 5/5/10 vs PREMIUM $5,99/mes cableado con cobro simulado; falta pasarela real
 - [ ] Pasarela de pago real para el freemium (hoy simulado) — antes del lanzamiento
+- [ ] 🎨 **Ilustraciones de ejercicios con IA local** (notebook RTX 16GB de Gustavo, confirmada): Fase 1 = ComfyUI + FLUX.1-schnell + piloto de 5 ejercicios (instrucción ya entregada, ver `IDEAS.md`) → Fase 2 = LoRA del avatar + ControlNet → producción de las 152 (~2 poses c/u). Licencia comercial limpia (Apache 2.0) — jul-ago, no bloquea el lanzamiento
 - [ ] Contenido en redes desde la semana del 06-jul (ver `CONTENIDO.md`) — continuo
 - [ ] 🎯 **Lanzamiento público (gratis) — fin de agosto**, antes de que fierro complete su app
 - [ ] Nombre definitivo: aparcado, decidir antes del lanzamiento (deadline dura: 15-ago)

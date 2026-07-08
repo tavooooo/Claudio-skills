@@ -46,6 +46,10 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 4. `ADMIN_EMAILS` en Vercel y quitar fallback hardcodeado en `src/lib/admin.ts`.
 5. Reconciliar `features-review` (diagnóstico primero: 415 commits divergentes, no un merge trivial).
 6. Cerrar nombre definitivo del producto (ver brainstorm en `IDEAS.md`).
+7. 🎨 **Ilustraciones de ejercicios con IA local** (tarea anotada 07-jul): avatar consistente
+   demostrando los 152 ejercicios, generado en el notebook RTX 16GB de Gustavo con
+   FLUX.1-schnell (licencia comercial). Fase 1 = piloto de 5 (instrucción entregada);
+   Fase 2 = LoRA del avatar + ControlNet OpenPose → producción. Detalles en `IDEAS.md`.
 
 ## Competencia — fierro.app (vigilancia activa)
 
