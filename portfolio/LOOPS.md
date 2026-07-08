@@ -102,6 +102,22 @@ lectura directa del dashboard:
 - Última sesión: <yyyy-mm-dd> · <qué se hizo en una línea>
 ```
 
+## Dashboard como PWA instalable (📱 acceso directo en el teléfono)
+
+El dashboard vive en dos formas desde la misma fuente `dashboard.html`:
+1. **Artifact de Claude** (para revisión rápida): se publica con la tool Artifact.
+2. **PWA propia en `portfolio/dashboard/`** (para instalar en el teléfono como
+   Kiwiano): `index.html` (documento completo con `<head>` de PWA) + `manifest.webmanifest`
+   + `icon-180.png`/`icon-512.png` (torre de control en la paleta del HUD).
+
+**Regla del loop**: después de copiar el `dashboard.html` nuevo al repo, correr
+`python3 portfolio/dashboard/build-pwa.py` — regenera `index.html` envolviendo el
+cuerpo con el `<head>` correcto. Así la app del teléfono se actualiza sola en cada corrida.
+
+**Deploy**: Vercel sirve la carpeta `portfolio/dashboard/` como estática (Root
+Directory = `portfolio/dashboard`, Production Branch = `claude/project-portfolio-tracking-ib0574`).
+El icono se regenera desde `scratchpad/icon.html` con Playwright si hay que rediseñarlo.
+
 ## Obsidian (memoria compacta entre sesiones)
 
 - `docs/obsidian/portfolio/context.md` = estado actual en ≤200 líneas. Toda
