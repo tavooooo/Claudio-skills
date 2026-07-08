@@ -73,3 +73,8 @@ cuando toque (Sprint 4, monetización/social, sep):
 + `resumen-wallace-kb.html` + `README.md`. Exportarlos a un lugar seguro (o a
 main bajo `wallace-kb/`) evita reescribir 262 artículos a mano. Lo hace el chat
 de dev de FitMark en el mismo movimiento en que borra la rama.
+- **Mantenerlo en la MISMA ruta** (`wallace-kb/` en la raíz) es lo más seguro:
+  así cualquier referencia existente de Wallace al KB sigue resolviendo. Si se
+  decide moverlo (a `src/`, `public/`, etc.), el chat de dev DEBE actualizar la
+  ruta que usa Wallace (RAG/coach) para no dejar al coach sin base de conocimiento
+  (pedido explícito de Gustavo 08-jul).
