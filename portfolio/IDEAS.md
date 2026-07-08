@@ -49,9 +49,8 @@ Idea de Gustavo: generar las ilustraciones del avatar haciendo cada ejercicio
   ControlNet/OpenPose con esqueletos de poses reales → mismo personaje, técnica correcta.
 - **Dimensión**: ~300 finales (2 poses × 152 ejercicios), ~2.000 generaciones con
   descartes, ~4-8 h de GPU local. Pendiente: confirmar GPU del PC de Gustavo.
-- **Hardware de Gustavo (2026-07-07)**: notebook 32GB RAM + 16GB video + i7.
-  PENDIENTE verificar que sean 16GB de GPU NVIDIA dedicada (nvidia-smi) y no
-  memoria compartida de Intel integrada. Si es RTX 16GB: FLUX.1-schnell fp8
+- **Hardware de Gustavo (2026-07-07)**: notebook 32GB RAM + i7 + **RTX NVIDIA 16GB
+  CONFIRMADA** → vía local viable: FLUX.1-schnell fp8
   (~15-25s/img) o SDXL (~8-15s/img); las ~2.000 generaciones = 8-12h de GPU
   (tandas nocturnas, notebook enchufado y ventilado). LoRA del avatar entrenable
   local. Plan: piloto 5 ejercicios en build.nvidia.com → ComfyUI local → LoRA →
