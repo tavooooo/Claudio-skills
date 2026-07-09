@@ -67,6 +67,11 @@ a Gustavo el 2026-07-08. Hasta el 1er cierre figuran "ESPERANDO 1ER CIERRE".
   3. **Avance autónomo en proyectos EN PAUSA**: Easy Courts (`/home/user/Padel`) y
      Navaja Suiza (`/home/user/La-Suiza`), avances pequeños y testeados según sus
      roadmaps, en la rama `claude/project-portfolio-tracking-ib0574`.
+     ⚠️ **ACTUALIZACIÓN 08-jul**: **Navaja Suiza YA tiene chat activo** (deploy en Vercel,
+     desarrolla en `claude/github-skills-import-4xhew4` y fusiona a la de tracking). El loop
+     **NO debe pushear código directo** ahí — se coordina vía su chat (como Kiwiano/FitMark),
+     o el cambio no se despliega y su merge lo pisa. Easy Courts (Padel) sí sigue como pausa
+     real hasta que se confirme lo contrario.
 - **Regla dura**: NUNCA tocar código de Kiwiano ni fitmark — se desarrollan en
   otros chats en paralelo; tocarlos generaría conflictos.
 - **Notificación**: push al teléfono solo si hay algo urgente (deadline vencido o

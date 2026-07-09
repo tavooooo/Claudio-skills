@@ -11,11 +11,20 @@ gastos, agenda, supermercado, comidas, recetario, metas, hábitos, diario, docum
 abstracción `Repository<T>` · Supabase scaffolded pero inactivo · Tesseract.js (OCR)
 · Leaflet · Recharts · GSAP · Vitest (6 módulos de dominio testeados).
 
-## Estado
+## Estado (git al 2026-07-09)
 
-- ✅ Funcionalmente completa en almacenamiento local; sin TODOs bloqueantes; UX pulida (WCAG, GSAP).
-- ✅ Schema SQL completo con RLS listo (`supabase/schema.sql`, 26 tablas).
-- 🟡 Pendiente de nube (4 pasos del README): crear proyecto Supabase + schema, login UI + protección de rutas, migrar `useLiveQuery` a realtime, mover imágenes a Storage.
+- 🟢 **TIENE CHAT ACTIVO** (descubierto por el loop 08-jul): no está dormido. El 09-jul
+  pushearon **deploy en Vercel** (`la-suiza.vercel.app`) + **upgrade visual premium**
+  (transiciones de ruta, hero animado, glows, nav activa) + auditoría funcional. HANDOFF
+  propio al día con reporte de tokens ya configurado. Se declaran **~80%**.
+- ✅ Funcionalmente completa en local (IndexedDB/Dexie); UX pulida (WCAG, GSAP).
+- ✅ Schema SQL completo con RLS listo (`supabase/schema.sql`).
+- 🟡 **Próximo hito (su HANDOFF)**: conectar Supabase (BBDD) + Login — requiere que Gustavo
+  cree el proyecto Supabase y provea URL + anon key. Luego migrar `useLiveQuery` a realtime.
+- ⚠️ **Ramas**: la app vive en `claude/github-skills-import-4xhew4` (default/Vercel); el
+  tracking de la torre se fusiona a `claude/project-portfolio-tracking-ib0574`. **El loop NO
+  debe pushear código directo** — coordina vía el chat activo (como Kiwiano/FitMark), o el
+  cambio no se despliega y su merge lo pisa.
 
 ## Rol en el portfolio — CAMBIO 2026-07-08
 
