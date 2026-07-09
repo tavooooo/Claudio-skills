@@ -26,8 +26,10 @@ HANDOFF). Cero deploys extra, cero push por consulta.
 El hook está instalado en los **5 repos** (incluida esta torre). Ojo con la RAMA de donde se lee el CSV:
 - **Kiwiano** y **fitmark** (dev activo en otros chats → van a main):
   `git show origin/main:docs/metricas/tokens.csv`
-- **Padel (Easy Courts)** y **La-Suiza (Navaja Suiza)** (en pausa, se trabajan en su
-  rama): `git show origin/claude/project-portfolio-tracking-ib0574:docs/metricas/tokens.csv`
+- **La-Suiza (Navaja Suiza)**: unificó en `main` canónica (09-jul) → leer de
+  `git show origin/main:docs/metricas/tokens.csv`.
+- **Padel (Easy Courts)**: su chat commitea a `claude/project-portfolio-tracking-ib0574`
+  (aún sin `tokens.csv` al 09-jul; figura "ESPERANDO 1ER CIERRE" hasta que incluya el CSV).
 - **Claudio-skills (esta torre)**: `docs/metricas/tokens.csv` en su rama de trabajo.
   Es el consumo de la COORDINACIÓN, no un proyecto del panel COSTOS (que tiene 4 filas) —
   sirve para saber cuánto gasta el propio loop; reportarlo aparte si algún día se quiere.
@@ -67,11 +69,12 @@ a Gustavo el 2026-07-08. Hasta el 1er cierre figuran "ESPERANDO 1ER CIERRE".
   3. **Avance autónomo en proyectos EN PAUSA**: Easy Courts (`/home/user/Padel`) y
      Navaja Suiza (`/home/user/La-Suiza`), avances pequeños y testeados según sus
      roadmaps, en la rama `claude/project-portfolio-tracking-ib0574`.
-     ⚠️ **ACTUALIZACIÓN 08-jul**: **Navaja Suiza YA tiene chat activo** (deploy en Vercel,
-     desarrolla en `claude/github-skills-import-4xhew4` y fusiona a la de tracking). El loop
-     **NO debe pushear código directo** ahí — se coordina vía su chat (como Kiwiano/FitMark),
-     o el cambio no se despliega y su merge lo pisa. Easy Courts (Padel) sí sigue como pausa
-     real hasta que se confirme lo contrario.
+     ⚠️ **ACTUALIZACIÓN 09-jul**: **los DOS "pausados" tienen chat activo.** Navaja Suiza
+     (deploy Vercel; unificó en `main` canónica) y Easy Courts/Padel (subió a nivel producto,
+     HANDOFF + reporte configurado). El loop **NO debe pushear código directo** a ninguno —
+     se coordina vía sus chats (como Kiwiano/FitMark), o el cambio no se despliega y su merge
+     lo pisa. En la práctica ya no queda proyecto "en pausa" para avance autónomo de código;
+     el loop se enfoca en coordinar (nivel 1) y tareas de `portfolio/` (nivel 2).
 - **Regla dura**: NUNCA tocar código de Kiwiano ni fitmark — se desarrollan en
   otros chats en paralelo; tocarlos generaría conflictos.
 - **Notificación**: push al teléfono solo si hay algo urgente (deadline vencido o

@@ -483,11 +483,11 @@
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
           <div class="panel feed">
-            <div class="feed-item"><span class="feed-when">08·jul</span><span><span class="good">✓ FitMark:</span> íconos musculares en toda la app + calendario semanal + medallas retroactivas + Wallace con fallback (Gemini→Groq)</span></div>
-            <div class="feed-item"><span class="feed-when">08·jul</span><span><span class="good">✓ Kiwiano:</span> roadmap F7 "En Vivo" planificado (marcador punto a punto → streaming) + fix del podio del mes</span></div>
-            <div class="feed-item"><span class="feed-when">08·jul</span><span><span class="good">✓ Decisión:</span> features-review se DESCARTA y se reconstruye desde cero (salvando el Wallace KB, que es contenido)</span></div>
-            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="good">✓ Kiwiano:</span> Stripe Checkout CODEADO (en pruebas) — 🔑 espera que Tavo cree el webhook + pegue claves en Vercel</span></div>
-            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="good">✓ Sistema:</span> tubería de tokens FUNCIONANDO — ambos repos reportan (panel Costos en AUTO)</span></div>
+            <div class="feed-item"><span class="feed-when">09·jul</span><span><span class="good">✓ FitMark:</span> día de pulido — admin premium, búsqueda por relevancia, ejercicios por tiempo, capa de guardado sin duplicados</span></div>
+            <div class="feed-item"><span class="feed-when">09·jul</span><span><span class="good">✓ features-review:</span> BORRADA — el chat de FitMark la descartó (se reconstruye desde cero cuando toque)</span></div>
+            <div class="feed-item"><span class="feed-when">09·jul</span><span><span class="good">✓ Navaja Suiza:</span> desplegada (Vercel) + reporta tokens · Easy Courts con HANDOFF y reporte configurado</span></div>
+            <div class="feed-item"><span class="feed-when">09·jul</span><span><span class="good">✓ Kiwiano:</span> fixes — modal de likes (portal), likes sin distinguir mayúsculas, sync DB antes de cerrar ronda</span></div>
+            <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="bad">🔑 Pendiente:</span> Stripe Kiwiano espera que Tavo cree el webhook + pegue claves en Vercel</span></div>
           </div>
         </div>
         <div>
@@ -684,7 +684,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v25 · NAVAJA SUIZA A PISTA COMERCIAL (divisor colaborativo) · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v26 · FEATURES-REVIEW BORRADA · EASY COURTS 45% · SUIZA REPORTA TOKENS · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -701,9 +701,9 @@
             <g transform="rotate(-90 130 130)">
               <circle class="ring-arc" data-pct="77" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
               <circle class="ring-arc" data-pct="91" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
-              <circle class="ring-arc" data-pct="35" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
+              <circle class="ring-arc" data-pct="45" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
               <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
-              <circle class="ring-arc total" data-pct="73" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
+              <circle class="ring-arc total" data-pct="76" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
             <!-- backdrop del número central: sin esto los anillos pisan el "72%" -->
             <circle cx="130" cy="130" r="50" fill="rgba(5,14,12,0.55)"/>
@@ -711,13 +711,13 @@
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
           <div class="ring-center">
-            <div><div class="ring-total">73<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
+            <div><div class="ring-total">76<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
           </div>
         </div>
         <div class="ring-legend">
           <span><i style="background:var(--kiwiano);color:var(--kiwiano)"></i>Kiwiano 77%</span>
           <span><i style="background:var(--fitmark);color:var(--fitmark)"></i>FitMark 91%</span>
-          <span><i style="background:var(--courts);color:var(--courts)"></i>Courts 35%</span>
+          <span><i style="background:var(--courts);color:var(--courts)"></i>Courts 45%</span>
           <span><i style="background:var(--suiza);color:var(--suiza)"></i>Suiza 90%</span>
         </div>
       </div>
@@ -752,9 +752,9 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="35" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--courts);color:var(--courts)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="45" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--courts);color:var(--courts)"/></g>
             </svg>
-            <div class="mini-pct">35%</div>
+            <div class="mini-pct">45%</div>
           </div>
           <div class="mini-next">Etapa 1 — DB + auth reales</div>
           <span class="mini-due ok">15·DIC</span>
@@ -880,7 +880,7 @@
     { nombre: "Kiwiano",      color: "var(--kiwiano)", sesiones: 1, tin: 1460036287, tout: 3897408 },
     { nombre: "FitMark",      color: "var(--fitmark)", sesiones: 1, tin: 1433789991, tout: 3772616 },
     { nombre: "Easy Courts",  color: "var(--courts)",  sesiones: null, tin: null, tout: null },
-    { nombre: "Navaja Suiza", color: "var(--suiza)",   sesiones: null, tin: null, tout: null },
+    { nombre: "Navaja Suiza", color: "var(--suiza)",   sesiones: 1, tin: 472690923, tout: 1066702 },
   ];
   const nf = new Intl.NumberFormat("es-CL");
   const tbody = document.querySelector("#cost-table tbody");
@@ -916,8 +916,6 @@
   const TAREAS = [
     { id:"kiw-stripe-keys",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:1,  due:"YA",        dueClass:"now",
       texto:"Crear el webhook en Stripe + pegar las claves (sk_test / whsec) en Vercel — desbloquea el 1er cobro" },
-    { id:"fm-descartar-featrev",proyecto:"FitMark", color:"var(--fitmark)", orden:2,  due:"YA",        dueClass:"now",
-      texto:"Pegar en el chat de FitMark la instrucción: salvar el Wallace KB + borrar features-review" },
     { id:"fm-region-check",     proyecto:"FitMark", color:"var(--fitmark)", orden:3,  due:"rápido",    dueClass:"soon",
       texto:"Verificar que Vercel y Supabase de FitMark estén en la MISMA región (baja la latencia ya)" },
     { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    orden:4,  due:"",          dueClass:"",
