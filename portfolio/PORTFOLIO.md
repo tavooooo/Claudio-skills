@@ -9,7 +9,7 @@
 | **Kiwiano** | F5 monetización **80%** — F5.1 en producción; **F5.2 Stripe Checkout codeado (Vitrina), EN PRUEBAS** | 🟢 Alto — **activo, en otro chat** | Casi — checkout escrito, falta probarlo con claves | **Tavo**: crear webhook en Stripe + pegar `sk_test_`/`whsec_` en Vercel | Prueba de pago con tarjeta test en preview → merge a main con claves live | **2026-08-10** (fecha del chat de dev) |
 | **FitMark** (nombre por definir) | Carrera al lanzamiento (**91%**) — íconos musculares en toda la app, calendario semanal, medallas retroactivas, Wallace con fallback | 🟢 Alto — **activo, en otro chat** | Casi — freemium listo con **cobro simulado**, falta pasarela real | Pasarela de pago real + nombre definitivo (15-ago) | Pasarela de pago real | 🎯 Lanzamiento gratis **2026-08-31** |
 | **Easy Courts** | Etapa 0 (demo mock completa) | 🟡 Medio — en pausa | No — nada persiste | Todo es mock: sin DB real, sin auth real, admin sin protección | Etapa 1: Postgres + Prisma + auth real | 2026-12-15 |
-| **Navaja Suiza** | Fase 1 completa (local-only) | 🟢 Alto — congelado | N/A (personal) | Sin nube (Supabase scaffolded, inactivo) | Mantener; evaluar comercializar en 2027 | — |
+| **Navaja Suiza** | Fase 1 completa (local) → **preparación para venta (prioridad baja, este mes)** | 🟡 Medio — descongelado 08-jul, apuesta #3 | Casi — el divisor de gastos ya calcula bien; falta nube + login + compartir | Sin nube/auth/compartir (Supabase scaffolded); motor de división YA listo | Divisor colaborativo: login + link de invitación + viaje compartido + sync | este mes (baja) |
 
 > **Nota de esta sesión**: Kiwiano y Biohack AI se desarrollan activamente en
 > otros chats en paralelo. Esta sesión (Claudio-skills) es la torre de control:
