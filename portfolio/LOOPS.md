@@ -33,6 +33,11 @@ El hook está instalado en los **5 repos** (incluida esta torre). Ojo con la RAM
   sirve para saber cuánto gasta el propio loop; reportarlo aparte si algún día se quiere.
 
 Si el archivo no existe todavía → aún no hubo cierre con el CSV → dejar el proyecto en `null`.
+
+**Easy Courts y Navaja Suiza** ya tienen el hook + la regla de cierre (HANDOFF
+en la raíz con bloque "Torre de control" + pendientes, y `git add HANDOFF.md
+docs/metricas/tokens.csv` al cerrar, a su rama de trabajo). Instrucción entregada
+a Gustavo el 2026-07-08. Hasta el 1er cierre figuran "ESPERANDO 1ER CIERRE".
 - **sesiones** = nº de filas (cada fila es una sesión distinta).
 - **tin** = suma de `tokens_entrada_acum`; **tout** = suma de `tokens_salida_acum`.
 - Cargar `{ sesiones, tin, tout }` en la entrada del proyecto en `COSTOS`
