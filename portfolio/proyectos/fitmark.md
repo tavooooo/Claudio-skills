@@ -12,7 +12,12 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-08 por el loop, desde git main — 91%)
+## Estado (actualizado 2026-07-10 por el loop, desde git main — 91%)
+
+- ✅ **10-jul — app BILINGÜE ES/EN completa**: i18n en toda la app (núcleo, ejercicios,
+  rutinas, tracker, coach, landing, auth) + selector de idioma + **catálogo 152/152
+  ejercicios traducido**. Amplía el mercado direccionable (no solo hispanohablantes).
+  Hecho con **orquestación multi-agente** (los commits marcan "agentes en curso").
 
 - ✅ **08-jul**: **íconos musculares en toda la app** (MuscleIcon/RoutineMuscleIcon desde
   los trazados reales del mapa, fuente única `lib/data/musclePaths.ts`; precisión por porción
