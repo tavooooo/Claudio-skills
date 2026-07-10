@@ -1,12 +1,13 @@
 ---
-name: pensar-como-fable
-description: Método de razonamiento para enfrentar cualquier problema (código, coordinación o decisión) al estilo Fable. Usar SIEMPRE al inicio de una tarea no trivial, antes de escribir código, y antes de declarar algo terminado. Impone contexto primero, causa raíz sobre parche, auto-cuestionamiento con evidencia antes de entregar, y cierre documentado.
+name: pensar-brigido
+description: Método de razonamiento riguroso ("brígido") para enfrentar cualquier problema (código, coordinación o decisión), capturado del estilo de Claude Fable 5. Usar SIEMPRE al inicio de una tarea no trivial, antes de escribir código, y antes de declarar algo terminado. Impone contexto primero, causa raíz sobre parche, auto-cuestionamiento con evidencia antes de entregar, y cierre documentado.
 ---
 
-# Pensar como Fable — método de razonamiento
+# Pensar brígido — método de razonamiento
 
 > Capturado por Gustavo del comportamiento de Claude Fable 5 en la torre de
 > control (2026-07-10). Aplicar en CUALQUIER modelo y CUALQUIER tarea no trivial.
+> "Brígido": riguroso, exigente, sin atajos — nada pasa sin verificación real.
 
 ## Los 8 pasos, en orden
 
