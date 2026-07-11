@@ -1,6 +1,6 @@
 # Kiwiano — Ficha de proyecto
 
-> Actualizado: 2026-07-06
+> Actualizado: 2026-07-11 (git; su HANDOFF narra hasta 07-07, desactualizado)
 
 **Qué es**: plataforma SaaS multi-club de torneos y ranking de pádel. Cada club vive en
 `/club/[slug]` con su marca. Admins pegan nombres desde WhatsApp — sin cuentas
@@ -27,9 +27,23 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
 - 🔑 **Bloqueador EN MANOS DE TAVO**: crear el webhook endpoint en Stripe (Sandbox) y pegar
   `STRIPE_SECRET_KEY` + `STRIPE_WEBHOOK_SECRET` en Vercel → probar pago con tarjeta test
   en preview → merge a main con claves live. Fecha objetivo: **2026-08-10**.
-- 🗺️ **F7 "En Vivo" planificado (08-jul)**: F7.1 marcador punto a punto en vivo (modo TV,
-  alimenta ranking, riesgo bajo — candidato justo tras F5.2) → F7.2 streaming del partido
-  (Cloudflare Stream, diferido a post-monetización) → F7.3. Orden real: F5.2→F7.1→F7.2→F7.3→F6.
+- 🟢 **F5.4 Plan Gratis ✅ shipped (09-jul)**: tier de demo completo — cap de 2 torneos
+  (soft-delete rotativo, reversible al subir de plan), 12 jugadores máx, sin branding,
+  badge "Plan Gratis" en modo TV, stats premium con teaser, Panel del club, selector
+  express de plan en superadmin. Requiere migración `014_free_plan.sql`.
+- 🟢 **Precios de landing actualizados (10-jul)**: Membresía $79 / Pro $159, con 30% off
+  de lanzamiento (ojo: HANDOFF viejo hablaba de $40 NZD — la estructura de precios cambió,
+  confirmar con Tavo si $40 quedó obsoleto o es un tier "Prepago" distinto).
+- 🟢 **Compartir para RRSS (11-jul)**: tarjeta cuadrada de perfil de jugador + imágenes de
+  podio (story 9:16 + cuadrado 1:1) — sin depender de Stripe. Mismo tipo de feature que
+  FitMark construyó la misma semana, sin coordinación entre chats.
+- 🗺️ **F8 "Plan Pro completo" planificado (09-jul)**: roadmap en `docs/PLAN_PRO.md`, ~5-7
+  sesiones en olas (gestión de jugadores, stories, multi-deporte, grupos con ranking propio,
+  dashboard de negocio, marcador en vivo Pro-only que absorbe F7.1, liga inter-clubes).
+  Patrón declarado: "fundación por el asistente + agentes en paralelo" — usa orquestación
+  multi-agente. Es planificación, aún sin código shippeado.
+- 🔑 **Bloqueador de F5.2 SIN CAMBIOS**: sigue esperando que Tavo cree el webhook en Stripe
+  y pegue las claves en Vercel. Fecha objetivo: **2026-08-10**.
 - ❌ **F6 crecimiento (continuo, va al final)**: categorías, inscripción online, notificaciones, multi-deporte.
 
 ## Brechas para comercializar

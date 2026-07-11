@@ -12,8 +12,19 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-10 por el loop, desde git main — 91%)
+## Estado (actualizado 2026-07-11 por el loop, desde git main — 91% su propio número;
+   HANDOFF narra hasta 08-jul, desactualizado vs. los commits reales)
 
+- ✅ **11-jul — tarjetas de "Compartir" para RRSS**: exportar la sesión/día como imagen
+  (story). Serie larga de fixes específicos de iOS (skipFonts en html-to-image por hang
+  de Safari, achicar imágenes musculares embebidas antes de capturar, ajustar layout de la
+  tarjeta). Mismo tipo de feature que Kiwiano construyó la misma semana, sin coordinación.
+- ✅ **08-jul (tarde) — Wallace fundamentado en la KB**: las rutinas ahora explican el
+  porqué citando la fuente del artículo + **auto-crecimiento de la KB**: registra en
+  `kb_gaps` los temas que la gente pregunta y no están (detector servidor + detector
+  Wallace), con panel admin para resolver. Wallace: 1 intento por proveedor, cae a Groq.
+  Medallas derivadas de récords (antes NUNCA se escribían). KB de `features-review`
+  **confirmado idéntico en main** al rescatarlo — no se perdió nada al borrar la rama.
 - ✅ **10-jul — app BILINGÜE ES/EN completa**: i18n en toda la app (núcleo, ejercicios,
   rutinas, tracker, coach, landing, auth) + selector de idioma + **catálogo 152/152
   ejercicios traducido**. Amplía el mercado direccionable (no solo hispanohablantes).
