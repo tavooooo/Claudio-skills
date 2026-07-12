@@ -12,9 +12,23 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-11 por el loop, desde git main — 91% su propio número;
-   HANDOFF narra hasta 08-jul, desactualizado vs. los commits reales)
+## Estado (actualizado 2026-07-12 por el loop, desde git main — 91% su propio número;
+   HANDOFF sigue narrando hasta 08-jul, ya 4 días desactualizado vs. los commits reales)
 
+- ✅ **12-jul — LANDING REHECHA de punta a punta**: reescribieron la landing pública
+  entera (`ScrollVideoLanding`) para reflejar lo que la app hace HOY (antes tenía
+  copy/promesas viejas) — mantiene la estética sci-fi neon (video hero, **holograma de
+  Wallace**, glitch titles) pero cada claim ahora es real: hero con la promesa de
+  entrenar/loguear/romper récords, franja de datos duros con contadores (152+ ejercicios,
+  30 músculos mapeados, 5 plantillas, 100% gratis para empezar), 6 tarjetas bento
+  construidas con los componentes REALES de la app (calendario, mapa muscular, PR con
+  sparkline, mini share-card). Aclaración propia: **el holograma es Wallace, no una
+  mascota genérica** (fix explícito 12-jul) — coherente con la idea de la torre de un
+  Wallace visual en la landing.
+- ✅ **12-jul — calendario y rutinas**: crear rutina respeta las reglas del día, guardado
+  a prueba de cortes de red, selector de ejercicios a 2 columnas en desktop, figuras de
+  rutina más grandes con mancuerna cian para sesiones libres, "+ Nueva rutina" crea y
+  loguea en un solo paso.
 - ✅ **11-jul — tarjetas de "Compartir" para RRSS**: exportar la sesión/día como imagen
   (story). Serie larga de fixes específicos de iOS (skipFonts en html-to-image por hang
   de Safari, achicar imágenes musculares embebidas antes de capturar, ajustar layout de la

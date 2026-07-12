@@ -1,6 +1,6 @@
 # Navaja Suiza (repo: La-Suiza) — Ficha de proyecto
 
-> Actualizado: 2026-07-08
+> Actualizado: 2026-07-12 (HANDOFF propio fresco, mismo día)
 
 **Qué es**: PWA personal con ~15 mini-apps para la vida diaria de mochileros en
 working holiday (Canadá, Australia, NZ): finanzas, conversor, inversiones, divisor de
@@ -45,12 +45,24 @@ Revisado el código: el **motor de división ya está completo y testeado** (`li
 - `computeBalances` (balance neto por persona) + `settle` (transferencias mínimas para
   saldar) — estilo Splitwise. Con tests.
 
-**Lo que FALTA (el trabajo nuevo = capa colaborativa):**
-1. Auth / cuentas (inicio de sesión).
-2. **Link de invitación** para agregar participantes a un viaje.
-3. Viaje/gasto **compartido multi-usuario** (cada uno se loguea y ve/agrega gastos).
-4. Sync en la nube (Supabase pasa de scaffolded a activo; realtime).
-5. (UI) exponer la selección de participantes por gasto si hoy solo muestra "partes iguales".
+## 🎉 Capa colaborativa CODEADA (12-jul) — solo falta activar Supabase
+
+El chat de dev construyó TODO lo que faltaba, verificado (local OK, 0 errores JS):
+1. ✅ **Login sin contraseña** (magic link, `signInWithOtp`) — `app/login`.
+2. ✅ **Link de invitación**: `app/unir/[token]` — el amigo abre el link, se loguea y
+   se une al grupo automáticamente.
+3. ✅ **Vista compartida en tiempo real** (`CloudDivisor.tsx`): grupo compartido,
+   gastos, neteo, realtime — conmuta sola a modo compartido si hay Supabase + sesión;
+   el modo local sigue intacto si no.
+4. ✅ **Esquema RLS por membresía** en `supabase/schema.sql`: cualquier miembro del
+   grupo lee/escribe, nadie ve grupos ajenos (`is_group_member()`, `join_group_by_token()`).
+5. 🔑 **Todo queda INERTE hasta activar Supabase** — el único paso que falta es tuyo:
+   crear el proyecto en supabase.com, correr `schema.sql`, pegar las claves
+   (`NEXT_PUBLIC_SUPABASE_URL`/`ANON_KEY`) y activar el proveedor de email (magic link).
+   Un solo paso enciende login + divisor compartido a la vez.
+6. ⏳ **Pendiente real, no resuelto por esto**: la UI de "nuevo gasto" TODAVÍA no deja
+   elegir quiénes participan (sigue dividiendo entre todos por defecto) — es una mejora
+   de UI aparte, chica, que puede ir después de activar Supabase.
 
 **Nicho (eval 08-jul)**: el divisor es el mejor gancho, más que la super-app entera.
 Splitwise se volvió tacaño (paywalls) → hay demanda de alternativa. Dolor universal

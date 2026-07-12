@@ -74,8 +74,9 @@ Orden de prioridad real tras F5.2: **F5.2 → F7.1 → F7.2 → F7.3 → F6** (F
 ### 🧭 Navaja Suiza → pista comercial (nuevo 08-jul, PRIORIDAD BAJA · este mes, sin robar foco)
 > Gustavo descongela Navaja Suiza y adelanta la evaluación comercial. Apuesta #3.
 - [x] ✅ Nicho evaluado (08-jul): el **divisor de gastos** es el mejor gancho (Splitwise se volvió tacaño; dolor universal; WHV como punta de entrada). Motor de división YA completo y testeado.
-- [ ] **Divisor colaborativo** (el trabajo nuevo): inicio de sesión + link de invitación + viaje compartido multi-usuario + sync en la nube (Supabase pasa de scaffolded a activo). Cálculo automático ya resuelto.
-- [ ] Inicio de sesión + subida a la nube de la super-app (4 pasos del README).
+- [x] ✅ **Divisor colaborativo CODEADO (12-jul)**: login magic-link + link de invitación + vista compartida realtime + RLS por membresía. Verificado localmente. **Inerte hasta activar Supabase** (🔑 único paso pendiente, es de Gustavo).
+- [ ] 🔑 **Gustavo: activar Supabase** — crear proyecto, correr `schema.sql`, pegar claves, activar proveedor de email. Enciende login + divisor compartido de una vez.
+- [ ] (menor) UI: elegir participantes por gasto (hoy divide entre todos por defecto).
 - **Regla**: avances pequeños y testeados; NO desplaza a Kiwiano ni FitMark. El loop puede ir chipeando piezas verificadas en la rama de La-Suiza.
 
 ## Reglas de la pipeline
