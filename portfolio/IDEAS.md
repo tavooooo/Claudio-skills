@@ -78,3 +78,33 @@ de dev de FitMark en el mismo movimiento en que borra la rama.
   decide moverlo (a `src/`, `public/`, etc.), el chat de dev DEBE actualizar la
   ruta que usa Wallace (RAG/coach) para no dejar al coach sin base de conocimiento
   (pedido explícito de Gustavo 08-jul).
+
+## 🕹️ Landing "gym navegable" con Wallace 2.5D (idea 2026-07-12)
+
+Gustavo compartió un video-ad de "Emergent" (app.emergent.sh): un sitio tipo
+videojuego top-down donde un personaje camina por una escena isométrica y, al
+pisar carteles en el piso (PRODUCTS, MEN, ABOUT...), se abren paneles con
+contenido real. Quiere algo así para FitMark: estaciones dentro de un gym
+(mesón de entrada, base de ejercicios, etc.) con **Wallace en 3D/2.5D**
+caminando entre ellas.
+
+**Veredicto técnico**: factible y FitMark YA tiene `three.js` en el stack (no
+hace falta adoptar Emergent ni ninguna herramienta externa).
+
+**Dos caminos evaluados**:
+- A) Movimiento libre 3D (como el video) — alto impacto, alto costo; choca con
+  la regla mobile-first de FitMark (WASD no existe en iPhone, hay que diseñar
+  control táctil desde cero).
+- B) **Recomendado**: "gym tour" con **GSAP ScrollTrigger** (skill ya instalada
+  en FitMark) — el scroll mueve la cámara por el gym ilustrado, estación por
+  estación, con Wallace caminando en 2-3 poses. Mobile-friendly nativo (el
+  scroll ES el control), sin física de colisiones.
+
+**Wallace 2.5D en vez de 3D completo**: evita rigging/animación 3D real
+(semanas de trabajo). Se puede generar con la misma pipeline de ilustraciones
+IA local ya anotada en el tablero (ComfyUI + FLUX, RTX de Gustavo).
+
+**Prioridad**: landing nueva, NO bloquea el lanzamiento (Stripe/nombre van
+primero). Diferenciador fuerte vs. fierro.app — ningún competidor tiene algo
+así. Cuando se retome: preparar spec/brief detallado para el chat de dev de
+FitMark (la torre no toca su código).
