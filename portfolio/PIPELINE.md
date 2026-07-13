@@ -30,8 +30,13 @@
 
 ### F7 Kiwiano "En Vivo" (planificado 08-jul — roadmap proyectado por Tavo)
 Orden de prioridad real tras F5.2: **F5.2 → F7.1 → F7.2 → F7.3 → F6** (F6 Crecimiento es continuo, por eso va al final).
-- [ ] **F7.1 Marcador en vivo** — puntaje punto a punto editable desde fuera de la cancha, en vivo en modo TV, alimenta el ranking. Riesgo BAJO. Candidato a ir **justo después de F5.2** (en los torneos ya se juega con puntos/sets, solo falta anotarlos).
-- [ ] **F7.2 Streaming del partido** — cámara→WHIP→Cloudflare Stream, plan Pro/créditos. Riesgo MEDIO (costo). **DIFERIDO a post-monetización** ("cuando ya estemos generando").
+- [x] ✅ **F7.1/F8.2 Marcador en vivo — MERGEADO a main (13-jul)**, como parte del merge "olas
+      1-5" (junto a modo TV 2.0, cuentas por club, ligas, fotos). Llegó antes de lo proyectado.
+      🔑 Requiere correr las migraciones `015`→`019` en Supabase para activarse en producción.
+- [ ] **F7.2 Streaming del partido** — el chat de Kiwiano ya lo está desarrollando en una rama
+      aparte (`claude/handoff-premium-roadmap-0ojicp`, cámara del celular → WebRTC → TV, sin
+      mergear) **a pesar de que esta pipeline lo marcaba "diferido post-monetización"**. No es
+      trabajo de esta sesión — solo se deja constancia del desfase entre plan y ejecución real.
 - [ ] **F7.3** — (ver HANDOFF de Kiwiano). Diferido.
 
 ### Sprint 3 — Kiwiano primeros clientes (2026-08-16 → 2026-08-31)

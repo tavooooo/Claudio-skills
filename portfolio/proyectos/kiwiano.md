@@ -1,6 +1,6 @@
 # Kiwiano — Ficha de proyecto
 
-> Actualizado: 2026-07-11 (git; su HANDOFF narra hasta 07-07, desactualizado)
+> Actualizado: 2026-07-13 (git; su HANDOFF narra hasta 07-07, ahora 6 días desactualizado)
 
 **Qué es**: plataforma SaaS multi-club de torneos y ranking de pádel. Cada club vive en
 `/club/[slug]` con su marca. Admins pegan nombres desde WhatsApp — sin cuentas
@@ -45,6 +45,26 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
 - 🔑 **Bloqueador de F5.2 SIN CAMBIOS**: sigue esperando que Tavo cree el webhook en Stripe
   y pegue las claves en Vercel. Fecha objetivo: **2026-08-10**.
 - ❌ **F6 crecimiento (continuo, va al final)**: categorías, inscripción online, notificaciones, multi-deporte.
+- 🚀 **Merge GRANDE "olas 1-5" a main (13-jul)**: merge selectivo desde Vitrina, 77 archivos,
+  +9729/-409 líneas, **excluyendo Stripe a propósito** (queda solo en la rama de desarrollo).
+  Incluye:
+  - **Modo TV 2.0**: cancha dibujada, score bug estilo transmisión, hasta 2 videos por cancha
+    con marcador anclado e intercambio, tabla de posiciones con auto-scroll, punto de oro.
+  - **Marcador en vivo punto a punto** (tenis/corrido) con anotador rediseñado — esto es F8.2
+    (absorbía a F7.1), llegó antes de lo que la pipeline proyectaba.
+  - **Cuentas individuales por club + login premium** (`AuthModal.tsx` casi triplicó tamaño,
+    `AccountsAdmin.tsx` y `LinkPlayerBanner.tsx` nuevos) — ⚠️ contrasta con el diseño original
+    documentado ("sin cuentas individuales por diseño", admins pegan nombres desde WhatsApp).
+    Vale confirmar con el chat de dev si esto es un pivote de producto deliberado o un feature
+    opcional/paralelo al modelo de 3 contraseñas por club.
+  - Ligas inter-clubes (backend + `/liga/[slug]` pública + gestión), fotos de jugadores,
+    multi-deporte, grupos con ranking propio, dashboard Pro (`ProInsights.tsx`), stories con sponsor.
+  - 🔑 **5 migraciones SQL nuevas sin correr** (`015_pro_foundation` a `019_player_photos`) —
+    sin ellas, todo este bloque queda inerte en producción aunque el código ya está en main.
+    Es el mismo patrón que Suiza (código listo, bloqueado por un paso de infra de Tavo/Gustavo).
+  - Rama activa aparte (`claude/handoff-premium-roadmap-0ojicp`, no mergeada) siguiendo con
+    streaming por cámara vía WebRTC — la pipeline marcaba esto como "diferido post-monetización"
+    y ya está en desarrollo.
 
 ## Brechas para comercializar
 

@@ -1,7 +1,7 @@
 # Easy Courts (repo: Padel) — Ficha de proyecto
 
-> Actualizado: 2026-07-12 por el loop, desde git (su HANDOFF sigue en 09-jul/60%,
-> desactualizado — el commit "docs: HANDOFF..." del 12-jul no tocó el archivo)
+> Actualizado: 2026-07-13 por el loop, desde git (su HANDOFF sigue en 09-jul/60%,
+> desactualizado — varios commits "docs: HANDOFF..." no tocaron el archivo)
 
 **Qué es**: plataforma web premium para gestionar clubes de pádel/pickleball:
 **arriendo de canchas**, clases, torneos/ligas, partidas abiertas (estilo Playtomic),
@@ -25,6 +25,10 @@ pagos y panel de administración completo. Bilingüe ES/EN (nuevo 12-jul).
 - ❌ **TODO sigue siendo mock** (`src/lib/data.ts`): mutaciones en memoria, auth falsa
   (client-only), `/admin` sin protección server-side. La i18n y las mejoras de producto
   no cambiaron esto — es la Etapa 1 completa la que falta.
+- 🟢 **Landing rediseñada (13-jul)**: rediseño premium con animaciones + selector de idioma,
+  pelotas de pádel con parallax de scroll (y un fix de recorte de costuras el mismo día).
+  Repo también creó rama `main` nueva (mismo commit que la rama de tracking) — no es
+  contenido nuevo, solo un puntero equivalente.
 
 ## Brechas para comercializar (Etapas 1–4 del roadmap)
 

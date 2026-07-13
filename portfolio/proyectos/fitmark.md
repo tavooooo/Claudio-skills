@@ -12,9 +12,14 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-12 por el loop, desde git main — 91% su propio número;
-   HANDOFF sigue narrando hasta 08-jul, ya 4 días desactualizado vs. los commits reales)
+## Estado (actualizado 2026-07-13 por el loop, desde git main — 91% su propio número;
+   HANDOFF sigue narrando hasta 08-jul, ya desactualizado vs. los commits reales)
 
+- ✅ **13-jul — Gustavo migró Supabase de Mumbai a Sídney** (`ap-south-1` → `ap-southeast-2`)
+  y fijó las funciones de Vercel en `syd1` para minimizar la latencia app↔DB. Commit propio
+  (no del chat de dev), hecho con Opus 4.8. Resuelve la tarea "verificar misma región
+  Vercel/Supabase" del tablero de la torre — sacada de la lista.
+- ✅ **13-jul — botón "Continuar con Google" visible en `/login`**.
 - ✅ **12-jul — LANDING REHECHA de punta a punta**: reescribieron la landing pública
   entera (`ScrollVideoLanding`) para reflejar lo que la app hace HOY (antes tenía
   copy/promesas viejas) — mantiene la estética sci-fi neon (video hero, **holograma de
