@@ -30,13 +30,13 @@
 
 ### F7 Kiwiano "En Vivo" (planificado 08-jul — roadmap proyectado por Tavo)
 Orden de prioridad real tras F5.2: **F5.2 → F7.1 → F7.2 → F7.3 → F6** (F6 Crecimiento es continuo, por eso va al final).
-- [x] ✅ **F7.1/F8.2 Marcador en vivo — MERGEADO a main (13-jul)**, como parte del merge "olas
-      1-5" (junto a modo TV 2.0, cuentas por club, ligas, fotos). Llegó antes de lo proyectado.
-      🔑 Requiere correr las migraciones `015`→`019` en Supabase para activarse en producción.
-- [ ] **F7.2 Streaming del partido** — el chat de Kiwiano ya lo está desarrollando en una rama
-      aparte (`claude/handoff-premium-roadmap-0ojicp`, cámara del celular → WebRTC → TV, sin
-      mergear) **a pesar de que esta pipeline lo marcaba "diferido post-monetización"**. No es
-      trabajo de esta sesión — solo se deja constancia del desfase entre plan y ejecución real.
+- [x] ✅ **F7.1/F8.2 Marcador en vivo — EN PRODUCCIÓN (14-jul)**, como parte del merge "olas
+      1-5" (junto a modo TV 2.0, cuentas por club, ligas, fotos). Migraciones `015`→`019` ya
+      corridas en Supabase. Llegó antes de lo proyectado.
+- [x] ✅ **F7.2 Streaming del partido — MERGEADO a main y VALIDADO EN PERSONA por Tavo, sin lag
+      (14-jul)**: cámara del celular → WebRTC → TV, señalización por Supabase Realtime, lentes
+      0,5×/1×/3×. Llegó **a pesar de que esta pipeline lo marcaba "diferido post-monetización"**
+      — el chat de Kiwiano lo priorizó por su cuenta, en paralelo a F5.2 Stripe (aún bloqueado).
 - [ ] **F7.3** — (ver HANDOFF de Kiwiano). Diferido.
 
 ### Sprint 3 — Kiwiano primeros clientes (2026-08-16 → 2026-08-31)

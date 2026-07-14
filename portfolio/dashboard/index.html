@@ -483,6 +483,7 @@
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
           <div class="panel feed">
+            <div class="feed-item"><span class="feed-when">14·jul</span><span><span class="good">✅ Kiwiano:</span> corrió las migraciones 015→019 + mergeó y VALIDÓ EN PERSONA (sin lag) la cámara en vivo WebRTC celular→TV — todo lo de "olas 1-5" ya está activo en producción, sigue sin Stripe</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">🚀 Kiwiano:</span> merge GRANDE "olas 1-5" a main — modo TV 2.0, marcador en vivo, cuentas, ligas, fotos, video/transmisión, login premium (77 archivos, sin Stripe todavía)</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">✓ Gustavo:</span> migró Supabase de FitMark a Sídney + fijó Vercel en syd1 — tarea de latencia region-check resuelta por vos mismo</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">✓ Easy Courts:</span> landing premium con parallax de pelotas + selector de idioma, reporta tokens de nuevo</span></div>
@@ -686,7 +687,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v31 · KIWIANO: OLAS 1-5 MERGEADAS · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v32 · KIWIANO: MIGRACIONES OK + CÁMARA VALIDADA · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -701,11 +702,11 @@
             <circle class="ring-track" cx="130" cy="130" r="97" stroke-width="8"/>
             <circle class="ring-track" cx="130" cy="130" r="118" stroke-width="13"/>
             <g transform="rotate(-90 130 130)">
-              <circle class="ring-arc" data-pct="85" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
+              <circle class="ring-arc" data-pct="88" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
               <circle class="ring-arc" data-pct="91" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
               <circle class="ring-arc" data-pct="55" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
               <circle class="ring-arc" data-pct="80" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
-              <circle class="ring-arc total" data-pct="78" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
+              <circle class="ring-arc total" data-pct="79" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
             <!-- backdrop del número central: sin esto los anillos pisan el "72%" -->
             <circle cx="130" cy="130" r="50" fill="rgba(5,14,12,0.55)"/>
@@ -713,7 +714,7 @@
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
           <div class="ring-center">
-            <div><div class="ring-total">78<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
+            <div><div class="ring-total">79<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
           </div>
         </div>
         <div class="ring-legend">
@@ -730,7 +731,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="85" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="88" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
             </svg>
             <div class="mini-pct">80%</div>
           </div>
@@ -918,8 +919,6 @@
   const TAREAS = [
     { id:"kiw-stripe-keys",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:1,  due:"YA",        dueClass:"now",
       texto:"Crear el webhook en Stripe + pegar las claves (sk_test / whsec) en Vercel — desbloquea el 1er cobro" },
-    { id:"kiw-migraciones-015-019", proyecto:"Kiwiano", color:"var(--kiwiano)", orden:2, due:"YA",     dueClass:"now",
-      texto:"Correr migraciones 015→019 en Supabase (SQL editor) — activa cuentas por club, marcador en vivo, ligas, fotos y TV 2.0 recién mergeados" },
     { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    orden:4,  due:"",          dueClass:"",
       texto:"Conectar el dashboard a Vercel (Root: portfolio/dashboard) para instalarlo como app en el teléfono" },
     { id:"kiw-backups-f16",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:5,  due:"20·jul",    dueClass:"soon",

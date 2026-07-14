@@ -1,6 +1,6 @@
 # Kiwiano — Ficha de proyecto
 
-> Actualizado: 2026-07-13 (git; su HANDOFF narra hasta 07-07, ahora 6 días desactualizado)
+> Actualizado: 2026-07-14 (git; su HANDOFF se puso al día el 14-jul — primera vez en semanas)
 
 **Qué es**: plataforma SaaS multi-club de torneos y ranking de pádel. Cada club vive en
 `/club/[slug]` con su marca. Admins pegan nombres desde WhatsApp — sin cuentas
@@ -53,18 +53,18 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
   - **Marcador en vivo punto a punto** (tenis/corrido) con anotador rediseñado — esto es F8.2
     (absorbía a F7.1), llegó antes de lo que la pipeline proyectaba.
   - **Cuentas individuales por club + login premium** (`AuthModal.tsx` casi triplicó tamaño,
-    `AccountsAdmin.tsx` y `LinkPlayerBanner.tsx` nuevos) — ⚠️ contrasta con el diseño original
-    documentado ("sin cuentas individuales por diseño", admins pegan nombres desde WhatsApp).
-    Vale confirmar con el chat de dev si esto es un pivote de producto deliberado o un feature
-    opcional/paralelo al modelo de 3 contraseñas por club.
+    `AccountsAdmin.tsx` y `LinkPlayerBanner.tsx` nuevos) — ✅ **aclarado (14-jul, HANDOFF)**: no
+    reemplaza el login compartido de 3 contraseñas, **convive** con él (login personal + código
+    de registro + enlazar jugador). No es un pivote de diseño.
   - Ligas inter-clubes (backend + `/liga/[slug]` pública + gestión), fotos de jugadores,
     multi-deporte, grupos con ranking propio, dashboard Pro (`ProInsights.tsx`), stories con sponsor.
-  - 🔑 **5 migraciones SQL nuevas sin correr** (`015_pro_foundation` a `019_player_photos`) —
-    sin ellas, todo este bloque queda inerte en producción aunque el código ya está en main.
-    Es el mismo patrón que Suiza (código listo, bloqueado por un paso de infra de Tavo/Gustavo).
-  - Rama activa aparte (`claude/handoff-premium-roadmap-0ojicp`, no mergeada) siguiendo con
-    streaming por cámara vía WebRTC — la pipeline marcaba esto como "diferido post-monetización"
-    y ya está en desarrollo.
+  - ✅ **Migraciones 015→019 CORRIDAS en Supabase (14-jul)** — todo el bloque ya está activo
+    en producción, no solo en el código.
+- 🎥 **Cámara en vivo WebRTC — mergeada a main y VALIDADA EN PERSONA por Tavo, sin lag (14-jul)**:
+  celular → modo TV por WiFi (~0.3s), señalización por Supabase Realtime (sin servidor de video
+  ni migración nueva), selector de lentes 0,5×/1×/3×, video 16:9 1080p pantalla completa. v1 es
+  1 cámara→1 TV (multi-espectador necesitaría un SFU). Esto es lo que la pipeline daba por
+  "diferido post-monetización" — llegó de todos modos, en paralelo a F5.2 Stripe.
 
 ## Brechas para comercializar
 
