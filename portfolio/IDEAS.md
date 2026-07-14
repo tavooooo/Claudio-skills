@@ -56,6 +56,48 @@ Idea de Gustavo: generar las ilustraciones del avatar haciendo cada ejercicio
   local. Plan: piloto 5 ejercicios en build.nvidia.com → ComfyUI local → LoRA →
   producción de las 152.
 
+### 📦 Datasets de ejercicios evaluados (2026-07-14, pedido de Gustavo)
+
+Gustavo recordó un repo de GitHub con "+1.400 gifs de ejercicios". **Encontrado y
+verificado**: es **`hasaneyldrm/exercises-dataset`** — 1.324 ejercicios, cada uno con
+gif animado (180×180) + thumbnail + metadata (categoría, músculos, equipo,
+instrucciones en 9 idiomas), gifs guardados en el repo (`videos/[id]-[media_id].gif`).
+
+⚠️ **HALLAZGO CRÍTICO DE LICENCIA (esto cambia el plan)**: los gifs **NO son libres**.
+- El **código y el JSON** son MIT (uso comercial OK).
+- Pero las **imágenes/gifs son © Gym Visual** (gymvisual.com), redistribuidos en el
+  repo a 180×180 "con permiso". El propio repo dice que **no reclama propiedad del
+  contenido** y que el **uso comercial requiere tu propia licencia de Gym Visual**.
+- Implicancia dura: **no se pueden meter esos gifs en FitMark tal cual** (sería
+  infracción), y **tampoco calcarlos/rotoscopiarlos** para hacer "los nuestros" con
+  Wallace — una animación trazada de la de ellos sigue siendo obra derivada = infracción.
+  Incluso extraer esqueletos OpenPose *automáticamente de sus gifs* para alimentar
+  ControlNet es zona gris (el esqueleto deriva de sus decisiones creativas de animación).
+
+✅ **Lo que SÍ sirve, limpio y gratis** — enfoque en 2 capas:
+1. **Capa de metadata (catálogo)**: el JSON MIT de este repo (nombres, categorías,
+   músculos, equipo, instrucciones 9 idiomas) es usable comercial. Alternativa aún más
+   limpia para la data: **`yuhonas/free-exercise-db`** (~800 ejercicios, data en
+   **Unlicense = dominio público total**, sin atribución; imágenes son fotos JPG, no gifs).
+   → Sirve para poblar/validar el catálogo de FitMark sin nube legal.
+2. **Capa de movimiento (los gifs de Wallace)**: las poses tienen que ser **nuestras**.
+   Los gifs de Gym Visual pueden mirarse como *referencia visual para uno mismo* (igual
+   que ver cualquier video para saber cómo se hace un ejercicio), pero **no como input
+   que la pipeline reproduce**. Camino comercial limpio para el movimiento:
+   - Definir las poses nosotros: librería de poses de dominio público, mocap propio, o
+     posar el esqueleto OpenPose a mano por ejercicio → luego FLUX.1-schnell + ControlNet
+     genera a Wallace sobre ESE esqueleto (encaja con la pipeline ya anotada arriba).
+   - O, si se quiere velocidad, **licenciar el pack de Gym Visual** (tienen licencia
+     comercial a la venta) y usar sus gifs directo — evita generar, pero no es "Wallace".
+   El diferencial de marca (Wallace haciendo cada ejercicio) sale de la vía generada, no
+   de reusar los de Gym Visual.
+
+**Veredicto**: el repo es un gran hallazgo **para la metadata** (o mejor free-exercise-db
+por licencia), pero **no como fuente de gifs** para un producto comercial. Los gifs de
+Wallace hay que generarlos con poses propias. Esto NO cambia la pipeline FLUX/ControlNet
+ya planeada — solo confirma que el esqueleto de pose debe originarse limpio, no calcado
+de Gym Visual.
+
 ## 🔁 Reconstrucción de features-review (FitMark) — desde cero (decidido 2026-07-08)
 
 La rama `claude/features-review` se DESCARTA (129 commits divergentes; rehacer
