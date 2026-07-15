@@ -104,6 +104,27 @@ caminos **excluyentes**, no uno escalón del otro.
 **Opción 100% gratis que funciona HOY como guía**: las **fotos JPG de free-exercise-db**
 (dominio público, Unlicense) — no son animadas, son fotos de personas reales demostrando,
 pero legales y $0. Sirven de guía visual en la app desde ya, sin licencia ni riesgo.
+
+### 📊 Mapeo 152 FitMark ↔ 873 free-exercise-db (hecho 2026-07-15)
+
+**Decisión de Gustavo (15-jul)**: lanzar con las fotos gratis y reemplazar de a poco por
+GIFs de Wallace. La torre cruzó los 152 ejercicios de FitMark contra los 873 del dataset
+(script + reporte + CSV en `portfolio/recursos/fitmark-fotos/`):
+
+- ✅ **122 DIRECTO (80%)** — match confiable, foto usable tal cual.
+- 🟡 **20 PROBABLE (13%)** — hay candidato pero ~mitad son la variante equivocada
+  (ej. *Band Hip Adductions* por Abducciones = músculo opuesto) → 10 min de revisión manual.
+- 🔴 **10 HUÉRFANO (6%)** — no existen en el dataset (bird dog, hollow hold, frog pump,
+  hip thrust smith, hidrante, patada de burro, wall sit, sumo-KB) → **primeros en la cola
+  de Wallace**, que es justo donde el 3D suma más que una foto de archivo.
+- **Piso realista de cobertura limpia: ~80% hoy, ~88-90% con la revisión de los PROBABLE.**
+
+Entregables en `portfolio/recursos/fitmark-fotos/`: `MAPEO.md` (reporte + brief listo para
+pegar en el chat de FitMark), `mapeo_fitmark_fedb.csv` (152 filas slug→fedb_id→foto),
+`match.py` (script reproducible). El chat de FitMark implementa el wiring — la torre solo
+preparó el mapa (no toca su código).
+   El diferencial de marca (Wallace haciendo cada ejercicio) sale de la vía generada, no
+   de reusar los de Gym Visual.
    El diferencial de marca (Wallace haciendo cada ejercicio) sale de la vía generada, no
    de reusar los de Gym Visual.
 
