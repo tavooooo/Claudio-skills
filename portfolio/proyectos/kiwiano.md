@@ -1,6 +1,6 @@
 # Kiwiano — Ficha de proyecto
 
-> Actualizado: 2026-07-14 (git; su HANDOFF se puso al día el 14-jul — primera vez en semanas)
+> Actualizado: 2026-07-15 (git; su HANDOFF al día, 15-jul)
 
 **Qué es**: plataforma SaaS multi-club de torneos y ranking de pádel. Cada club vive en
 `/club/[slug]` con su marca. Admins pegan nombres desde WhatsApp — sin cuentas
@@ -65,6 +65,21 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
   ni migración nueva), selector de lentes 0,5×/1×/3×, video 16:9 1080p pantalla completa. v1 es
   1 cámara→1 TV (multi-espectador necesitaría un SFU). Esto es lo que la pipeline daba por
   "diferido post-monetización" — llegó de todos modos, en paralelo a F5.2 Stripe.
+  - ⚠️ **Pendiente conocido (discutido con Tavo, sin codear)**: la cámara solo garantiza conexión
+    dentro de la MISMA WiFi (P2P sin TURN falla entre redes por NAT/CGNAT). Dos mejoras: (a) TURN
+    de respaldo (sigue 1:1), (b) SFU si se quiere que cualquier visitante del sitio vea la
+    transmisión en vivo (feature más grande, evaluar costo/infra).
+- ✅ **Backups F1.6 Capa 2 (offsite) HECHOS y verificados (15-jul, en main)**: GitHub Action diario
+  (`.github/workflows/backup.yml`, Node 22) exporta las 12 tablas a JSON → artifact (90d) + rama
+  huérfana `backups` (`AAAA/MM/DD/`). Verificado corriendo solo. **Capa 1** (PITR gestionado de
+  Supabase) pospuesta a propósito por Tavo hasta tener clientes de pago. Cierra el riesgo que
+  estaba en el tablero (vencía 20-jul). Pendiente menor: respaldar buckets de Storage offsite.
+- 🎨 **Rediseño UX del flujo Pro + pase visual premium (15-jul, mergeado a main desde `vitrina`)**:
+  menú admin reorganizado por tarea, **Interclubes** con puerta propia `/interclubes`, config del
+  club movida a `/ajustes`, nuevo **Centro de control** `/centro` (mosaico de tareas del admin),
+  CTAs de marca con gradiente+glow en todas las pantallas, landing con sección "En directo" (mock
+  fiel al modo TV real: video + score bug + standings) y barra de auspicios (marquee) en el TV.
+  Blueprint en `docs/REDISENO_PRO.html`. Todo con confirmación en acciones destructivas.
 
 ## Brechas para comercializar
 

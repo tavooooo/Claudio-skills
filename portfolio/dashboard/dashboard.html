@@ -466,6 +466,9 @@
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
           <div class="panel feed">
+            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ FitMark:</span> EJECUTÓ la tarea de fotos guía — auditó a ojo 127/152 ejercicios con foto de free-exercise-db (corrigió 27, 25 a cola de Wallace) + componente ExerciseGuideImage. En rama, aún no en main</span></div>
+            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">🍽️ FitMark:</span> feature nuevo de COMIDAS — biblioteca de alimentos, macros con anillos, calendario de comidas con Supabase (migración 005), foto→calorías planeado. En rama, en pruebas</span></div>
+            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ Kiwiano:</span> backups F1.6 Capa 2 (Action diario offsite) HECHOS y verificados + rediseño UX del flujo Pro y pase visual premium mergeados a main (/centro, /interclubes, landing "En directo")</span></div>
             <div class="feed-item"><span class="feed-when">14·jul</span><span><span class="good">✅ Kiwiano:</span> corrió las migraciones 015→019 + mergeó y VALIDÓ EN PERSONA (sin lag) la cámara en vivo WebRTC celular→TV — todo lo de "olas 1-5" ya está activo en producción, sigue sin Stripe</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">🚀 Kiwiano:</span> merge GRANDE "olas 1-5" a main — modo TV 2.0, marcador en vivo, cuentas, ligas, fotos, video/transmisión, login premium (77 archivos, sin Stripe todavía)</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">✓ Gustavo:</span> migró Supabase de FitMark a Sídney + fijó Vercel en syd1 — tarea de latencia region-check resuelta por vos mismo</span></div>
@@ -480,7 +483,6 @@
           <h2>Próximos 3 hitos <span class="count">EN ORDEN</span></h2>
           <div class="panel feed">
             <div class="feed-item"><span class="feed-when">YA</span><span class="meh">🔑 Tavo: webhook en Stripe + claves en Vercel → desbloquea la prueba de pago</span></div>
-            <div class="feed-item"><span class="feed-when">20·jul</span><span>Backups automáticos Supabase (Kiwiano F1.6)</span></div>
             <div class="feed-item"><span class="feed-when">10·ago</span><span class="meh">Stripe live Kiwiano — primer dinero real del portfolio</span></div>
             <div class="feed-item"><span class="feed-when">15·ago</span><span class="bad">Nombre definitivo de FitMark (deadline dura, antes del lanzamiento)</span></div>
           </div>
@@ -670,7 +672,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v32 · KIWIANO: MIGRACIONES OK + CÁMARA VALIDADA · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v33 · KIWIANO: BACKUPS + REDISEÑO UX · FITMARK: FOTOS GUÍA · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -685,7 +687,7 @@
             <circle class="ring-track" cx="130" cy="130" r="97" stroke-width="8"/>
             <circle class="ring-track" cx="130" cy="130" r="118" stroke-width="13"/>
             <g transform="rotate(-90 130 130)">
-              <circle class="ring-arc" data-pct="88" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
+              <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
               <circle class="ring-arc" data-pct="91" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
               <circle class="ring-arc" data-pct="55" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
               <circle class="ring-arc" data-pct="80" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
@@ -714,7 +716,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="88" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="90" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
             </svg>
             <div class="mini-pct">80%</div>
           </div>
@@ -904,8 +906,6 @@
       texto:"Crear el webhook en Stripe + pegar las claves (sk_test / whsec) en Vercel — desbloquea el 1er cobro" },
     { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    orden:4,  due:"",          dueClass:"",
       texto:"Conectar el dashboard a Vercel (Root: portfolio/dashboard) para instalarlo como app en el teléfono" },
-    { id:"kiw-backups-f16",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:5,  due:"20·jul",    dueClass:"soon",
-      texto:"Activar los backups automáticos de Supabase (F1.6)" },
     { id:"fm-nombre",           proyecto:"FitMark", color:"var(--fitmark)", orden:6,  due:"15·ago",    dueClass:"soon",
       texto:"Decidir el nombre definitivo de FitMark" },
     { id:"fm-dominio",          proyecto:"FitMark", color:"var(--fitmark)", orden:7,  due:"pre-lanzam", dueClass:"soon",

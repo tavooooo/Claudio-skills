@@ -123,6 +123,12 @@ Entregables en `portfolio/recursos/fitmark-fotos/`: `MAPEO.md` (reporte + brief 
 pegar en el chat de FitMark), `mapeo_fitmark_fedb.csv` (152 filas slug→fedb_id→foto),
 `match.py` (script reproducible). El chat de FitMark implementa el wiring — la torre solo
 preparó el mapa (no toca su código).
+
+✅ **EJECUTADO por el chat de FitMark (15-jul)**: construyeron `exerciseGuideImages.ts` +
+`ExerciseGuideImage.tsx`, y **auditaron a ojo cada foto** — corrigieron los 27 mapeos "PROBABLE"
+con variante equivocada que la torre había marcado como dudosos, agregaron 2 y quitaron 10 sin
+foto válida → **127/152 verificadas**, 25 a la cola de Wallace. El mapeo de la torre sirvió de
+base y su auditoría lo mejoró. Está en rama `test/fotos-guia-fedb`, falta mergear a main.
    El diferencial de marca (Wallace haciendo cada ejercicio) sale de la vía generada, no
    de reusar los de Gym Visual.
    El diferencial de marca (Wallace haciendo cada ejercicio) sale de la vía generada, no

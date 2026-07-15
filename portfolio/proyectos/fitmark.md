@@ -12,9 +12,20 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-13 por el loop, desde git main — 91% su propio número;
-   HANDOFF sigue narrando hasta 08-jul, ya desactualizado vs. los commits reales)
+## Estado (actualizado 2026-07-15 por el loop, desde git — 91% su propio número)
 
+- ✅ **15-jul — FOTOS GUÍA DE EJERCICIOS ejecutadas (tarea preparada por la torre)**: el chat de
+  FitMark tomó el mapeo de la torre (`portfolio/recursos/fitmark-fotos/`) y lo llevó a código:
+  `src/lib/data/exerciseGuideImages.ts` (mapa `slug → fedb_id`, fotos servidas por URL cruda de
+  GitHub para no pesar el repo) + componente `ExerciseGuideImage.tsx` en la ficha y las tarjetas.
+  **Hicieron auditoría visual a ojo**: corrigieron 27 mapeos con la variante equivocada (los que
+  la torre marcó "PROBABLE"), agregaron 2 y quitaron 10 sin foto válida → **127/152 con foto
+  verificada**, 25 a la cola de Wallace 3D. Licencia limpia (free-exercise-db = Unlicense). En rama
+  `test/fotos-guia-fedb`, **aún no en main**.
+- 🍽️ **15-jul — feature nuevo de COMIDAS/nutrición (en rama, en pruebas)**: biblioteca de
+  alimentos + macros con anillos + calendario de comidas persistido en Supabase (migración `005`)
+  + endpoint `foto→calorías` planeado. Amplía el producto de "tracker de fuerza" a "fitness +
+  nutrición". Aún no en main.
 - ✅ **13-jul — Gustavo migró Supabase de Mumbai a Sídney** (`ap-south-1` → `ap-southeast-2`)
   y fijó las funciones de Vercel en `syd1` para minimizar la latencia app↔DB. Commit propio
   (no del chat de dev), hecho con Opus 4.8. Resuelve la tarea "verificar misma región
