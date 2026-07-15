@@ -89,6 +89,21 @@ instrucciones en 9 idiomas), gifs guardados en el repo (`videos/[id]-[media_id].
      genera a Wallace sobre ESE esqueleto (encaja con la pipeline ya anotada arriba).
    - O, si se quiere velocidad, **licenciar el pack de Gym Visual** (tienen licencia
      comercial a la venta) y usar sus gifs directo — evita generar, pero no es "Wallace".
+
+**Términos reales de Gym Visual (verificados 2026-07-15)**: licencia N-CRFL
+(no-exclusiva, royalty-free, pago único, perpetua, mundial). Gifs ~$10 c/u, baja a
+**~$6 c/u comprando 5+**; ilustraciones planas $3 → $0.75 (10+). Catálogo: 6.502 gifs.
+Costo estimado para las 152 de FitMark ≈ **$900 USD una sola vez** (o menos si se usan
+ilustraciones planas en vez de gifs). ⚠️ **DOS restricciones que nos pegan**: (1) prohíbe
+usar los assets en "productos destinados a reventa" o "stock content"; (2) **prohíbe
+explícitamente subirlos/distribuirlos en cualquier plataforma de IA** → confirma por
+partida doble que **NO** se pueden usar como input para generar los de Wallace (lo bloquea
+el copyright Y su propia licencia). O sea: licencia Gym Visual y Wallace-generado son
+caminos **excluyentes**, no uno escalón del otro.
+
+**Opción 100% gratis que funciona HOY como guía**: las **fotos JPG de free-exercise-db**
+(dominio público, Unlicense) — no son animadas, son fotos de personas reales demostrando,
+pero legales y $0. Sirven de guía visual en la app desde ya, sin licencia ni riesgo.
    El diferencial de marca (Wallace haciendo cada ejercicio) sale de la vía generada, no
    de reusar los de Gym Visual.
 
