@@ -466,7 +466,10 @@
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
           <div class="panel feed">
-            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ FitMark:</span> EJECUTÓ la tarea de fotos guía — auditó a ojo 127/152 ejercicios con foto de free-exercise-db (corrigió 27, 25 a cola de Wallace) + componente ExerciseGuideImage. En rama, aún no en main</span></div>
+            <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">🎉 Kiwiano:</span> F5.2 Stripe Checkout MERGEADO A MAIN (packs de pelotas en NZD, webhook + rediseño premium de /pelotas). El código está listo — falta SOLO activar en prod (webhook + env vars, infra)</span></div>
+            <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">✅ Kiwiano:</span> backup automático CONFIRMADO corriendo solo — 2 días seguidos (15 y 16-jul, corrió 08:17 UTC sin intervención)</span></div>
+            <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">🍽️ FitMark:</span> fotos guía (127 ejercicios) + COMIDAS foto→calorías MERGEADOS A MAIN — calendario unificado Entreno/Nutrición en /tracker, migración 005</span></div>
+            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ FitMark:</span> ejecutó la tarea de fotos guía de la torre — auditó a ojo 127/152 ejercicios (corrigió 27, 25 a cola de Wallace) + componente ExerciseGuideImage</span></div>
             <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">🍽️ FitMark:</span> feature nuevo de COMIDAS — biblioteca de alimentos, macros con anillos, calendario de comidas con Supabase (migración 005), foto→calorías planeado. En rama, en pruebas</span></div>
             <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ Kiwiano:</span> backups F1.6 Capa 2 (Action diario offsite) HECHOS y verificados + rediseño UX del flujo Pro y pase visual premium mergeados a main (/centro, /interclubes, landing "En directo")</span></div>
             <div class="feed-item"><span class="feed-when">14·jul</span><span><span class="good">✅ Kiwiano:</span> corrió las migraciones 015→019 + mergeó y VALIDÓ EN PERSONA (sin lag) la cámara en vivo WebRTC celular→TV — todo lo de "olas 1-5" ya está activo en producción, sigue sin Stripe</span></div>
@@ -672,7 +675,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v33 · KIWIANO: BACKUPS + REDISEÑO UX · FITMARK: FOTOS GUÍA · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v34 · KIWIANO: STRIPE EN MAIN · FITMARK: FOTOS+COMIDAS EN MAIN · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -687,11 +690,11 @@
             <circle class="ring-track" cx="130" cy="130" r="97" stroke-width="8"/>
             <circle class="ring-track" cx="130" cy="130" r="118" stroke-width="13"/>
             <g transform="rotate(-90 130 130)">
-              <circle class="ring-arc" data-pct="90" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
-              <circle class="ring-arc" data-pct="91" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
+              <circle class="ring-arc" data-pct="93" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
+              <circle class="ring-arc" data-pct="92" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
               <circle class="ring-arc" data-pct="55" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
               <circle class="ring-arc" data-pct="80" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
-              <circle class="ring-arc total" data-pct="79" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
+              <circle class="ring-arc total" data-pct="80" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
             <!-- backdrop del número central: sin esto los anillos pisan el "72%" -->
             <circle cx="130" cy="130" r="50" fill="rgba(5,14,12,0.55)"/>
@@ -699,7 +702,7 @@
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
           <div class="ring-center">
-            <div><div class="ring-total">79<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
+            <div><div class="ring-total">80<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
           </div>
         </div>
         <div class="ring-legend">
@@ -716,7 +719,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="90" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="93" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--kiwiano);color:var(--kiwiano)"/></g>
             </svg>
             <div class="mini-pct">80%</div>
           </div>
@@ -728,7 +731,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="91" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="92" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
             </svg>
             <div class="mini-pct">91%</div>
           </div>
@@ -903,7 +906,7 @@
      El loop mantiene el array TAREAS (ids ESTABLES); 'orden' solo fija el orden inicial. */
   const TAREAS = [
     { id:"kiw-stripe-keys",     proyecto:"Kiwiano", color:"var(--kiwiano)", orden:1,  due:"YA",        dueClass:"now",
-      texto:"Crear el webhook en Stripe + pegar las claves (sk_test / whsec) en Vercel — desbloquea el 1er cobro" },
+      texto:"Activar Stripe en prod: el CÓDIGO YA ESTÁ EN MAIN (16-jul). Falta SOLO infra: crear el webhook en el Dashboard de Stripe → kiwiano.vercel.app/api/stripe/webhook + poner STRIPE_SECRET_KEY/WEBHOOK_SECRET/SITE_URL en Vercel. Es el último paso al 1er cobro." },
     { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    orden:4,  due:"",          dueClass:"",
       texto:"Conectar el dashboard a Vercel (Root: portfolio/dashboard) para instalarlo como app en el teléfono" },
     { id:"fm-nombre",           proyecto:"FitMark", color:"var(--fitmark)", orden:6,  due:"15·ago",    dueClass:"soon",

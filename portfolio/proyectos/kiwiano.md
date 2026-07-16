@@ -1,6 +1,20 @@
 # Kiwiano — Ficha de proyecto
 
-> Actualizado: 2026-07-15 (git; su HANDOFF al día, 15-jul)
+> Actualizado: 2026-07-16 (git; su HANDOFF al día, 16-jul)
+
+## 🎉 F5.2 Stripe Checkout MERGEADO A MAIN (16-jul) — a un paso de cobrar
+
+El bloqueador #1 del portfolio pasó de "código en rama de pruebas" a **main**:
+- `lib/stripe.ts` + `createBallCheckoutAction` (crea orden `pending` + Checkout Session
+  con `metadata.orderId`) + `app/api/stripe/webhook/route.ts` (en `checkout.session.completed`
+  llama al RPC existente `mark_ball_order_paid` → acredita, **atómico + idempotente**).
+- Migración `013_stripe_order_session.sql`. Moneda **NZD** (`STRIPE_CURRENCY`).
+- Rediseño premium de `/pelotas` (columna tipo Apple Wallet, ledger estilo banco) + botón
+  "Pagar con tarjeta". Probado en sandbox.
+- 🔑 **Falta SOLO infra (ya NO código)**: Tavo crea el webhook en el Dashboard de Stripe
+  apuntando a `https://kiwiano.vercel.app/api/stripe/webhook` + pone `STRIPE_SECRET_KEY`,
+  `STRIPE_WEBHOOK_SECRET` y `NEXT_PUBLIC_SITE_URL` en Vercel. Es el último paso al **primer
+  cobro real del portfolio**. Deadline 10-ago.
 
 **Qué es**: plataforma SaaS multi-club de torneos y ranking de pádel. Cada club vive en
 `/club/[slug]` con su marca. Admins pegan nombres desde WhatsApp — sin cuentas
@@ -69,11 +83,12 @@ individuales por diseño. Bilingüe ES/EN. Deploy: `kiwiano.vercel.app`.
     dentro de la MISMA WiFi (P2P sin TURN falla entre redes por NAT/CGNAT). Dos mejoras: (a) TURN
     de respaldo (sigue 1:1), (b) SFU si se quiere que cualquier visitante del sitio vea la
     transmisión en vivo (feature más grande, evaluar costo/infra).
-- ✅ **Backups F1.6 Capa 2 (offsite) HECHOS y verificados (15-jul, en main)**: GitHub Action diario
-  (`.github/workflows/backup.yml`, Node 22) exporta las 12 tablas a JSON → artifact (90d) + rama
-  huérfana `backups` (`AAAA/MM/DD/`). Verificado corriendo solo. **Capa 1** (PITR gestionado de
-  Supabase) pospuesta a propósito por Tavo hasta tener clientes de pago. Cierra el riesgo que
-  estaba en el tablero (vencía 20-jul). Pendiente menor: respaldar buckets de Storage offsite.
+- ✅ **Backups F1.6 Capa 2 (offsite) HECHOS y CONFIRMADOS corriendo solos (15→16-jul, en main)**:
+  GitHub Action diario (`.github/workflows/backup.yml`, Node 22, cron 06:00 UTC) exporta las 12
+  tablas a JSON → artifact (90d) + rama huérfana `backups` (`AAAA/MM/DD/`). **Verificado con 2 días
+  de snapshots automáticos** (15 y 16-jul; el del 16 disparó solo a las 08:17 UTC). **Capa 1** (PITR
+  gestionado de Supabase) pospuesta a propósito por Tavo hasta tener clientes de pago. Cierra el
+  riesgo que estaba en el tablero (vencía 20-jul). Pendiente menor: respaldar buckets de Storage.
 - 🎨 **Rediseño UX del flujo Pro + pase visual premium (15-jul, mergeado a main desde `vitrina`)**:
   menú admin reorganizado por tarea, **Interclubes** con puerta propia `/interclubes`, config del
   club movida a `/ajustes`, nuevo **Centro de control** `/centro` (mosaico de tareas del admin),

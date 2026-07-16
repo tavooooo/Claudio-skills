@@ -12,20 +12,20 @@ logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-15 por el loop, desde git — 91% su propio número)
+## Estado (actualizado 2026-07-16 por el loop, desde git main — 92% su propio número)
 
-- ✅ **15-jul — FOTOS GUÍA DE EJERCICIOS ejecutadas (tarea preparada por la torre)**: el chat de
-  FitMark tomó el mapeo de la torre (`portfolio/recursos/fitmark-fotos/`) y lo llevó a código:
-  `src/lib/data/exerciseGuideImages.ts` (mapa `slug → fedb_id`, fotos servidas por URL cruda de
-  GitHub para no pesar el repo) + componente `ExerciseGuideImage.tsx` en la ficha y las tarjetas.
-  **Hicieron auditoría visual a ojo**: corrigieron 27 mapeos con la variante equivocada (los que
-  la torre marcó "PROBABLE"), agregaron 2 y quitaron 10 sin foto válida → **127/152 con foto
-  verificada**, 25 a la cola de Wallace 3D. Licencia limpia (free-exercise-db = Unlicense). En rama
-  `test/fotos-guia-fedb`, **aún no en main**.
-- 🍽️ **15-jul — feature nuevo de COMIDAS/nutrición (en rama, en pruebas)**: biblioteca de
-  alimentos + macros con anillos + calendario de comidas persistido en Supabase (migración `005`)
-  + endpoint `foto→calorías` planeado. Amplía el producto de "tracker de fuerza" a "fitness +
-  nutrición". Aún no en main.
+- ✅ **16-jul — FOTOS GUÍA + COMIDAS MERGEADAS A MAIN** (venían de rama):
+  - **Fotos guía (tarea preparada por la torre)**: `src/lib/data/exerciseGuideImages.ts` (mapa
+    `slug → fedb_id`, fotos por URL cruda de GitHub) + componente `ExerciseGuideImage.tsx` en ficha
+    y tarjetas, con badge de "guía visual" en el listado. Auditoría visual en 2 fases (incluyó
+    revisar los 20 "PROBABLE" que marcó la torre y corregir fotos que compartían imagen con otro
+    movimiento) → **127/152 ejercicios con foto verificada** en main, 25 a la cola de Wallace 3D.
+    Licencia limpia (free-exercise-db = Unlicense). Landing con card de foto guía real (press de banca).
+  - **COMIDAS foto→calorías (MVP)**: escaneo de foto → estimación de calorías/macros con **visión
+    Gemini nativa → Groq (Llama 4 Scout / Qwen) de respaldo**, biblioteca de alimentos, macros con
+    anillos, **calendario unificado Entreno/Nutrición en `/tracker`** (toggle, donas, compartir
+    tarjeta), persistido en Supabase (migración `005_meals.sql`). El producto ya es **fitness +
+    nutrición**, no solo fuerza.
 - ✅ **13-jul — Gustavo migró Supabase de Mumbai a Sídney** (`ap-south-1` → `ap-southeast-2`)
   y fijó las funciones de Vercel en `syd1` para minimizar la latencia app↔DB. Commit propio
   (no del chat de dev), hecho con Opus 4.8. Resuelve la tarea "verificar misma región
