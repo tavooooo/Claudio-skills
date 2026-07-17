@@ -3,14 +3,14 @@
   /* ============================================================
      TORRE DE CONTROL v13 — costos automáticos vía hook (1 dato por
      sesión, el loop lee tokens.csv de cada repo). Kiwiano F5.1 cobro
-     mergeado (74%), FitMark Wallace 2.0 (90%). Fondo real (fondo.jpg),
+     mergeado (74%), FitBook Wallace 2.0 (90%). Fondo real (fondo.jpg),
      gráfico circular multi-anillo 3D, dock fijo abajo ("mesa") en
      Resumen, mini-grafo esquina superior, grafo 3D con física estable.
      ============================================================ */
   :root {
     --sidebar-w: 216px;
     --bg: #04090B;
-    /* vidrio más claro / blanquecino, per referencia FitMark */
+    /* vidrio más claro / blanquecino, per referencia FitBook */
     --glass: rgba(196, 222, 216, 0.09);
     --glass-hi: rgba(224, 242, 235, 0.19);
     --line: rgba(180, 235, 218, 0.16);
@@ -442,7 +442,7 @@
         <div class="chip-cloud">
           <span class="chip good"><b>⚡</b> 2/4 proyectos activos</span>
           <span class="chip warn"><b>🎯</b> Stripe F5 · <em id="dias-stripe">—</em></span>
-          <span class="chip critical"><b>🏁</b> Lanza FitMark 31·ago · <em id="dias-lanzamiento">—</em></span>
+          <span class="chip critical"><b>🏁</b> Lanza FitBook 31·ago · <em id="dias-lanzamiento">—</em></span>
           <span class="chip good"><b>✓</b> Stripe codeado · faltan claves (Tavo)</span>
           <span class="chip critical"><b>⚠</b> fierro.app: librería 404 hoy</span>
           <span class="chip"><b>🪙</b> <span id="kpi-tokens">costos: auto vía hook (esperando 1er cierre)</span></span>
@@ -466,18 +466,23 @@
         <div>
           <h2>Actividad reciente <span class="count">DETECTADO POR EL LOOP</span></h2>
           <div class="panel feed">
+            <div class="feed-item"><span class="feed-when">17·jul</span><span><span class="good">🏷️ FitBook:</span> REBRAND FitMark → FitBook (nombre + logo, 52 archivos) — nombre definitivo DECIDIDO, un mes antes del deadline. Wallace ahora es "el coach de FitBook"</span></div>
+            <div class="feed-item"><span class="feed-when">17·jul</span><span><span class="good">🎮 FitBook:</span> empezaron los RENDERS 3D PROPIOS — el press de banca ya usa render 3D de FitBook (no la foto de archivo). El camino Wallace-3D arrancó, reemplazando fotos de a poco</span></div>
+            <div class="feed-item"><span class="feed-when">17·jul</span><span><span class="good">✓ FitBook:</span> escáner foto→calorías con límite freemium (1/día gratis, Premium ilimitado) + Wallace sin cuelgues (fallback Gemini→Groq por modelo)</span></div>
+            <div class="feed-item"><span class="feed-when">17·jul</span><span><span class="good">✓ Easy Courts:</span> demo 100% funcional con PERSISTENCIA LOCAL + 8 features nuevas + QA 15/15 verde (sigue sin DB real — es Etapa 0 pulida)</span></div>
+            <div class="feed-item"><span class="feed-when">17·jul</span><span><span class="good">✓ Kiwiano:</span> backup automático ya lleva 3 días corriendo solo (15·16·17-jul)</span></div>
             <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">🎉 Kiwiano:</span> F5.2 Stripe Checkout MERGEADO A MAIN (packs de pelotas en NZD, webhook + rediseño premium de /pelotas). El código está listo — falta SOLO activar en prod (webhook + env vars, infra)</span></div>
             <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">✅ Kiwiano:</span> backup automático CONFIRMADO corriendo solo — 2 días seguidos (15 y 16-jul, corrió 08:17 UTC sin intervención)</span></div>
-            <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">🍽️ FitMark:</span> fotos guía (127 ejercicios) + COMIDAS foto→calorías MERGEADOS A MAIN — calendario unificado Entreno/Nutrición en /tracker, migración 005</span></div>
-            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ FitMark:</span> ejecutó la tarea de fotos guía de la torre — auditó a ojo 127/152 ejercicios (corrigió 27, 25 a cola de Wallace) + componente ExerciseGuideImage</span></div>
-            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">🍽️ FitMark:</span> feature nuevo de COMIDAS — biblioteca de alimentos, macros con anillos, calendario de comidas con Supabase (migración 005), foto→calorías planeado. En rama, en pruebas</span></div>
+            <div class="feed-item"><span class="feed-when">16·jul</span><span><span class="good">🍽️ FitBook:</span> fotos guía (127 ejercicios) + COMIDAS foto→calorías MERGEADOS A MAIN — calendario unificado Entreno/Nutrición en /tracker, migración 005</span></div>
+            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ FitBook:</span> ejecutó la tarea de fotos guía de la torre — auditó a ojo 127/152 ejercicios (corrigió 27, 25 a cola de Wallace) + componente ExerciseGuideImage</span></div>
+            <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">🍽️ FitBook:</span> feature nuevo de COMIDAS — biblioteca de alimentos, macros con anillos, calendario de comidas con Supabase (migración 005), foto→calorías planeado. En rama, en pruebas</span></div>
             <div class="feed-item"><span class="feed-when">15·jul</span><span><span class="good">✅ Kiwiano:</span> backups F1.6 Capa 2 (Action diario offsite) HECHOS y verificados + rediseño UX del flujo Pro y pase visual premium mergeados a main (/centro, /interclubes, landing "En directo")</span></div>
             <div class="feed-item"><span class="feed-when">14·jul</span><span><span class="good">✅ Kiwiano:</span> corrió las migraciones 015→019 + mergeó y VALIDÓ EN PERSONA (sin lag) la cámara en vivo WebRTC celular→TV — todo lo de "olas 1-5" ya está activo en producción, sigue sin Stripe</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">🚀 Kiwiano:</span> merge GRANDE "olas 1-5" a main — modo TV 2.0, marcador en vivo, cuentas, ligas, fotos, video/transmisión, login premium (77 archivos, sin Stripe todavía)</span></div>
-            <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">✓ Gustavo:</span> migró Supabase de FitMark a Sídney + fijó Vercel en syd1 — tarea de latencia region-check resuelta por vos mismo</span></div>
+            <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">✓ Gustavo:</span> migró Supabase de FitBook a Sídney + fijó Vercel en syd1 — tarea de latencia region-check resuelta por vos mismo</span></div>
             <div class="feed-item"><span class="feed-when">13·jul</span><span><span class="good">✓ Easy Courts:</span> landing premium con parallax de pelotas + selector de idioma, reporta tokens de nuevo</span></div>
             <div class="feed-item"><span class="feed-when">12·jul</span><span><span class="good">🎉 Suiza:</span> divisor de gastos COLABORATIVO codeado — link de invitación + login + realtime, solo falta que actives Supabase</span></div>
-            <div class="feed-item"><span class="feed-when">12·jul</span><span><span class="good">✓ FitMark:</span> landing REHECHA completa — features/planes/precios reales, el holograma es Wallace</span></div>
+            <div class="feed-item"><span class="feed-when">12·jul</span><span><span class="good">✓ FitBook:</span> landing REHECHA completa — features/planes/precios reales, el holograma es Wallace</span></div>
             <div class="feed-item"><span class="feed-when">12·jul</span><span><span class="good">✓ Easy Courts:</span> i18n ES/EN completo + reporta tokens por primera vez</span></div>
             <div class="feed-item"><span class="feed-when">07·jul</span><span><span class="bad">🔑 Pendiente:</span> Stripe Kiwiano SIN AVANCE — sigue esperando que Tavo cree el webhook + pegue claves</span></div>
           </div>
@@ -487,7 +492,7 @@
           <div class="panel feed">
             <div class="feed-item"><span class="feed-when">YA</span><span class="meh">🔑 Tavo: webhook en Stripe + claves en Vercel → desbloquea la prueba de pago</span></div>
             <div class="feed-item"><span class="feed-when">10·ago</span><span class="meh">Stripe live Kiwiano — primer dinero real del portfolio</span></div>
-            <div class="feed-item"><span class="feed-when">15·ago</span><span class="bad">Nombre definitivo de FitMark (deadline dura, antes del lanzamiento)</span></div>
+            <div class="feed-item"><span class="feed-when">15·ago</span><span class="bad">Nombre definitivo de FitBook (deadline dura, antes del lanzamiento)</span></div>
           </div>
         </div>
       </div>
@@ -526,7 +531,7 @@
         <div>
           <div class="panel pcard" style="--pc: var(--fitmark)">
             <div class="pcard-head">
-              <span class="pname">FitMark <small>NOMBRE POR DEFINIR</small></span>
+              <span class="pname">FitBook <small>NOMBRE POR DEFINIR</small></span>
               <span class="pstatus live">ACTIVO · EN CARRERA</span>
               <span class="ptag">Tracker de fuerza + coach IA Wallace · 152 ejercicios · mapa muscular 3D</span>
             </div>
@@ -558,7 +563,7 @@
       <h2>Calendario semanal <span class="count">PRÓXIMAS 6 SEMANAS · 3 FRENTES EN PARALELO</span></h2>
       <div class="panel scroll-x">
         <table class="htable" style="min-width: 840px;">
-          <thead><tr><th style="width:11%">Semana</th><th><span class="dot" style="color:var(--kiwiano)"></span>Kiwiano</th><th><span class="dot" style="color:var(--fitmark)"></span>FitMark</th><th><span class="dot" style="color:var(--cyan)"></span>Contenido</th></tr></thead>
+          <thead><tr><th style="width:11%">Semana</th><th><span class="dot" style="color:var(--kiwiano)"></span>Kiwiano</th><th><span class="dot" style="color:var(--fitmark)"></span>FitBook</th><th><span class="dot" style="color:var(--cyan)"></span>Contenido</th></tr></thead>
           <tbody>
             <tr><td class="wk">06–12 jul</td><td><span class="good">✓ Vitrina mergeada</span> → arrancar Stripe F5</td><td>Definir free vs premium · rescate features-review</td><td>Crear handles (IG/TikTok/YT) · primer reel build-in-public</td></tr>
             <tr><td class="wk">13–19 jul</td><td>Backups Supabase · cerrar Sprint 1</td><td>Terminar rescate → descartar rama · analytics</td><td>3 reels (1 por pilar) · plantilla visual</td></tr>
@@ -577,9 +582,9 @@
         <div>
           <h2>Después del 16·ago <span class="count">Q3 → Q4</span></h2>
           <div class="panel feed">
-            <div class="feed-item"><span class="feed-when">31·ago</span><span>🎯 <b>FitMark lanza público gratis</b> — antes que fierro complete su app</span></div>
-            <div class="feed-item"><span class="feed-when">sep</span><span>Kiwiano: primeros clientes (pilotos NZ/Chile) · FitMark: monetización freemium</span></div>
-            <div class="feed-item"><span class="feed-when">oct</span><span>FitMark: Stripe subscripciones + Wallace KB RAG como premium</span></div>
+            <div class="feed-item"><span class="feed-when">31·ago</span><span>🎯 <b>FitBook lanza público gratis</b> — antes que fierro complete su app</span></div>
+            <div class="feed-item"><span class="feed-when">sep</span><span>Kiwiano: primeros clientes (pilotos NZ/Chile) · FitBook: monetización freemium</span></div>
+            <div class="feed-item"><span class="feed-when">oct</span><span>FitBook: Stripe subscripciones + Wallace KB RAG como premium</span></div>
             <div class="feed-item"><span class="feed-when">nov–dic</span><span>Easy Courts Etapa 1: DB real + auth · demo vendible a club piloto</span></div>
             <div class="feed-item"><span class="feed-when">regla</span><span class="meh">Ideas nuevas → IDEAS.md · no interrumpen el sprint activo</span></div>
           </div>
@@ -589,10 +594,10 @@
 
     <!-- ========== VISTA: CARRERA ========== -->
     <section class="view" id="v-carrera">
-      <h2>fierro.app vs FitMark <span class="count">VERIFICADO POR GUSTAVO · 05·JUL</span></h2>
+      <h2>fierro.app vs FitBook <span class="count">VERIFICADO POR GUSTAVO · 05·JUL</span></h2>
       <div class="panel scroll-x">
         <table class="htable" style="min-width: 640px;">
-          <thead><tr><th>Frente</th><th>fierro.app (hoy)</th><th>FitMark (hoy)</th></tr></thead>
+          <thead><tr><th>Frente</th><th>fierro.app (hoy)</th><th>FitBook (hoy)</th></tr></thead>
           <tbody>
             <tr><td>Librería de ejercicios</td><td class="bad">Error 404 — no existe</td><td class="good">152 ejercicios funcionando</td></tr>
             <tr><td>Rutinas</td><td class="meh">Flojas: descansos y explicaciones pobres</td><td class="good">Rutinas propias + tracker maduro + plantillas</td></tr>
@@ -675,7 +680,7 @@
       </div>
     </section>
 
-    <footer>TORRE DE CONTROL v34 · KIWIANO: STRIPE EN MAIN · FITMARK: FOTOS+COMIDAS EN MAIN · SE REGENERA 08:00 NZ</footer>
+    <footer>TORRE DE CONTROL v35 · FITMARK → FITBOOK (rebrand) · EASY COURTS: DEMO PERSISTENTE · SE REGENERA 08:00 NZ</footer>
   </main>
 
   <!-- Dock fijo (solo visible + fijo en escritorio, dentro de la vista Resumen) -->
@@ -691,10 +696,10 @@
             <circle class="ring-track" cx="130" cy="130" r="118" stroke-width="13"/>
             <g transform="rotate(-90 130 130)">
               <circle class="ring-arc" data-pct="93" cx="130" cy="130" r="46" stroke-width="9" style="stroke:var(--kiwiano);color:var(--kiwiano)"/>
-              <circle class="ring-arc" data-pct="92" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
-              <circle class="ring-arc" data-pct="55" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
+              <circle class="ring-arc" data-pct="93" cx="130" cy="130" r="63" stroke-width="9" style="stroke:var(--fitmark);color:var(--fitmark)"/>
+              <circle class="ring-arc" data-pct="58" cx="130" cy="130" r="80" stroke-width="9" style="stroke:var(--courts);color:var(--courts)"/>
               <circle class="ring-arc" data-pct="80" cx="130" cy="130" r="97" stroke-width="9" style="stroke:var(--suiza);color:var(--suiza)"/>
-              <circle class="ring-arc total" data-pct="80" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
+              <circle class="ring-arc total" data-pct="81" cx="130" cy="130" r="118" stroke-width="13" style="stroke:var(--neon);color:var(--neon)"/>
             </g>
             <!-- backdrop del número central: sin esto los anillos pisan el "72%" -->
             <circle cx="130" cy="130" r="50" fill="rgba(5,14,12,0.55)"/>
@@ -702,12 +707,12 @@
             <circle cx="130" cy="130" r="130" fill="url(#torusSheen)" style="mix-blend-mode:overlay"/>
           </svg>
           <div class="ring-center">
-            <div><div class="ring-total">80<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
+            <div><div class="ring-total">81<small>%</small></div><div class="ring-total-label">PORTFOLIO</div></div>
           </div>
         </div>
         <div class="ring-legend">
           <span><i style="background:var(--kiwiano);color:var(--kiwiano)"></i>Kiwiano 80%</span>
-          <span><i style="background:var(--fitmark);color:var(--fitmark)"></i>FitMark 91%</span>
+          <span><i style="background:var(--fitmark);color:var(--fitmark)"></i>FitBook 91%</span>
           <span><i style="background:var(--courts);color:var(--courts)"></i>Courts 50%</span>
           <span><i style="background:var(--suiza);color:var(--suiza)"></i>Suiza 80%</span>
         </div>
@@ -727,11 +732,11 @@
           <span class="mini-due warn">10·AGO</span>
         </div>
         <div class="mini-pad" style="--pc: var(--fitmark)">
-          <div class="mini-head"><span class="mini-dot"></span>FitMark</div>
+          <div class="mini-head"><span class="mini-dot"></span>FitBook</div>
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="92" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="93" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--fitmark);color:var(--fitmark)"/></g>
             </svg>
             <div class="mini-pct">91%</div>
           </div>
@@ -743,7 +748,7 @@
           <div class="mini-ring-wrap">
             <svg viewBox="0 0 70 70" width="66" height="66">
               <circle class="ring-track" cx="35" cy="35" r="27" stroke-width="6"/>
-              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="55" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--courts);color:var(--courts)"/></g>
+              <g transform="rotate(-90 35 35)"><circle class="ring-arc" data-pct="58" cx="35" cy="35" r="27" stroke-width="6" style="stroke:var(--courts);color:var(--courts)"/></g>
             </svg>
             <div class="mini-pct">50%</div>
           </div>
@@ -817,8 +822,8 @@
   const DEADLINES = [
     ["2026-07-20", "Backups Supabase Kiwiano (F1.6)", "warn"],
     ["2026-08-10", "Stripe F5 Kiwiano — beta comercial", "warn"],
-    ["2026-08-15", "Nombre definitivo de FitMark", "critical"],
-    ["2026-08-31", "Lanzamiento público FitMark (gratis)", "critical"],
+    ["2026-08-15", "Nombre definitivo de FitBook", "critical"],
+    ["2026-08-31", "Lanzamiento público FitBook (gratis)", "critical"],
     ["2026-12-15", "Easy Courts Etapa 1 (DB + auth)", "ok"],
   ];
   const dl = document.getElementById("deadlines");
@@ -869,8 +874,8 @@
     // Datos reales de docs/metricas/tokens.csv de cada repo (leídos por el loop 07-jul).
     // OJO: tin incluye lecturas de caché a precio de entrada plena → USD sobreestimado.
     { nombre: "Kiwiano",      color: "var(--kiwiano)", sesiones: 1, tin: 1460036287, tout: 3897408 },
-    { nombre: "FitMark",      color: "var(--fitmark)", sesiones: 1, tin: 1433789991, tout: 3772616 },
-    { nombre: "Easy Courts",  color: "var(--courts)",  sesiones: 2, tin: 446934870, tout: 1605482 },
+    { nombre: "FitBook",      color: "var(--fitmark)", sesiones: 1, tin: 1433789991, tout: 3772616 },
+    { nombre: "Easy Courts",  color: "var(--courts)",  sesiones: 3, tin: 495276789, tout: 1922806 },
     { nombre: "Navaja Suiza", color: "var(--suiza)",   sesiones: 1, tin: 489182601, tout: 1095796 },
   ];
   const nf = new Intl.NumberFormat("es-CL");
@@ -909,23 +914,21 @@
       texto:"Activar Stripe en prod: el CÓDIGO YA ESTÁ EN MAIN (16-jul). Falta SOLO infra: crear el webhook en el Dashboard de Stripe → kiwiano.vercel.app/api/stripe/webhook + poner STRIPE_SECRET_KEY/WEBHOOK_SECRET/SITE_URL en Vercel. Es el último paso al 1er cobro." },
     { id:"torre-vercel-pwa",    proyecto:"Torre",   color:"var(--neon)",    orden:4,  due:"",          dueClass:"",
       texto:"Conectar el dashboard a Vercel (Root: portfolio/dashboard) para instalarlo como app en el teléfono" },
-    { id:"fm-nombre",           proyecto:"FitMark", color:"var(--fitmark)", orden:6,  due:"15·ago",    dueClass:"soon",
-      texto:"Decidir el nombre definitivo de FitMark" },
-    { id:"fm-dominio",          proyecto:"FitMark", color:"var(--fitmark)", orden:7,  due:"pre-lanzam", dueClass:"soon",
-      texto:"Conseguir el dominio propio de FitMark (antes del lanzamiento)" },
+    { id:"fm-dominio",          proyecto:"FitBook", color:"var(--fitmark)", orden:7,  due:"pre-lanzam", dueClass:"soon",
+      texto:"Conseguir el dominio propio de FitBook (antes del lanzamiento) — nombre YA decidido" },
     { id:"kiw-dominio",         proyecto:"Kiwiano", color:"var(--kiwiano)", orden:8,  due:"",          dueClass:"",
       texto:"Conseguir/confirmar el dominio propio de Kiwiano" },
-    { id:"fm-vps",              proyecto:"FitMark", color:"var(--fitmark)", orden:9,  due:"pre-lanzam", dueClass:"soon",
-      texto:"Evaluar un VPS para FitMark antes del lanzamiento (¿mejor que Vercel+Supabase?)" },
+    { id:"fm-vps",              proyecto:"FitBook", color:"var(--fitmark)", orden:9,  due:"pre-lanzam", dueClass:"soon",
+      texto:"Evaluar un VPS para FitBook antes del lanzamiento (¿mejor que Vercel+Supabase?)" },
     { id:"infra-migrar-eval",   proyecto:"Torre",   color:"var(--neon)",    orden:10, due:"",          dueClass:"",
-      texto:"Evaluar Vercel+Supabase vs. migrar todo (FitMark y Kiwiano): costo de migración + si mejora la velocidad" },
-    { id:"fm-loader-anim",      proyecto:"FitMark", color:"var(--fitmark)", orden:11, due:"",          dueClass:"",
+      texto:"Evaluar Vercel+Supabase vs. migrar todo (FitBook y Kiwiano): costo de migración + si mejora la velocidad" },
+    { id:"fm-loader-anim",      proyecto:"FitBook", color:"var(--fitmark)", orden:11, due:"",          dueClass:"",
       texto:"Animación de carga: sombra haciendo squat 180k que sube según carga la página (dinámica)" },
-    { id:"fm-ilustraciones",    proyecto:"FitMark", color:"var(--fitmark)", orden:12, due:"jul-ago",   dueClass:"",
+    { id:"fm-ilustraciones",    proyecto:"FitBook", color:"var(--fitmark)", orden:12, due:"jul-ago",   dueClass:"",
       texto:"Piloto de ilustraciones IA (5 ejercicios) en el PC con ComfyUI + FLUX" },
     { id:"suiza-activar-supabase", proyecto:"Suiza", color:"var(--suiza)",   orden:3,  due:"listo",     dueClass:"now",
       texto:"Activar Supabase de Navaja Suiza (crear proyecto + correr schema.sql + pegar claves) — enciende login + divisor COLABORATIVO, ya codeados y verificados" },
-    { id:"fm-landing-gym",      proyecto:"FitMark", color:"var(--fitmark)", orden:15, due:"",          dueClass:"",
+    { id:"fm-landing-gym",      proyecto:"FitBook", color:"var(--fitmark)", orden:15, due:"",          dueClass:"",
       texto:"Landing 'gym navegable': GSAP ScrollTrigger recorre estaciones + Wallace 2.5D caminando (no bloquea lanzamiento)" },
   ];
   const TB_KEY = "torre_tareas_v1", TB_ORDER_KEY = "torre_tareas_orden_v1";
@@ -1018,7 +1021,7 @@
     { id: "metricas", l: "Métricas / tokens", g: "doc", s: 6 },
     { id: "obsidian", l: "Obsidian ctx", g: "doc", s: 5 },
     { id: "kiwiano",  l: "KIWIANO",      g: "proj", s: 9, c: "#9BE15D" },
-    { id: "fitmark",  l: "FITMARK",      g: "proj", s: 9, c: "#C8FF00" },
+    { id: "fitmark",  l: "FITBOOK",      g: "proj", s: 9, c: "#C8FF00" },
     { id: "courts",   l: "EASY COURTS",  g: "proj", s: 7, c: "#3FB0AE" },
     { id: "suiza",    l: "Navaja Suiza", g: "proj", s: 6, c: "#B9C6D2" },
     { id: "handk",    l: "HANDOFF K",    g: "doc", s: 4 },

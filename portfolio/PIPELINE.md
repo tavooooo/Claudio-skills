@@ -57,7 +57,7 @@ Orden de prioridad real tras F5.2: **F5.2 → F7.1 → F7.2 → F7.3 → F6** (F
 - [ ] 🎨 **Ilustraciones de ejercicios con IA local** (notebook RTX 16GB de Gustavo, confirmada): Fase 1 = ComfyUI + FLUX.1-schnell + piloto de 5 ejercicios (instrucción ya entregada, ver `IDEAS.md`) → Fase 2 = LoRA del avatar + ControlNet → producción de las 152 (~2 poses c/u). Licencia comercial limpia (Apache 2.0) — jul-ago, no bloquea el lanzamiento
 - [ ] Contenido en redes desde la semana del 06-jul (ver `CONTENIDO.md`) — continuo
 - [ ] 🎯 **Lanzamiento público (gratis) — fin de agosto**, antes de que fierro complete su app
-- [ ] Nombre definitivo: aparcado, decidir antes del lanzamiento (deadline dura: 15-ago)
+- [x] ✅ **Nombre definitivo: DECIDIDO 17-jul → FitBook** (rebrand a fondo, ~1 mes antes del deadline). Queda conseguir el dominio.
 
 ### Sprint 4 — FitMark monetización temprana (2026-09-01 → 2026-09-30)
 - [ ] Modelo de precios freemium (Wallace + features premium) — la competencia es

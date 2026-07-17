@@ -1,19 +1,31 @@
-# FitMark / Biohack AI — Ficha de proyecto
+# FitBook (ex-FitMark) — Ficha de proyecto
 
-> Actualizado: 2026-07-05
-> **Nombre en transición**: Gustavo está evaluando renombrar el producto a
-> "Biohack AI", pero no lo convence del todo. FitMark sigue siendo el nombre
-> del repo/código. Ver `IDEAS.md` para el brainstorm de nombres.
+> Actualizado: 2026-07-17
+> **Nombre DEFINITIVO decidido (17-jul): FitBook.** Rebrand a fondo (52 archivos:
+> toda la i18n, logo `FitBookLogo`, Wallace = "coach de FitBook"). Cierra el debate
+> de nombres (antes se barajó "Biohack AI"). ⚠️ El **repo sigue llamándose `fitmark`**
+> y la var interna de la torre es `--fitmark`; el PRODUCTO es FitBook.
 
-**Qué es**: tracker de entrenamiento de fuerza mobile-first (iPhone-first). Registro de
-sesiones y PRs, rutinas, base de 152 ejercicios, mapa muscular SVG/3D interactivo,
-logros, y **Wallace**, coach IA (Claude API). En español. Deploy: Vercel (auto en `main`).
+**Qué es**: app mobile-first (iPhone-first) de **fitness + nutrición**. Entreno: registro de
+sesiones y PRs, rutinas, base de 152 ejercicios (con fotos guía + renders 3D propios en
+marcha), mapa muscular SVG/3D, logros. Nutrición: comidas con **foto→calorías**, macros,
+calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy: Vercel (auto en `main`).
 
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-16 por el loop, desde git main — 92% su propio número)
+## Estado (actualizado 2026-07-17 por el loop, desde git main — 93% su propio número)
 
+- 🏷️ **17-jul — REBRAND FitMark → FitBook (nombre definitivo)**: 52 archivos, toda la i18n +
+  logo `FitBookLogo` + Wallace "coach de FitBook". Decidido ~1 mes antes del deadline (15-ago).
+  Pendiente derivado: dominio propio de FitBook.
+- 🎮 **17-jul — arrancaron los RENDERS 3D PROPIOS**: el press de banca ya sirve renders 3D
+  propios (`/images/ejercicios/press-banca-barra/{1,2}.png`, inicio→final) en vez de la foto de
+  free-exercise-db. **Inicio real del camino Wallace-3D** — el plan de "fotos gratis de placeholder
+  → reemplazo gradual por lo propio" está en marcha, primer ejercicio migrado.
+- ✅ **17-jul — freemium en el escáner + Wallace estable**: escáner foto→calorías con límite
+  (1/día gratis, Premium ilimitado), macros con meta personalizada por sliders (tolerancia ±5%),
+  Wallace sin cuelgues (fallback POR MODELO Gemini→Groq, 3 intentos), timeout que ya no corta el stream.
 - ✅ **16-jul — FOTOS GUÍA + COMIDAS MERGEADAS A MAIN** (venían de rama):
   - **Fotos guía (tarea preparada por la torre)**: `src/lib/data/exerciseGuideImages.ts` (mapa
     `slug → fedb_id`, fotos por URL cruda de GitHub) + componente `ExerciseGuideImage.tsx` en ficha
