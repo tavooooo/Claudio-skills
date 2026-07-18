@@ -14,8 +14,16 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-17 por el loop, desde git main — 93% su propio número)
+## Estado (actualizado 2026-07-18 por el loop, desde git main — 94% su propio número)
 
+- 👨‍🏫 **18-jul — CUENTA COACH completa (F1–F6, en main)**: nueva dimensión de producto y de
+  ingresos. Un entrenador puede: invitar alumnos (`/join/[code]`, registro vinculado, "Mi coach"),
+  ver un dashboard de alumnos con detalle (Resumen/Entreno solo lectura), **asignar rutinas por
+  snapshot** (planificación semanal; las asignadas NO ocupan cupo FREE del alumno y quedan
+  bloqueadas solo-uso), fijar **metas de nutrición** desde el servidor, hacer **check-ins
+  semanales + notas privadas + alertas**, con **frontera de privacidad server-side** (migración
+  `006_coach.sql`, `coach_links`) y **plan Coach en `/premium`** (`getCoachTier`). Incluye
+  mini-calendario del alumno (tema rojo, solo lectura) reutilizando `CalendarClient`.
 - 🏷️ **17-jul — REBRAND FitMark → FitBook (nombre definitivo)**: 52 archivos, toda la i18n +
   logo `FitBookLogo` + Wallace "coach de FitBook". Decidido ~1 mes antes del deadline (15-ago).
   Pendiente derivado: dominio propio de FitBook.

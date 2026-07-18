@@ -35,6 +35,14 @@ pagos y panel de administración completo. Bilingüe ES/EN (nuevo 12-jul).
   persistencia es del lado del navegador, NO hay Postgres ni auth reales. La Etapa 1 (la que lo
   vuelve vendible) sigue sin empezar. Estimado ~55→58% por el pulido del demo. Reportó tokens de
   nuevo (17-jul: 495M in / 1,92M out).
+- 🔦 **Acceso físico + luces por pista (18-jul, demo bien arquitecturado)**: código de acceso
+  (PIN + ventana horaria con buffer) y control de luces on/off por pista desde la reserva, detrás
+  de una capa `src/lib/access/provider.ts` — interfaz `AccessProvider` + `DemoAccessProvider` que
+  **se cambia por un adaptador real (UniFi Access / Protege WX / relé Shelly) sin tocar la UI**.
+  Investigación de integración real ya documentada en el repo. Es el tipo de valor B2B que
+  diferencia a Easy Courts (el club automatiza acceso/luces desde la app). + **rating numérico
+  1.0–7.0** (estándar internacional, con equivalencias). Sigue siendo demo (Etapa 0). ~58→60%.
+  Tokens 18-jul: 498M in / 1,93M out.
 
 ## Brechas para comercializar (Etapas 1–4 del roadmap)
 
