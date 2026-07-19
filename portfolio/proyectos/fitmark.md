@@ -14,8 +14,20 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-18 por el loop, desde git main — 94% su propio número)
+## Estado (actualizado 2026-07-19 por el loop, desde git main — 95% su propio número)
 
+- 🧠 **19-jul — Wallace con MEMORIA + acceso total a datos (en main)**: el coach IA persiste el
+  historial de chat (con retención + borrar conversación) y accede a TODOS los datos del usuario
+  con **carga perezosa por pregunta** — encuentra sesiones pasadas y ve los pesos reales por serie.
+  Pasa de "chat sin contexto" a coach que conoce al usuario. Mejora directa del valor premium.
+- 🎮 **19-jul — 2° render 3D propio**: el peso muerto convencional ya usa render propio (después
+  del press de banca), formato JPEG unificado. El reemplazo de fotos de archivo por renders propios
+  avanza ejercicio a ejercicio.
+- 📱 **19-jul — RED SOCIAL en reconstrucción (rama `vitrina`, aún no en main)**: "Vitrina v2: red
+  social fit" — follows, @nicknames, buscador, visibilidad y récords. Es una de las 5 piezas de
+  `features-review` que se rehacen desde cero. La rama `vitrina` es de staging (se mergea con main
+  regularmente, hoy 15 commits adelante). También: búsqueda tolerante de ejercicios (typos,
+  conectores intercambiables, sugerencias).
 - 👨‍🏫 **18-jul — CUENTA COACH completa (F1–F6, en main)**: nueva dimensión de producto y de
   ingresos. Un entrenador puede: invitar alumnos (`/join/[code]`, registro vinculado, "Mi coach"),
   ver un dashboard de alumnos con detalle (Resumen/Entreno solo lectura), **asignar rutinas por
