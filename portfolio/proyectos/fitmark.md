@@ -14,8 +14,18 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-19 por el loop, desde git main — 95% su propio número)
+## Estado (actualizado 2026-07-20 por el loop, desde git main — 95% su propio número)
 
+- 📱 **20-jul — RED SOCIAL v3 casi lista (rama `vitrina`, aún no en main)**: "Vitrina v3" en fases
+  A–E — datos/lib/actions (notifs, reposts, likes, edición, denuncias), **PostCard pro** (menú,
+  edición, denuncia, repost, likes, menciones), **campanita de notificaciones + listas de follows +
+  muros por @nickname**, **semana de entreno compartible + panel de moderación**. Es la pieza "red
+  social/feed" de features-review, ya bastante completa. `vitrina` es staging (30 commits adelante
+  de main, se mergea con main regularmente). Falta el merge a main.
+- ✨ **20-jul — pulido en main**: visualización del exceso de macros (escala ámbar→naranja→rojo
+  según cuánto te pasaste de la meta, respetando el color base de cada macro), vista semana de
+  comidas con kcal dentro del anillo, mapa muscular (antebrazo siempre en ambas láminas), panel
+  coach con días de asignación.
 - 🧠 **19-jul — Wallace con MEMORIA + acceso total a datos (en main)**: el coach IA persiste el
   historial de chat (con retención + borrar conversación) y accede a TODOS los datos del usuario
   con **carga perezosa por pregunta** — encuentra sesiones pasadas y ve los pesos reales por serie.
