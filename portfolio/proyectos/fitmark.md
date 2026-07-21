@@ -14,9 +14,17 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-20 por el loop, desde git main — 95% su propio número)
+## Estado (actualizado 2026-07-21 por el loop, desde git main — 96% su propio número)
 
-- 📱 **20-jul — RED SOCIAL v3 casi lista (rama `vitrina`, aún no en main)**: "Vitrina v3" en fases
+- ☀️ **21-jul — TEMA CLARO completo (en main)**: "versión día" estilo Apple seleccionable desde
+  el menú del usuario. Trabajo grande (~20 commits): un solo verde de marca por variable CSS
+  (`var(--acc)`, #76b900) en toda la app, cero negros residuales, fixes de serialización CSSOM
+  (nav, bandas sticky, toggles), landing siempre oscura, arte anatómico sobre lienzo adaptado.
+  La app deja de ser solo dark.
+- 👨‍🏫 **21-jul — panel coach más profundo (en main)**: tabla comparativa de alumnos, cambio
+  rápido entre alumnos, **nutrición real + meta semanal por alumno**, ficha del alumno con roster
+  lateral y calendario clickeable. El tier Coach pasa de "cimientos" a herramienta usable.
+- 📱 **20-jul — RED SOCIAL v3 casi lista (rama `vitrina`, aún no en main; ya 67 commits sobre main)**: "Vitrina v3" en fases
   A–E — datos/lib/actions (notifs, reposts, likes, edición, denuncias), **PostCard pro** (menú,
   edición, denuncia, repost, likes, menciones), **campanita de notificaciones + listas de follows +
   muros por @nickname**, **semana de entreno compartible + panel de moderación**. Es la pieza "red
