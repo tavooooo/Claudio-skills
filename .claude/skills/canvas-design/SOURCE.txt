@@ -1,0 +1,3 @@
+Source: https://github.com/anthropics/skills (skills/canvas-design)
+Commit: fa0fa64bdc967915dc8399e803be67759e1e62b8 (2026-07-16)
+License: see LICENSE.txt
