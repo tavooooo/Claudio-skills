@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-07-21** · Actualizar en cada sesión de trabajo.
+> Última actualización: **2026-07-22** · Actualizar en cada sesión de trabajo.
 
 ## Estado global
 
@@ -29,7 +29,7 @@
   Kiwiano F5.1 (pelotas + planes + billing UI, cobro manual) mergeado 06-jul; FitMark freemium 5/5
   cableado 06-jul con **cobro simulado**. Falta cerrar con pasarela real (Kiwiano Stripe F5.2, FitMark pasarela).
 - 🔴 **Carrera con fierro.app**: competidor directo pero incompleto (sin pagos, librería 404, rutinas flojas — verificado por Gustavo 05-jul). Decisión: FitMark sale primero — lanzamiento público adelantado a **fin de agosto**. Vigilar fierro.app semanalmente.
-- 🟠 **Contenido en redes parte esta semana** (ver `CONTENIDO.md`) — construir audiencia antes del lanzamiento; sin distribución no hay carrera que ganar.
+- 🟢 **Contenido en redes: el motor ARRANCÓ (22-jul)** — antes era un pendiente (`CONTENIDO.md`); ahora hay señales concretas de que se está armando: (a) el repo de la torre sumó skills de **social, video, canvas-design y grabar demos de apps para reels** (pusheados a main por Gustavo); (b) FitBook tiene una rama con un **calendario de contenido orgánico de 4 semanas**; (c) FitBook shippeó **compartir semana/mes como imagen** para redes (munición de contenido lista). El riesgo "sin distribución no hay carrera" se está atacando. Falta que empiece la publicación real y sostenida.
 - ✅ **`features-review` — RESUELTA (09-jul): BORRADA por el chat de FitMark.** La rama ya no existe. Se reconstruirá desde cero en main cuando toque (ranking, red social/feed, planes, cuentas gym/coach, chat — checklist en `IDEAS.md`). Riesgo cerrado.
 - ⚠️ **Ambos "pausados" tienen chat activo** (descubierto 08–09 jul): Navaja Suiza (deploy Vercel, ~80%) y Easy Courts (nivel producto, HANDOFF+reporte). El loop **coordina vía sus chats, NO pushea código directo** — como Kiwiano/FitMark. Ya no hay proyecto realmente "en pausa" para avance autónomo.
 - ✅ ~~Nombre definitivo aparcado~~ — **DECIDIDO 17-jul: FitBook** (rebrand a fondo, 1 mes antes del deadline 15-ago). Riesgo cerrado; queda solo conseguir el dominio.

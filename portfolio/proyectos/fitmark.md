@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-21 por el loop, desde git main — 96% su propio número)
+## Estado (actualizado 2026-07-22 por el loop, desde git main — 96% su propio número)
 
+- 📣 **22-jul — arranca el motor de contenido pre-lanzamiento**: (a) rama nueva
+  `claude/fitbook-content-calendar-jfxiw1` con un **calendario de contenido orgánico de 4 semanas**;
+  (b) en main, **compartir "Mi semana/mes" del calendario como imagen** para redes (theme-aware,
+  figuras musculares con color fiable en iOS Safari vía color literal + precarga/decode, zona
+  horaria dinámica del dispositivo). Es la munición de contenido que el usuario puede postear.
+  (En paralelo, el repo de la torre sumó skills de social/video/canvas/grabar-demos.)
 - ☀️ **21-jul — TEMA CLARO completo (en main)**: "versión día" estilo Apple seleccionable desde
   el menú del usuario. Trabajo grande (~20 commits): un solo verde de marca por variable CSS
   (`var(--acc)`, #76b900) en toda la app, cero negros residuales, fixes de serialización CSSOM
