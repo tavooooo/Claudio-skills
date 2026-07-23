@@ -14,8 +14,17 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-22 por el loop, desde git main — 96% su propio número)
+## Estado (actualizado 2026-07-23 por el loop, desde git main — 97% su propio número)
 
+- 🎉 **23-jul — RED SOCIAL MERGEADA A MAIN**: la "vitrina" pasó a producción — `src/app/vitrina/_components/`
+  (PostCard, PostComposer, RepostModal, SocialSidebar, WallSocialRow) con posts, muros por @nickname,
+  reposts, menciones, moderación y tests (`social-actions.test.ts`). Con esto la reconstrucción de
+  `features-review` queda **esencialmente completa** (coach + chat/Wallace + red social, los 3 en main).
+  La rama `vitrina` volvió a estar a la par de `main`.
+- ✨ **23-jul — gran pase de UI/UX**: dashboard "Hoy" rediseñado (racha/stats en una tarjeta, gráficos
+  de fuerza en carrusel), **constructor de rutinas v2** (filtros desplegables, acordeón, chips
+  indicadores), botón central "Entrenar", campanita de notificaciones estilo "T", y **nuevo eslogan:
+  "Registra. Progresa. Rompe récords."**
 - 📣 **22-jul — arranca el motor de contenido pre-lanzamiento**: (a) rama nueva
   `claude/fitbook-content-calendar-jfxiw1` con un **calendario de contenido orgánico de 4 semanas**;
   (b) en main, **compartir "Mi semana/mes" del calendario como imagen** para redes (theme-aware,
