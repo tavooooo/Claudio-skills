@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-23 por el loop, desde git main — 97% su propio número)
+## Estado (actualizado 2026-07-24 por el loop, desde git main — 97% su propio número)
 
+- 🏃 **24-jul — grupo CARDIO + dropsets + "Muro"**: nuevo grupo **CARDIO** con 9 ejercicios
+  registrables por tiempo ("cardio lite") — el catálogo se amplía más allá de la fuerza. Tipos de
+  serie **W/D/F + dropsets** (menú al tocar el número de serie), "copiar a todas" con fill-down por
+  columna (peso y reps por separado). La red social se **renombró de "Vitrina" a "Muro"** en toda la
+  UI visible. + acceso "Mis alumnos" para coaches en móvil, notificación de bienvenida al hacerse
+  Premium, fixes de compartir (PNG en la primera captura) y pulido del bottom nav (haz tipo cometa).
 - 🎉 **23-jul — RED SOCIAL MERGEADA A MAIN**: la "vitrina" pasó a producción — `src/app/vitrina/_components/`
   (PostCard, PostComposer, RepostModal, SocialSidebar, WallSocialRow) con posts, muros por @nickname,
   reposts, menciones, moderación y tests (`social-actions.test.ts`). Con esto la reconstrucción de

@@ -35,9 +35,10 @@ pagos y panel de administración completo. Bilingüe ES/EN (nuevo 12-jul).
   persistencia es del lado del navegador, NO hay Postgres ni auth reales. La Etapa 1 (la que lo
   vuelve vendible) sigue sin empezar. Estimado ~55→58% por el pulido del demo. Reportó tokens de
   nuevo (17-jul: 495M in / 1,92M out).
-- 💼 **Primer paso comercial: deck de ventas + pagos + matchmaking (23-jul)**: **deck de presentación
-  para dueños de club** (`/presentacion.html`, página estática interactiva) — el material para salir a
-  vender a clubes. Además: **pagar en el club (efectivo)** con restricción por deuda pendiente,
+- 💼 **Primer paso comercial: deck de ventas + pagos + matchmaking (23-jul, refinado 24-jul)**: **deck
+  de presentación para dueños de club** (`/presentacion.html`, página estática interactiva) — el
+  material para salir a vender a clubes. **Refinado 24-jul**: presentación reenfocada a "club en
+  construcción" (apunta a clubes nuevos que aún no operan), con guion y más movimiento. Además: **pagar en el club (efectivo)** con restricción por deuda pendiente,
   matchmaking (compartir una reserva la publica como **partida abierta**), invitaciones dirigidas,
   selector de cuenta para impersonar socios (demo), y fix de i18n en los charts de admin (inglés).
   Sigue siendo demo (mock), pero es la primera vez que arma material de venta B2B.
