@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-24 por el loop, desde git main — 97% su propio número)
+## Estado (actualizado 2026-07-25 por el loop, desde git main — 97% su propio número)
 
+- 📄 **25-jul — legales al día + cardio afinado + limpieza**: **documentos legales (T&C +
+  Privacidad, ES+EN) actualizados** para cubrir las features nuevas (nutrición, muro, coach) —
+  disciplina pre-lanzamiento. Cardio afinado (tiempo en minutos que se guarda en segundos, métrica
+  secundaria por ejercicio km/m/saltos/pisos, caminata inclinada con ajuste de columnas), dropsets
+  como cadena agrupada con color por tipo, fix de guardado (una columna sin migrar ya no perdía el
+  entreno), repasada completa de i18n. **Limpieza**: se eliminó el mapa muscular 3D experimental
+  (`/muscle-map`).
 - 🏃 **24-jul — grupo CARDIO + dropsets + "Muro"**: nuevo grupo **CARDIO** con 9 ejercicios
   registrables por tiempo ("cardio lite") — el catálogo se amplía más allá de la fuerza. Tipos de
   serie **W/D/F + dropsets** (menú al tocar el número de serie), "copiar a todas" con fill-down por
