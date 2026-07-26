@@ -14,8 +14,17 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-25 por el loop, desde git main — 97% su propio número)
+## Estado (actualizado 2026-07-26 por el loop, desde git main — 97% su propio número)
 
+- 🛠️ **26-jul — sistema de admin del CATÁLOGO + Wallace multiidioma**: máquina de back-office para
+  gestionar el catálogo a medida que los usuarios crean ejercicios propios — triaje de personalizados
+  (agrupados y con duplicados), **la IA los agrupa**, migración de un grupo al catálogo oficial
+  avisando al usuario, reparar filas que quedaron en el ejercicio equivocado (por usuario y rango de
+  peso), revertir renombrados usando las notificaciones como registro, previsualización de impacto.
+  Panel de notificaciones manual + avisos automáticos al promover. Matching más fino: **unilateral
+  vs bilateral e instrumento como diferenciadores duros**, buscador de destinatarios por nombre/@alias.
+  **Wallace responde en el idioma en que le escriben**. 3 ejercicios nuevos (Curl Martillo Cruzado,
+  Sentadillas Búlgaras con Mancuernas, Aducciones de Cadera en Máquina). Lint del repo a cero.
 - 📄 **25-jul — legales al día + cardio afinado + limpieza**: **documentos legales (T&C +
   Privacidad, ES+EN) actualizados** para cubrir las features nuevas (nutrición, muro, coach) —
   disciplina pre-lanzamiento. Cardio afinado (tiempo en minutos que se guarda en segundos, métrica
