@@ -14,8 +14,19 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-26 por el loop, desde git main — 97% su propio número)
+## Estado (actualizado 2026-07-27 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🚀 **27-jul — BETA CERRADA (hito)**: FitBook pasó a **acceso por invitación** (un único control
+  para las dos vías, fix del bucle de redirección, nav apagada sin invitación), con **formulario de
+  feedback** (tarjeta de agradecimiento en Hoy + contexto) y **topes del plan gratis subidos** para
+  la beta. Ya no es solo desarrollo: hay **usuarios reales probando**. Además, listo para instalarse:
+  - **PWA instalable**: manifest + iconos + meta de iOS para abrir a pantalla completa; icono con el
+    logo completo (mancuerna + FIT book).
+  - **Notificaciones en tiempo real** (con sondeo como red de seguridad), cada aviso lleva a su pantalla.
+  - **Endurecimiento de seguridad**: cabeceras HTTP, cobro simulado detrás de un flag, errores sin
+    detalle interno.
+  - **Biblioteca de alimentos server-side** (deja de vivir en el navegador → persistencia real por usuario).
+  - Fix de kcal con basura de coma flotante, fix del holograma de la landing (las cabeceras bloqueaban el iframe).
 - 🛠️ **26-jul — sistema de admin del CATÁLOGO + Wallace multiidioma**: máquina de back-office para
   gestionar el catálogo a medida que los usuarios crean ejercicios propios — triaje de personalizados
   (agrupados y con duplicados), **la IA los agrupa**, migración de un grupo al catálogo oficial
