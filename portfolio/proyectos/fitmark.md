@@ -14,8 +14,16 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-27 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-07-28 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🧪 **28-jul — iterando la beta + más pulido de lanzamiento**: **pre-aprobar invitaciones por
+  correo** (antes de que exista la cuenta), **medidor de cupo del plan gratis en las 4 pantallas**
+  con tope, "Premium **próximamente**" en la landing + tarjeta que explica lo "prestado" durante la
+  beta, **cupo de IA atómico en Postgres** (migración 017). **i18n 100%**: barrido total, todo lo
+  visible al usuario es bilingüe es/en. Nuevo **sistema de calentamiento** (fila de warm-up arriba,
+  editable/borrable desde el día, incluida en el volumen y en la imagen compartida) + **reordenar
+  series arrastrando** (long-press) + comprimir tarjeta de ejercicio a una línea. **Más renders 3D
+  propios**: Peso Muerto Rumano e Hip Thrust (fondo negro puro) → ya ~4 ejercicios con render propio.
 - 🚀 **27-jul — BETA CERRADA (hito)**: FitBook pasó a **acceso por invitación** (un único control
   para las dos vías, fix del bucle de redirección, nav apagada sin invitación), con **formulario de
   feedback** (tarjeta de agradecimiento en Hoy + contexto) y **topes del plan gratis subidos** para
