@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-07-28 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-07-30 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🧠 **30-jul — Wallace más inteligente + feed social pulido**: **Wallace con contexto completo**
+  (comentarios + 14 días de comida + días sin registro) y **dietas como tarjetas agregables al
+  calendario** — el coach IA ahora razona con la nutrición además del entreno. **Reacciones estilo
+  Facebook** en el feed (💪 con long-press para elegir emoji + apilado que abre la lista, con los
+  fixes de selección de texto de iOS durante el gesto). Renombre: el espacio de UNA persona pasa de
+  "Muro" a **"Perfil"** (con @nickname editable). Sesiones: el orden de ejercicios se guarda y se
+  respeta, foco automático en el ejercicio en curso; cardio/isométricos ya no piden peso en la revisión.
 - 🧪 **28-jul — iterando la beta + más pulido de lanzamiento**: **pre-aprobar invitaciones por
   correo** (antes de que exista la cuenta), **medidor de cupo del plan gratis en las 4 pantallas**
   con tope, "Premium **próximamente**" en la landing + tarjeta que explica lo "prestado" durante la
