@@ -1,6 +1,20 @@
-# Easy Courts (repo: Padel) — Ficha de proyecto
+# Easy Courts — Ficha de proyecto
 
-> Actualizado: 2026-07-17 por el loop, desde git
+> Actualizado: 2026-08-02 por el loop
+
+## ⚠️ DOS repos desde el 02-ago (aviso de Gustavo)
+
+- **`tavooooo/Padel`** = el **DEMO** (mock, sin BBDD). Es lo que la torre venía trackeando.
+  Queda como **legado/vitrina** — sigue sirviendo para el deck y las demos de venta.
+- **`tavooooo/easy-court`** (singular) = el **PRODUCTO REAL en construcción** — **BBDD real +
+  Vercel**, Gustavo está haciendo la **app funcional** (Etapa 1), dejando **Stripe afuera por
+  ahora**. Pusheado por primera vez el 30-jul. Es la respuesta directa al prospecto Pete: se
+  arrancó el backend real antes de lo planeado (estaba para nov-dic).
+- **Regla**: `easy-court` se desarrolla activamente → la torre **trackea, NO pushea** (igual que
+  Kiwiano/fitmark). El loop debe leer el estado real desde `easy-court` de acá en más.
+- ⏳ **Pendiente de la torre**: clonar/agregar `easy-court` a la sesión para inspeccionarlo de
+  verdad (git). Lo de abajo (Etapa 0) describe el **demo** (Padel); el avance del producto real
+  se irá documentando a medida que el loop lo lea directo.
 
 **Qué es**: plataforma web premium para gestionar clubes de pádel/pickleball:
 **arriendo de canchas**, clases, torneos/ligas, partidas abiertas (estilo Playtomic),

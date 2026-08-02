@@ -75,6 +75,14 @@ a Gustavo el 2026-07-08. Hasta el 1er cierre figuran "ESPERANDO 1ER CIERRE".
      se coordina vía sus chats (como Kiwiano/FitMark), o el cambio no se despliega y su merge
      lo pisa. En la práctica ya no queda proyecto "en pausa" para avance autónomo de código;
      el loop se enfoca en coordinar (nivel 1) y tareas de `portfolio/` (nivel 2).
+     ⚠️ **ACTUALIZACIÓN 02-ago (Gustavo)**: **Easy Courts se separó en DOS repos.**
+     `tavooooo/Padel` = el DEMO (mock, legado). `tavooooo/easy-court` (singular) = el
+     **producto REAL en construcción** — BBDD real + Vercel, app funcional, Stripe afuera por
+     ahora. Gustavo lo desarrolla activamente → **misma regla dura que Kiwiano/fitmark: la torre
+     TRACKEA, no pushea código a `easy-court`.** El loop ahora debería leer el estado de Easy
+     Courts desde `easy-court` (real) y tratar `Padel` como legado/demo. **Repos a fetchear = 6**
+     (agregar `easy-court` cuando esté clonado en la sesión). Pendiente de clasificar (no-portfolio
+     por ahora): `tavooooo/VR` y `tavooooo/lumina-masoterapeuta` — esperar confirmación de Gustavo.
 - **Regla dura**: NUNCA tocar código de Kiwiano ni fitmark — se desarrollan en
   otros chats en paralelo; tocarlos generaría conflictos.
 - **Notificación**: push al teléfono solo si hay algo urgente (deadline vencido o
