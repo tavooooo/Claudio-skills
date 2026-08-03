@@ -14,8 +14,19 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-02 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-03 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🕹️ **03-ago — NACE el "gimnasio navegable" con Wallace 3D** (la idea del video, ver `IDEAS.md`):
+  **Wallace camina de verdad hacia la cámara** (ciclo de andar de 4 fotogramas, sin patinar), con
+  un **atlas de 5 vistas generadas → 8 direcciones en pantalla**, recorriendo **5 estaciones**
+  medidas sobre el render. El **MuscleMap dejó de ser un widget y pasó a ser tu AVATAR** ("cuerpo
+  iluminado": escala de 4 tonos, rellenos translúcidos que tiñen sin tapar, luz simétrica). Hay una
+  **demo autocontenida del gimnasio** para mirarlo sin desplegar. Renders optimizados (1,8 MB → 32 KB).
+  Es exactamente el concepto que la torre registró el 12-jul tras analizar el video de Emergent —
+  ahora en construcción real.
+- 📈 **03-ago — "escalera" de peso corporal en /progress**: 6 peldaños derivados del historial
+  (puros, con tests), migración `022` (historial de peso corporal). F0: índices que faltaban + limpieza
+  (16 MB de peso muerto fuera).
 - 💬 **02-ago — comentarios con HILOS en el feed**: respuestas anidadas a comentarios (hilos de un
   nivel), barra de comentar sobre el teclado con textarea que crece, animación de la primera
   respuesta, manejo de respuestas que fallan. + CTA "Empezar gratis" fijado al borde inferior de la

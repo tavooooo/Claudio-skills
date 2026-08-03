@@ -165,6 +165,13 @@ de dev de FitMark en el mismo movimiento en que borra la rama.
 
 ## 🕹️ Landing "gym navegable" con Wallace 2.5D (idea 2026-07-12)
 
+> ✅ **EN CONSTRUCCIÓN (03-ago-2026)**: el chat de FitBook empezó a construirlo. Wallace camina
+> hacia la cámara (ciclo de andar de 4 fotogramas, atlas de 5 vistas → 8 direcciones), 5 estaciones
+> medidas sobre el render, y el MuscleMap pasó a ser el avatar "cuerpo iluminado". Hay demo
+> autocontenida del gimnasio. La idea de abajo se está haciendo realidad — dejar esta sección como
+> registro del origen (el video de Emergent) y del razonamiento técnico que se recomendó.
+
+
 Gustavo compartió un video-ad de "Emergent" (app.emergent.sh): un sitio tipo
 videojuego top-down donde un personaje camina por una escena isométrica y, al
 pisar carteles en el piso (PRODUCTS, MEN, ABOUT...), se abren paneles con
