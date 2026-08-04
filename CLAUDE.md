@@ -17,6 +17,13 @@ Repositorio de skills globales para todos los proyectos.
 - (2026-07-07) El usuario suele trabajar desde el celular: probar los entregables en viewport móvil y en el flujo real de apertura (vista previa, no navegador).
 - (2026-08-03) **Antes de medir o probar cualquier cosa, levantar el entorno y ESPERAR a que responda** — y comprobarlo, no suponerlo. Medir contra un entorno a medio arrancar no da error: da números creíbles y falsos, y se tarda horas en descubrirlo. Tres formas reales de que pase: la base de datos no estaba en pie y se midió la pantalla de error; un servidor viejo ocupaba el puerto y servía HTML que pedía hojas de estilo ya reemplazadas (sin CSS **todo mide diminuto**: una pasada dio 374 problemas inventados); y se midió antes de que el servidor contestara. La comprobación va en un guion que **sale con error** si algo falta, no en un recordatorio. Ejemplo: `scripts/audit-server.sh` en easy-court.
 - (2026-08-03) **Un guardián o una prueba que no sabe fallar no sirve.** Después de escribir una comprobación, romperla a propósito y confirmar que salta. Se aplica igual a los guiones de verificación: si el "antes" no está en rojo, el "después" en verde no prueba nada.
+- (2026-08-04) **`pkill -f "algo"` se mata a sí mismo.** El shell que lo ejecuta
+  lleva ese mismo texto en su línea de comando, así que el patrón se encuentra a
+  sí mismo: el `pkill` muere y **todo lo que venía detrás en el comando no llega
+  a correr**. Hoy eso dejó viva la caché de compilación que creía borrada, y
+  media hora dudando del CSS servido en vez de del comando. Matar por PID
+  (`ps -eo pid,cmd`, luego `kill <pid>`), o `pkill -f "patrón" || true` en un
+  comando aparte y COMPROBAR después que el proceso ya no está.
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
 
 ## Convenciones de trabajo
