@@ -18,14 +18,24 @@ Repositorio de skills globales para todos los proyectos.
 - (2026-08-03) **Antes de medir o probar cualquier cosa, levantar el entorno y ESPERAR a que responda** — y comprobarlo, no suponerlo. Medir contra un entorno a medio arrancar no da error: da números creíbles y falsos, y se tarda horas en descubrirlo. Tres formas reales de que pase: la base de datos no estaba en pie y se midió la pantalla de error; un servidor viejo ocupaba el puerto y servía HTML que pedía hojas de estilo ya reemplazadas (sin CSS **todo mide diminuto**: una pasada dio 374 problemas inventados); y se midió antes de que el servidor contestara. La comprobación va en un guion que **sale con error** si algo falta, no en un recordatorio. Ejemplo: `scripts/audit-server.sh` en easy-court.
 - (2026-08-03) **Un guardián o una prueba que no sabe fallar no sirve.** Después de escribir una comprobación, romperla a propósito y confirmar que salta. Se aplica igual a los guiones de verificación: si el "antes" no está en rojo, el "después" en verde no prueba nada.
 - (2026-08-05) **Si el bug solo pasa en un navegador que no puedes ejecutar,
-  deja de afinar lo que sí puedes medir.** El carrusel de medallas falló CUATRO
-  veces en el iPhone con el guardián verde en Chromium: dos rondas "arreglando"
-  geometría que ya estaba bien. Lo que difiere entre motores no es la geometría,
-  son comportamientos (WebKit: `scrollIntoView` suave interceptado por
-  `snap-mandatory`, tabla de puntos de snap que no se recalcula tras cambiar el
-  layout). El arreglo real es ELIMINAR la dependencia de ese comportamiento
-  (scroll manual con snap apagado, forzar el recálculo), no ajustar píxeles. Y
-  decir siempre en qué motor se verificó.
+  cambia el MECANISMO, no los números.** El carrusel de medallas falló SIETE
+  veces en el iPhone con el guardián verde en Chromium. Cada ronda afinaba el
+  mecanismo roto —separadores al píxel, colchones, forzar el recálculo de la
+  tabla de snaps, enganche propio por temporizador— y cada una fallaba igual,
+  porque la causa no era la geometría: iOS DESCARTA el espacio final de un
+  scroller horizontal, así que el último elemento era inalcanzable por
+  construcción. Se arregló cuando se tiró el scroll nativo entero y la pista
+  pasó a moverse con transform (Embla). Tres cosas que ahorran rondas:
+  1. **La asimetría es el diagnóstico.** "El primero sí y el último no" señala
+     al mecanismo (el primero descansa en 0, válido siempre); "en PC sí y en el
+     móvil no" señala a los eventos táctiles. Preguntar por esos contrastes
+     ANTES de tocar nada.
+  2. **Un guardián verde en el motor equivocado no es evidencia.** Decir
+     siempre en qué motor se verificó, y que la palabra final la tiene el
+     dispositivo real.
+  3. **Cuando lleves tres intentos sobre la misma pieza, deja de arreglarla:
+     sustitúyela.** Buscar la librería que ya resolvió eso (aquí: Embla, la
+     misma de shadcn/ui) sale más barato que la cuarta ronda.
 - (2026-08-04) **`pkill -f "algo"` se mata a sí mismo.** El shell que lo ejecuta
   lleva ese mismo texto en su línea de comando, así que el patrón se encuentra a
   sí mismo: el `pkill` muere y **todo lo que venía detrás en el comando no llega
