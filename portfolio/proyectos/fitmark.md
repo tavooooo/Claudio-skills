@@ -14,8 +14,16 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-04 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-05 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🏅 **05-ago — capa de enganche ENORME: 968 logros + rangos narrados**: **catálogo de 968 logros**
+  (893 de base + 75 reconocimientos), servido en una **página pública** `/catalogo-logros.html` (sin
+  login, útil también para marketing). Las **placas de rango** ganan **36 títulos fijos por usuario**,
+  un **"papiro"** que te llama por nombre y cuenta tu historia (cada placa cuenta SU historia, no tu
+  índice de hoy), tiers ligados a técnicas avanzadas (**Oro** = Bi-Serie Suprema, **Esmeralda** =
+  Súper Serie al Fallo, Bronce ya visible). Regla: **sin peso corporal no hay rango**. El "cuerpo
+  encendido" estrena **leyenda en /progress** (qué se consigue en cada color/zona). **Escalera de
+  volumen recalibrada** para que la base dure años, no meses (progresión sostenible a largo plazo).
 - 🏆 **04-ago — sistema de RANGOS gamificado "La Bestia" + cardio en rutinas**: el rango estrena
   **placas** en un **carrusel de 6** (la del usuario presidiendo la tarjeta, con cartel "BLOQUEADO"
   cruzado en diagonal), placas que se igualan por área y crecen por peldaño, con nombres de nivel,
