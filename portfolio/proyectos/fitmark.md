@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-05 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-06 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🛡️ **06-ago — perfil de rango pulido (continuación)**: el **marco** con **escudo por rango** y
+  **anillo de nivel** entra en Progreso (con la foto del muro), un juego de escudos por rango con su
+  neón (38→56 px, la Bestia deja de verse chica), "si eres Oro **todo** es de oro" (tarjeta, barra,
+  halo), nombre grande sobre el marco. Terminología: **las medallas son RANGOS**, "nivel" queda para
+  la experiencia. Cartel de 3 pasos para quien entra a Progreso y aún no ve nada. Todo pulido visual
+  del sistema de rangos de los días previos.
 - 🏅 **05-ago — capa de enganche ENORME: 968 logros + rangos narrados**: **catálogo de 968 logros**
   (893 de base + 75 reconocimientos), servido en una **página pública** `/catalogo-logros.html` (sin
   login, útil también para marketing). Las **placas de rango** ganan **36 títulos fijos por usuario**,

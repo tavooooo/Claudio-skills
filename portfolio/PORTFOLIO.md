@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-05** · Actualizar en cada sesión de trabajo.
+> Última actualización: **2026-08-06** · Actualizar en cada sesión de trabajo.
 
 ## Estado global
 
