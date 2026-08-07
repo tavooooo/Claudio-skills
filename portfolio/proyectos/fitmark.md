@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-06 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-07 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🔞 **07-ago — dos piezas de lanzamiento + más logros**: **fecha de nacimiento pedida al registrarse
+  con verificación de edad** (compliance — la app declara `minAge` en los legales) e **invitaciones
+  abiertas** (cualquiera puede invitar, no solo el admin → mecanismo de crecimiento viral de la beta).
+  Bug real corregido: el gráfico de progreso decía 73 kg sobre un punto dibujado en 102. Logros:
+  Colecciones y Catálogo encendidos (+375 placas), +100 de volumen, Constancia se concede sola, y una
+  **auditoría de logros** (qué se puede verificar de verdad; dos etiquetas que mentían, corregidas). El
+  buscador entiende los dos idiomas y palabras sueltas.
 - 🛡️ **06-ago — perfil de rango pulido (continuación)**: el **marco** con **escudo por rango** y
   **anillo de nivel** entra en Progreso (con la foto del muro), un juego de escudos por rango con su
   neón (38→56 px, la Bestia deja de verse chica), "si eres Oro **todo** es de oro" (tarjeta, barra,
