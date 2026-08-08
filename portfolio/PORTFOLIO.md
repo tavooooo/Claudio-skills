@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-07** · Actualizar en cada sesión de trabajo. · ⏰ **ALERTA: Stripe Kiwiano vence 10-ago (3 días) — push enviado**
+> Última actualización: **2026-08-08** · Actualizar en cada sesión de trabajo. · ⏰ **ALERTA: Stripe Kiwiano vence 10-ago (2 días) — SIN activar aún; push enviado 07-ago**
 
 ## Estado global
 

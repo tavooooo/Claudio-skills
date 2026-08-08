@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-07 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-08 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 💠 **08-ago — pulido fino del sistema de logros**: el "latido" de la raya del catálogo (pasa por
+  blanco antes de apagarse, ya no se pintaba doble), rarezas/sombras/arlequines ahora conseguibles,
+  el hexágono avisa "hay algo nuevo" y la raya dice cuál. **Los logros se conceden AL ESCRIBIR + hay
+  barrido nocturno** (con aviso que lleva hasta ellos); botón de admin para revivir el aviso de logros
+  ya conseguidos. Cardio "Dominado" pide sesiones, no series. Progreso: "0,15 de 1" reemplazado por
+  dos condiciones con dos barras y cifras reales. Nota técnica: anotaron en AGENTS.md las trampas de
+  `pg_net` en el barrido.
 - 🔞 **07-ago — dos piezas de lanzamiento + más logros**: **fecha de nacimiento pedida al registrarse
   con verificación de edad** (compliance — la app declara `minAge` en los legales) e **invitaciones
   abiertas** (cualquiera puede invitar, no solo el admin → mecanismo de crecimiento viral de la beta).
