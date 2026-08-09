@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-08 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-09 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🌐 **09-ago — logros en inglés + Catálogo completo + rango a 4 peldaños**: la tubería de logros y
+  las **674 placas del Catálogo** ahora hablan inglés (antes el Catálogo solo mostraba 132: faltaban
+  los ejercicios sin tocar). El cardio llega hasta el rango "Amo" (250 sesiones) y la escalera de un
+  ejercicio sube a **cuatro peldaños** (Maestro, Amo). Carrusel de rangos que viste la página entera al
+  hojear, muestra semanal grupo por grupo, y la "estela" de la placa del ejercicio en curso gira al
+  doble para avisar de logros nuevos. Fix: hojear el carrusel ya no abre descanso en la última serie.
 - 💠 **08-ago — pulido fino del sistema de logros**: el "latido" de la raya del catálogo (pasa por
   blanco antes de apagarse, ya no se pintaba doble), rarezas/sombras/arlequines ahora conseguibles,
   el hexágono avisa "hay algo nuevo" y la raya dice cuál. **Los logros se conceden AL ESCRIBIR + hay
