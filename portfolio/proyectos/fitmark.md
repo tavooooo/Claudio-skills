@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-09 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-10 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 💪 **10-ago — gran tanda en el mapa muscular + catálogo**: el trapecio se parte en **3 zonas**
+  (y se nombra por zonas en los 23 ejercicios que lo tocan), romboides y redondo menor estrenan trazo
+  propio, y el **serrato se reasigna a hombros** (en 20/23 ejercicios cargaba él solo la cifra de espalda
+  alta). El heatmap ahora cuenta **MÚSCULOS** (el grupo solo agrupa) y sube de 10 a **15 grupos**; el
+  core deja de encenderse en día de pierna. Herramienta de trazado de músculos en el repo (con guardián
+  que vigila la trampa de cortar dos veces el original). Migración 031 (los 21 ejercicios que la app
+  conocía y la base no). Los **1103 logros** ahora en inglés. Fix volumen de unilaterales (valía la mitad).
 - 🌐 **09-ago — logros en inglés + Catálogo completo + rango a 4 peldaños**: la tubería de logros y
   las **674 placas del Catálogo** ahora hablan inglés (antes el Catálogo solo mostraba 132: faltaban
   los ejercicios sin tocar). El cardio llega hasta el rango "Amo" (250 sesiones) y la escalera de un
