@@ -43,6 +43,18 @@ Repositorio de skills globales para todos los proyectos.
   media hora dudando del CSS servido en vez de del comando. Matar por PID
   (`ps -eo pid,cmd`, luego `kill <pid>`), o `pkill -f "patrón" || true` en un
   comando aparte y COMPROBAR después que el proceso ya no está.
+- (2026-08-10) **Los links se dan CLICKEABLES y directos.** Nada de «entra en
+  /lab/trazar» ni una ruta suelta que hay que componer a mano: el usuario trabaja
+  desde el móvil y una URL a medias es una URL que no se abre. Si la herramienta
+  todavía no está desplegada donde él pueda entrar, se le entrega igual algo que
+  sí se abra ahora (un artefacto autocontenido), no una promesa de deploy.
+- (2026-08-10) **Lo visual se manda VIÉNDOLO.** Si se prueba algo de pantalla, va
+  la captura; si tiene movimiento, va un GIF. Describir con palabras lo que se
+  acaba de mirar obliga al usuario a fiarse en vez de ver.
+- (2026-08-10) **Modo caveman por defecto.** Corto y preciso, el resultado en la
+  primera frase, listas antes que párrafos, cero relleno. Es una preferencia
+  permanente del dueño, no de una sesión suelta.
+
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
 
 ## Convenciones de trabajo
