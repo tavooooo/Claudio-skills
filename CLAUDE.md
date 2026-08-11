@@ -10,6 +10,21 @@ Repositorio de skills globales para todos los proyectos.
 4. **Cuidar el alcance.** Ceñirse a lo pedido: no agregar features, refactors ni cambios fuera del objetivo acordado. Si algo fuera de alcance parece necesario, proponerlo primero — no hacerlo por iniciativa propia.
 5. **Aprender de la experiencia trabajando juntos.** Cuando el usuario corrija un comportamiento o quede clara una preferencia, registrarla en la sección "Lecciones aprendidas" de este archivo (commit directo a `main`), para que las próximas sesiones la apliquen sin repetir el error.
 
+## Frases que disparan algo (el «Jarvis»)
+
+Instrucción del dueño (2026-08-11). Cuando diga cualquiera de estas, la respuesta
+es traerle lo pedido, no preguntarle a qué se refiere:
+
+| Lo que dice | Qué se le trae |
+|---|---|
+| «muéstrame las funciones» · «nuestras herramientas» · «el menú» | El catálogo de lo que ya sabemos hacer en ese proyecto. En FitBook: `docs/funciones.md` |
+| «lístame los pendientes» | La lista con estado, para atacarlos de a uno. En FitBook: `docs/pendientes.md` |
+| «hagamos la revisión del día» | Repaso de todo lo hecho en la jornada —commits, migraciones corridas, decisiones, lo que quedó a medias— y actualizar los pendientes con lo que salga |
+
+Y la regla que las sostiene: **toda herramienta que construyamos juntos entra en
+el listado de funciones el mismo día**, con qué hace, cómo se dispara y qué hay
+que tener a mano. Si no está en la lista, para él no existe.
+
 ## Lecciones aprendidas
 
 - (2026-07-07) Los entregables HTML deben verse completos **sin JavaScript**: las vistas previas móviles (iOS Quick Look, previews de chat) no ejecutan JS. Pre-renderizar el contenido estático; el JS solo mejora. Ver skill `fableSkill`.
