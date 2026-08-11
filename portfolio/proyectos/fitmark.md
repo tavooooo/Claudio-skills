@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-10 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-11 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🩺 **11-ago — catálogo auditado + integridad base/catálogo**: entraron **13 ejercicios de la gente**
+  al catálogo (auditado), y la **migración 038 cuadra base y catálogo** (discrepaban en 42 ejercicios).
+  Bug de datos gordo cazado: un músculo presente en las dos columnas (primario+secundario) contaba el
+  **TRIPLE** y no lo veía nadie. Iliopsoas e infraespinoso nombrados (falta dibujarlos). Nuevo script
+  `scripts/dbq.mjs` para consultar la base sin depender del conector. Escrito el plan de "sesiones por
+  músculo" con los datos ya comprobados. Rama `test/catalogo-13-fichas-y-auditoria` ya mergeada a main.
 - 💪 **10-ago — gran tanda en el mapa muscular + catálogo**: el trapecio se parte en **3 zonas**
   (y se nombra por zonas en los 23 ejercicios que lo tocan), romboides y redondo menor estrenan trazo
   propio, y el **serrato se reasigna a hombros** (en 20/23 ejercicios cargaba él solo la cifra de espalda
