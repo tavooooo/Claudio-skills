@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-11** · Actualizar en cada sesión de trabajo. · 🚨 **Stripe Kiwiano VENCIDO (era 10-ago) — arriesga la BETA COMERCIAL cobrable del 15-ago (4 días). Sin más pushes diarios; re-escalo el 12-ago si el hito sigue en riesgo**
+> Última actualización: **2026-08-12** · Actualizar en cada sesión de trabajo. · 🚨 **BETA COMERCIAL cobrable 15-ago (3 días) EN RIESGO — Stripe sigue sin activar (main 7d3e8b6). Push por el hito enviado 12-ago**
 
 ## Estado global
 

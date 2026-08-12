@@ -14,8 +14,17 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-11 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-12 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🦵 **12-ago — gran tanda de anatomía + unilateralidad como campo**: el mapa muscular se afina fuerte —
+  **cuádriceps e isquiotibiales por CABEZAS**, los dos tibiales cada uno en su sitio (el anterior estaba
+  del lado del hueso; el posterior encendía a su antagonista), e **iliopsoas, sartorio, tensor de la
+  fascia lata, braquiorradial y romboides (mayor/menor)** estrenan trazo propio en vez de pintar de
+  prestado. Cambio de datos importante: **la unilateralidad deja de ser una palabra del nombre y pasa a
+  ser un CAMPO** (17 ejercicios se hacían de a uno y contaban un solo lado). Nueva métrica de
+  **frecuencia por músculo** (cuántas sesiones lo tocaron). Fixes: capa fantasma que robaba clics a 4
+  músculos, doble redondeo en la hoja de series. Dos ramas `fix/tibiales` y `fix/orden-rutinas-y-alias`
+  ya mergeadas a main.
 - 🩺 **11-ago — catálogo auditado + integridad base/catálogo**: entraron **13 ejercicios de la gente**
   al catálogo (auditado), y la **migración 038 cuadra base y catálogo** (discrepaban en 42 ejercicios).
   Bug de datos gordo cazado: un músculo presente en las dos columnas (primario+secundario) contaba el
