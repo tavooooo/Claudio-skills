@@ -14,8 +14,16 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-12 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-13 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🔒 **13-ago — fix de seguridad + integridad de conteos**: **los guiones de navegador tenían la
+  CONTRASEÑA escrita** (no solo el correo) — sacada del repo; las listas de admin ahora salen **solo del
+  entorno y fallan cerrado** (sin variable, no hay admin); los volcados base64 de la prueba de imágenes,
+  fuera del historial. En conteos: el mapa de calor contaba **dos series donde los logros contaban una**
+  (los lados ahora cuentan como una), y el unilateral partido cuenta por su **lado flojo**. Se sumó la
+  nota de esfuerzo con **RPE**. Decisiones de catálogo: elevaciones/remo al mentón NO siguen a ExRx
+  (solo trapecio superior), supraespinoso descartado, hidrante marcado unilateral. Ramas
+  `fix/credenciales-fuera-de-los-guiones` y `fix/lados-en-el-mapa-de-calor` ya mergeadas a main.
 - 🦵 **12-ago — gran tanda de anatomía + unilateralidad como campo**: el mapa muscular se afina fuerte —
   **cuádriceps e isquiotibiales por CABEZAS**, los dos tibiales cada uno en su sitio (el anterior estaba
   del lado del hueso; el posterior encendía a su antagonista), e **iliopsoas, sartorio, tensor de la
