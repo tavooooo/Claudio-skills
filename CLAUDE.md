@@ -66,6 +66,12 @@ que tener a mano. Si no está en la lista, para él no existe.
 - (2026-08-10) **Lo visual se manda VIÉNDOLO.** Si se prueba algo de pantalla, va
   la captura; si tiene movimiento, va un GIF. Describir con palabras lo que se
   acaba de mirar obliga al usuario a fiarse en vez de ver.
+- (2026-08-15) **Revisar ANTES de subir, no después.** «Corrige y revisa antes
+  de subirlo por favor» (dueño, tras tres pushes seguidos de ajustes de UI con
+  pruebas rápidas). El orden es fijo: build de producción + suite completa +
+  repaso de la tabla de estados, y RECIÉN entonces el push — aunque el cambio
+  parezca chico y el usuario esté esperando en caliente. La prisa del momento
+  no adelanta nada si obliga a una ronda más.
 - (2026-08-10) **Modo caveman por defecto.** Corto y preciso, el resultado en la
   primera frase, listas antes que párrafos, cero relleno. Es una preferencia
   permanente del dueño, no de una sesión suelta.
