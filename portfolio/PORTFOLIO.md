@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-13** · Actualizar en cada sesión de trabajo. · 🚨 **BETA COMERCIAL cobrable 15-ago (2 días) EN RIESGO — Stripe sin activar (main 7d3e8b6). Push enviado 12-ago; re-escalo el 14-ago si sigue igual**
+> Última actualización: **2026-08-14** · Actualizar en cada sesión de trabajo. · 🚨 **BETA COMERCIAL cobrable MAÑANA (15-ago) EN RIESGO — Stripe sin activar (main 7d3e8b6). Push de re-escalada enviado 14-ago**
 
 ## Estado global
 

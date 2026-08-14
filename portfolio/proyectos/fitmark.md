@@ -14,8 +14,16 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-13 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-14 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🏋️ **14-ago — rangos "en tu serie" + flujo de sesión viva + catálogo 206**: los **tres grandes**
+  (banca/sentadilla/peso muerto) traducen cada rango a **TU serie** (reps×peso, teñida con el metal del
+  rango) y enseñan la que pide el siguiente peldaño. **Flujo de sesión viva** pulido: con sesión en curso
+  el primer botón de la hoja es SIEMPRE **Retomar**, la fila agendada se esconde mientras corre, y el
+  guardián reconoce tu propia sesión (iniciar la misma = retomarla). **Convertir sesión en rutina** (vive
+  en el lápiz del calendario, con sus 6 defectos ya resueltos). Catálogo **188→206** (18 ejercicios
+  populares, incl. curl araña), isquiotibiales **retrazados a mano por el dueño** (semimembranoso),
+  sartorio de 1 a 6 ejercicios, migración 053 (hidrante unilateral a la base).
 - 🔒 **13-ago — fix de seguridad + integridad de conteos**: **los guiones de navegador tenían la
   CONTRASEÑA escrita** (no solo el correo) — sacada del repo; las listas de admin ahora salen **solo del
   entorno y fallan cerrado** (sin variable, no hay admin); los volcados base64 de la prueba de imágenes,
