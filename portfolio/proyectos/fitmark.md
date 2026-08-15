@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-14 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-15 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🔬 **15-ago — Escáner semanal + hitos automáticos**: estrena el **Escáner semanal**, una vista del
+  cuerpo entero a pantalla completa (avatar por grupo, el músculo elegido perfilado en blanco, la figura
+  gira hacia donde se ve, las cuatro fases de la semana). Mucho pulido de esa pantalla (dosier que se
+  cerraba mal, deformación del avatar, reparto móvil/escritorio, título en aleta de carpeta). Y **los
+  cuatro hitos de la campanita** (nivel, rango y las dos semanas grandes) ya se **envían solos** al
+  guardar un entreno.
 - 🏋️ **14-ago — rangos "en tu serie" + flujo de sesión viva + catálogo 206**: los **tres grandes**
   (banca/sentadilla/peso muerto) traducen cada rango a **TU serie** (reps×peso, teñida con el metal del
   rango) y enseñan la que pide el siguiente peldaño. **Flujo de sesión viva** pulido: con sesión en curso
