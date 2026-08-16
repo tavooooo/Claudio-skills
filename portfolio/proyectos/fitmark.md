@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-15 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-16 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- ⚡ **16-ago — nivel por XP + sexo en el rango**: el anillo del nivel deja de ser «sesiones ÷ 3» y pasa
+  a ser **XP de verdad** (rampa turquesa-verde como el mapa de calor, ranura marcada, brillos de energía,
+  un rayo que lo carga; puntas rectas, carril sólido). El **alta ahora pide el sexo** y ese dato **llega
+  hasta el rango** (puntúa cada marca con el peso corporal de SU día; antes el sexo nunca llegaba porque
+  `user_profiles` se consultaba por el id equivocado). Progreso avisa arriba de todo lo que le falta.
+  Empiezan a integrar por **PR** (#9–#13) en vez de merges directos. Registro de la estrategia de niveles
+  para el próximo agente.
 - 🔬 **15-ago — Escáner semanal + hitos automáticos**: estrena el **Escáner semanal**, una vista del
   cuerpo entero a pantalla completa (avatar por grupo, el músculo elegido perfilado en blanco, la figura
   gira hacia donde se ve, las cuatro fases de la semana). Mucho pulido de esa pantalla (dosier que se

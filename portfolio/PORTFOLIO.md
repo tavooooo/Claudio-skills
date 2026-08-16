@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-15** · Actualizar en cada sesión de trabajo. · 🚨 **HITO 15-ago LLEGÓ SIN STRIPE — la beta comercial arranca sin cobro (main 7d3e8b6). Último push enviado; queda como BLOQUEO ABIERTO, sin recordatorio diario hasta que haya novedad**
+> Última actualización: **2026-08-16** · Actualizar en cada sesión de trabajo. · 🚨 **Stripe Kiwiano: BLOQUEO ABIERTO (hito 15-ago llegó sin cobro, main 7d3e8b6). Sin recordatorio diario; se retoma cuando haya novedad. Próximo deadline: lanzamiento público FitBook ~fin de agosto**
 
 ## Estado global
 
