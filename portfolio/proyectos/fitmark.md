@@ -14,8 +14,17 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-16 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-17 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🎨 **17-ago — gran pasada de UX (HOY como lobby + /progress revestido)**: la pantalla **HOY** se
+  reconvierte en un **lobby de cinco tarjetas** (nutrición con su anillo y tres barras de macros,
+  biblioteca con su botón, el repaso se va a su propia sala) y el escritorio deja de ser "el móvil
+  estirado". **/progress** revestido con el estilo del rango: tres gráficos vestidos, un solo calendario,
+  un solo volumen, mapa de calor y récords junto a los tres grandes; **el cuerpo se muda a `/cuerpo`** y
+  se dibuja con sus músculos. Avisos de **pesaje cada dos semanas**, cabeceras rehechas, tema claro deja
+  de ser "negro sobre negro". El **fix de la barra inferior de iOS** se mantiene en rama
+  `claude/ios-barra-inferior` (SIN verificar en dispositivo) hasta confirmarlo en un iPhone real —
+  aplicando la lección propia de no dar por bueno un arreglo iOS con guardián verde en otro motor.
 - ⚡ **16-ago — nivel por XP + sexo en el rango**: el anillo del nivel deja de ser «sesiones ÷ 3» y pasa
   a ser **XP de verdad** (rampa turquesa-verde como el mapa de calor, ranura marcada, brillos de energía,
   un rayo que lo carga; puntas rectas, carril sólido). El **alta ahora pide el sexo** y ese dato **llega
