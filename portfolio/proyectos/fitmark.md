@@ -14,8 +14,17 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-17 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-18 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🧭 **18-ago — pulido de navegación + fix de compilación**: **botón de volver unificado y pegajoso** en
+  todas las pantallas (mismo alto que la barra de búsqueda, vidrio verde), **títulos sin posesivo**
+  (Progreso, Cuerpo, Alimentación de hoy, Logros), la medalla del rango se muda de Progreso a **HOY**,
+  las cuatro fases del Escáner pasan a ser **filtros** (se ve cuál está puesta, con guardián de ida y
+  vuelta), y los modales que preguntan ya **no se cierran tocando el fondo**. En Progreso, "Tu cuerpo"
+  se parte en "Peso y medidas" + la puerta a Cuerpo. **Fixes reales**: una **llave huérfana en
+  `globals.css`** dejaba la hoja entera sin compilar; y "Calendario" no volvía a la rejilla porque un
+  `useRef(true)` se rompía en StrictMode. La rama `claude/ios-barra-inferior` ya trae main dentro (para
+  probar el arreglo iOS sin los otros fallos), sigue pendiente de verificar en iPhone real.
 - 🎨 **17-ago — gran pasada de UX (HOY como lobby + /progress revestido)**: la pantalla **HOY** se
   reconvierte en un **lobby de cinco tarjetas** (nutrición con su anillo y tres barras de macros,
   biblioteca con su botón, el repaso se va a su propia sala) y el escritorio deja de ser "el móvil
