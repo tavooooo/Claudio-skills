@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-18 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-19 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🛠️ **19-ago — ronda de fixes sobre ejercicios propios y rutinas de ejemplo**: los ejercicios propios
+  **por tiempo** se escriben en **M:SS** (antes un ejercicio por tiempo se guardaba como "3.600
+  repeticiones y un récord" absurdo); el mismo ejercicio propio **decía cuatro cosas distintas en cuatro
+  pantallas** y ahora cuadra (se relee entero lo guardado); crear uno propio **ya no exige saber
+  anatomía**. Las **rutinas de ejemplo** se distinguen, no se editan y dejan de desaparecer al crear la
+  primera (el banco monta también el cupo lleno). Fix móvil: el `:hover` se quedaba pegado hasta el
+  tercer toque. Editar una sesión recalcula su duración (+ SQL para lo ya truncado).
 - 🧭 **18-ago — pulido de navegación + fix de compilación**: **botón de volver unificado y pegajoso** en
   todas las pantallas (mismo alto que la barra de búsqueda, vidrio verde), **títulos sin posesivo**
   (Progreso, Cuerpo, Alimentación de hoy, Logros), la medalla del rango se muda de Progreso a **HOY**,
