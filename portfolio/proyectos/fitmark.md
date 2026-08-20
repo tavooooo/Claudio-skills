@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-19 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-20 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🌗 **20-ago — tema claro por tokens (piloto) + láminas del mapa muscular**: arranca el rehacer del
+  **tema claro basado en tokens** (el color entra por variable CSS en vez de hardcodeado). El piloto
+  destapó varios bugs de contraste: el **resumen del final no se leía en claro** ("el bug del token en su
+  forma pura"), la miniatura del calendario y el HUD de logros, la figura del mapa que ahora va **sin
+  caja** en claro. Entran **láminas nuevas del mapa muscular** y el mapa de logros se recoloca para
+  monitor (no el móvil estirado). Casi todo se integró desde main a la rama del tema claro y de vuelta.
 - 🛠️ **19-ago — ronda de fixes sobre ejercicios propios y rutinas de ejemplo**: los ejercicios propios
   **por tiempo** se escriben en **M:SS** (antes un ejercicio por tiempo se guardaba como "3.600
   repeticiones y un récord" absurdo); el mismo ejercicio propio **decía cuatro cosas distintas en cuatro
