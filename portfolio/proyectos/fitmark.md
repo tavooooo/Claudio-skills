@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-20 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-21 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- ⚔️ **21-ago — tema claro cerrado + índice de fuerza + plan "la Arena"**: el **tema claro** queda
+  completo (rampa, elevación y color de marca). Aparece el **índice de fuerza** en el pie de HOY, junto
+  al rango, y se **desacopla de la caché** (se recalcula de verdad). Novedad de dirección: se escribe el
+  **plan maestro de "la Arena", un auto-battler 2.5D** — una feature de juego nueva y ambiciosa dentro de
+  FitBook, por ahora **solo plan** (no código). Señal a vigilar: es una apuesta grande de producto
+  mientras la pasarela de pago (freemium) sigue sin tocarse.
 - 🌗 **20-ago — tema claro por tokens (piloto) + láminas del mapa muscular**: arranca el rehacer del
   **tema claro basado en tokens** (el color entra por variable CSS en vez de hardcodeado). El piloto
   destapó varios bugs de contraste: el **resumen del final no se leía en claro** ("el bug del token en su
