@@ -14,8 +14,16 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-21 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-22 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- ⚔️ **22-ago — "la Arena" CONSTRUIDA en un día + fix del error 494**: el auto-battler **la Arena** pasó
+  de plan (ayer) a estar **entero en `/lab/arena`** (motor completo con suite de guardianes, control
+  apilado cerrado, pieza oscura en ambos temas, "golpe esquivado no controla"). Fix de peso real: los
+  **ejercicios personalizados se mudan a tabla propia** y con eso **muere el error 494
+  REQUEST_HEADER_TOO_LARGE** (viajaban en la cookie/cabecera y la inflaban hasta romper la request).
+  Catálogo: flexiones con rodillas y en pica con pies en banco (con guía visual). Fix de la
+  duración-suelo (solo vale cuando lo registrado ES la sesión entera). Nota: la Arena vive en `/lab/`
+  (laboratorio), aún no en producción.
 - ⚔️ **21-ago — tema claro cerrado + índice de fuerza + plan "la Arena"**: el **tema claro** queda
   completo (rampa, elevación y color de marca). Aparece el **índice de fuerza** en el pie de HOY, junto
   al rango, y se **desacopla de la caché** (se recalcula de verdad). Novedad de dirección: se escribe el
