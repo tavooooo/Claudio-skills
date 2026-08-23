@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-22 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-08-23 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🎮 **23-ago — día casi entero en la Arena (mini-juego)**: coreografía del combate (ronda 1), las cinco
+  poses del Tank y de la Grip-Reaper, y varios bugs de espejo del "recibe golpe" (el Tank encajaba de
+  espaldas). **8 de 9 commits fueron de la Arena**, que sigue en `/lab/` (no producción). El único cambio
+  en la app real: el **interruptor Entrenamiento | Comidas estaba roto desde el día que se añadió** — ya
+  funciona. Señal: el foco de la semana está en el mini-juego de laboratorio, no en cerrar el lanzamiento
+  público (~fin de agosto) ni en la monetización.
 - ⚔️ **22-ago — "la Arena" CONSTRUIDA en un día + fix del error 494**: el auto-battler **la Arena** pasó
   de plan (ayer) a estar **entero en `/lab/arena`** (motor completo con suite de guardianes, control
   apilado cerrado, pieza oscura en ambos temas, "golpe esquivado no controla"). Fix de peso real: los

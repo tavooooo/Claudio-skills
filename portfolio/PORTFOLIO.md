@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-22** · Actualizar en cada sesión de trabajo. · 🚨 **Stripe Kiwiano: BLOQUEO ABIERTO (hito 15-ago llegó sin cobro, main 7d3e8b6). Sin recordatorio diario. Próximo deadline: lanzamiento público FitBook ~fin de agosto (~8 días)**
+> Última actualización: **2026-08-23** · Actualizar en cada sesión de trabajo. · 🚨 **Stripe Kiwiano: BLOQUEO ABIERTO (hito 15-ago llegó sin cobro, main 7d3e8b6). Sin recordatorio diario. Próximo deadline: lanzamiento público FitBook ~fin de agosto (~7 días)**
 
 ## Estado global
 
