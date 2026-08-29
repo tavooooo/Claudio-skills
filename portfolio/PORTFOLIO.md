@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-28** · Actualizar en cada sesión de trabajo. · 🚨 **Stripe Kiwiano: BLOQUEO ABIERTO (main 7d3e8b6). ⏳ FitBook: lanzamiento público ~fin de agosto EN DUDA — 5 días quietos (24–28), push enviado el 27 sin respuesta aún. A la espera de confirmar/correr la fecha**
+> Última actualización: **2026-08-29** · Actualizar en cada sesión de trabajo. · 💳 **Kiwiano: Gustavo EVALÚA pasarela de pago (preguntó WooCommerce vs Stripe) — el bloqueo de monetización está en su radar. Aclarado que Stripe ya está codeado; alternativas Chile: Flow/Mercado Pago/Webpay. A la espera de qué le frena de Stripe. FitBook: fecha de lanzamiento aún sin confirmar**
 
 ## Estado global
 
