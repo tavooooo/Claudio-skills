@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-29** · Actualizar en cada sesión de trabajo. · 💳 **Kiwiano: Gustavo EVALÚA pasarela de pago (preguntó WooCommerce vs Stripe) — el bloqueo de monetización está en su radar. Aclarado que Stripe ya está codeado; alternativas Chile: Flow/Mercado Pago/Webpay. A la espera de qué le frena de Stripe. FitBook: fecha de lanzamiento aún sin confirmar**
+> Última actualización: **2026-08-30** · Actualizar en cada sesión de trabajo. · 📅 **FitBook: llegó fin de agosto SIN lanzamiento público — la fecha del pipeline se corrió de hecho, a la espera de que Gustavo fije la nueva. 💳 Kiwiano: monetización en evaluación (Stripe vs Flow/Mercado Pago/Webpay), a la espera de qué le frena de Stripe**
 
 ## Estado global
 
