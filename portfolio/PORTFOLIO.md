@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-08-30** · Actualizar en cada sesión de trabajo. · 📅 **FitBook: llegó fin de agosto SIN lanzamiento público — la fecha del pipeline se corrió de hecho, a la espera de que Gustavo fije la nueva. 💳 Kiwiano: monetización en evaluación (Stripe vs Flow/Mercado Pago/Webpay), a la espera de qué le frena de Stripe**
+> Última actualización: **2026-08-31** · Actualizar en cada sesión de trabajo. · 😴 **8 días sin código (24–31). 2 DECISIONES ABIERTAS de Gustavo: (1) nueva fecha de lanzamiento FitBook (fin-ago pasó sin lanzar); (2) qué le frena de Stripe → destraba 1er cobro de Kiwiano. Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
 
 ## Estado global
 
