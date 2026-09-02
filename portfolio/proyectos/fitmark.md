@@ -14,8 +14,12 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-08-23 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-09-02 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- ▶️ **02-sep — vuelve la actividad tras 9 días quietos**: rama `claude/escaner-directo` con un commit
+  de UX — **el Escáner se abre directo** (`/cuerpo` deja de ser una antesala). Chico y aún en rama (no
+  en main), pero rompe la racha de 9 días sin commits (24-ago → 01-sep). **La fecha de lanzamiento
+  público de FitBook (era ~fin de agosto) pasó sin lanzar — pendiente que Gustavo fije la nueva.**
 - 🎮 **23-ago — día casi entero en la Arena (mini-juego)**: coreografía del combate (ronda 1), las cinco
   poses del Tank y de la Grip-Reaper, y varios bugs de espejo del "recibe golpe" (el Tank encajaba de
   espaldas). **8 de 9 commits fueron de la Arena**, que sigue en `/lab/` (no producción). El único cambio
