@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-09-02** · Actualizar en cada sesión de trabajo. · ▶️ **FitBook volvió a moverse (02-sep, rama `escaner-directo`) tras 9 días quietos. Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
+> Última actualización: **2026-09-03** · Actualizar en cada sesión de trabajo. · FitBook activo de nuevo (Escáner directo mergeado a main). Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
 
 ## Estado global
 
