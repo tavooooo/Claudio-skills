@@ -89,6 +89,17 @@ que tener a mano. Si no está en la lista, para él no existe.
   ojo con la otra mitad: `next start` NO sirve para los bancos de `/lab`
   —el proxy exige las variables de Supabase y las manda a `/login`—, así que
   las capturas y los guardianes van siempre contra `next dev`.
+- (2026-09-07) **Next 16.3 REESCRIBE lo que haya entre `<!-- BEGIN:nextjs-agent-rules -->`
+  y `<!-- END:nextjs-agent-rules -->` en `AGENTS.md`/`CLAUDE.md`** cada vez que
+  `next dev` arranca con un agente detectado y su texto cambió
+  (`node_modules/next/dist/server/lib/generate-agent-files.js`). Sin aviso y sin
+  error. En FitBook el marcador de apertura estaba en la línea 1 y tres secciones
+  del dueño (102 líneas de reglas de seguridad) vivían dentro: el primer `next dev`
+  con 16.3.4 las borró del árbol. Se cazó porque `git status` enseñó un `AGENTS.md`
+  modificado que nadie había tocado. Reglas: nada propio entre los marcadores;
+  tras subir Next, `git status` ANTES del commit y leer el diff de `AGENTS.md`;
+  y un archivo que aparece modificado sin que lo hayas editado no se commitea a
+  ciegas ni se restaura a ciegas — primero se mira quién lo tocó.
 
 ## Convenciones de trabajo
 
