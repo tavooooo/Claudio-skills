@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-09-06** · Actualizar en cada sesión de trabajo. · FitBook arranca «limpieza de app» (rama `claude/limpieza-app`, aún sin mergear). Kiwiano/Padel/La-Suiza sin cambios en main. Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
+> Última actualización: **2026-09-07** · Actualizar en cada sesión de trabajo. · 🚀 FitBook día grande: **24 commits a main** (mergeadas `limpieza-app` + `tanda-2`) — limpieza de código muerto, fix de seguridad (`user_metadata`→servidor), Prisma fuera del repo, **Tienda con pagos «pronto»**. Kiwiano/Padel/La-Suiza sin cambios en main. Siguen abiertas 2 DECISIONES de Gustavo (fecha lanzamiento + Stripe → la Tienda ya empuja esa decisión). Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
 
 ## Estado global
 

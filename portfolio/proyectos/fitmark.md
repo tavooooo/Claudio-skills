@@ -14,15 +14,25 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-09-06 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-09-07 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
 - ✓ **02–03-sep — actividad plena de vuelta tras 9 días quietos**: el **Escáner abre directo**
   (`/cuerpo` deja de ser una antesala) **ya mergeado a main** + pulido (la tira punteada deja aire en
   los laterales). Rompe la racha de 9 días sin commits (24-ago → 01-sep). **La fecha de lanzamiento
   público de FitBook (era ~fin de agosto) pasó sin lanzar — pendiente que Gustavo fije la nueva.**
-- ▶️ **06-sep — arranca «limpieza de app»**: rama `claude/limpieza-app` con un primer commit que es un
-  guardián visual (captura TODOS los bancos `/lab` como referencia antes de refactorizar). Aún **sin
-  mergear** — rama a seguir.
+- 🚀 **07-sep — día grande: 24 commits a main** (se mergearon `claude/limpieza-app` y `claude/tanda-2`,
+  ambas ya sin divergencia). Lo destacado:
+  - **Limpieza de código muerto**: fuera 25 archivos, 9 dependencias y 150 claves i18n que nadie usaba.
+  - **Fix de seguridad**: el plan, el rol de coach y la invitación ya **no se leen de `user_metadata`**
+    (que el cliente puede manipular) → pasan al servidor. Además CSP en Report-Only y cerrojo admin-cliente.
+  - **Prisma fuera del repo**: esquema portado a `supabase/migrations/000`, build sin `prisma generate`.
+  - **Tienda**: productos administrables desde `/admin/tienda`, carrito y **pagos «pronto»** →
+    ⚠️ empuja de lleno la decisión pendiente de pasarela (Stripe).
+  - **Barrendero diario de huérfanos** en Storage (borrar producto o ejercicio propio se lleva sus fotos).
+  - **RPE por serie** (el toggle que faltaba; ya no se borra al editar; también en editores de sesión guardada).
+  - **Vitrina**: gate de visibilidad en las 4 acciones sociales + rate-limit al publicar/comentar.
+  - Nivel hasta 120 «Leyenda», dos fotos de postura en ejercicio propio, docs de las tandas 2 y 3.
+- ▶️ 06-sep — la rama `claude/limpieza-app` arrancó con un guardián visual de bancos `/lab`; hoy quedó mergeada.
 - 🎮 **23-ago — día casi entero en la Arena (mini-juego)**: coreografía del combate (ronda 1), las cinco
   poses del Tank y de la Grip-Reaper, y varios bugs de espejo del "recibe golpe" (el Tank encajaba de
   espaldas). **8 de 9 commits fueron de la Arena**, que sigue en `/lab/` (no producción). El único cambio
