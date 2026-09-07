@@ -77,6 +77,18 @@ que tener a mano. Si no está en la lista, para él no existe.
   permanente del dueño, no de una sesión suelta.
 
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
+- (2026-09-07) **En un contenedor recién arrancado, la primera compilación de
+  Turbopack puede parecer colgada y no lo está.** El disco está frío (`next dev`
+  avisa «Slow filesystem detected»): `/lab/hoy` tardó 3,6 min y `/lab/calendario`
+  no contestó en DIEZ minutos con el proceso al 3% de CPU. Se mató, se relanzó y
+  volvió a colgarse igual. Lo que lo destrabó fue correr `npm run build` una vez
+  (lee `node_modules` entero y calienta la caché del sistema): después, el mismo
+  `next dev` compiló `/lab/hoy` en 7 s y `/lab/calendario` en 1,4 s. Regla: si el
+  contenedor lleva menos de media hora arriba y una ruta no compila, **no
+  investigues la ruta ni reinicies dos veces**: build primero, dev después. Y
+  ojo con la otra mitad: `next start` NO sirve para los bancos de `/lab`
+  —el proxy exige las variables de Supabase y las manda a `/login`—, así que
+  las capturas y los guardianes van siempre contra `next dev`.
 
 ## Convenciones de trabajo
 
