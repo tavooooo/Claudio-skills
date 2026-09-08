@@ -14,7 +14,20 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-09-07 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-09-08 por el loop, desde git main — ~98%, EN BETA CERRADA)
+
+- 📱 **08-sep — FitBook VA A LAS TIENDAS** (hito grande, main 6b6113b6..0fc2fb06):
+  - **iOS con Capacitor 8**: cascarón nativo que abre `fitbook.cl`, proyecto Xcode, icono/splash,
+    **build en GitHub Actions** (IPA sin firmar siempre; firmada + TestFlight cuando haya secretos),
+    privacy manifest, háptica nativa, **login nativo OAuth** (fuera del WebView, vuelve por `fitbook://`).
+    Run 1 en verde → tag `ios-build-1`.
+  - **Android como TWA**: `twa-manifest`, `assetlinks` con la huella de la clave de firma, workflow que
+    compila **APK y AAB** en GitHub Actions (run 2 en verde, APK/AAB publicados) → tag `android-build-2`.
+  - **Borrar la cuenta desde la app** + página pública `/legal/eliminar-cuenta` (requisito Apple 5.1.1 /
+    Google Play). Docs `tiendas.md` (listas de control Apple y Google), `ios.md`, `android.md`.
+  - Seguridad/deps: **npm audit a cero** (next 16.2.7 → 16.3.4).
+  - ⚠️ **Nueva consideración para la decisión de pasarela**: publicar en iOS mete la regla de **Apple
+    In-App Purchase (30%)** para bienes/suscripciones digitales — interactúa de lleno con el pendiente de Stripe.
 
 - ✓ **02–03-sep — actividad plena de vuelta tras 9 días quietos**: el **Escáner abre directo**
   (`/cuerpo` deja de ser una antesala) **ya mergeado a main** + pulido (la tira punteada deja aire en
