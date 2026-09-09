@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-09-08** · Actualizar en cada sesión de trabajo. · 📱 **FitBook VA A LAS TIENDAS**: app iOS (Capacitor 8 sobre `fitbook.cl`, IPA compilando en GitHub Actions, TestFlight) + Android (TWA Bubblewrap, APK/AAB compilando); tags `ios-build-1`/`android-build-2`; borrar-cuenta legal, privacy manifest, login nativo. Kiwiano/Padel/La-Suiza sin cambios en main. Siguen abiertas 2 DECISIONES de Gustavo (fecha lanzamiento + pasarela) — ⚠️ ir a iOS mete la regla **Apple IAP (30%)** en la decisión de Stripe. Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
+> Última actualización: **2026-09-09** · Actualizar en cada sesión de trabajo. · Día quieto (sin cambios en main de ningún repo) tras dos días fuertes de FitBook. FitBook mantiene los builds de tienda (iOS/Android) en verde. Siguen abiertas 2 DECISIONES de Gustavo (fecha lanzamiento + pasarela) — ⚠️ ir a iOS mete la regla **Apple IAP (30%)** en la decisión de Stripe. Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
 
 ## Estado global
 
