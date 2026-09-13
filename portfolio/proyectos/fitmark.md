@@ -14,8 +14,28 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-09-08 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-09-13 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🔎 **13-sep — AUDITORÍA DE VENTA** (2 docs a main: `docs/auditoria-venta-2026-09-13.md` + plan por
+  etapas `docs/superpowers/plans/2026-09-13-plan-venta.md`). Pedido del dueño: «qué falta para vender
+  FitBook como producto terminado». Seis auditorías paralelas de solo lectura, cada hallazgo comprobado
+  a mano. **Veredicto**: el núcleo (sesión en vivo, rutinas, calendario, progreso, logros, nutrición,
+  coach) está **sólido y bien probado** (2607 tests, tsc/eslint 0, build verde); lo que falta para VENDER
+  no es funcionalidad sino cerrar **10 bloqueantes de producto (~9-12 d)** y, si se quiere competir de
+  frente con Hevy/Strong, 4 funciones (superseries, libras, progresión sugerida, código de barras).
+  - 🔴 **Bloqueantes** (no se vende sin esto): **1) Cobro real** — no hay pasarela; el flag
+    `ENABLE_SIMULATED_BILLING=1` **viene en `.env.example`** → quien lo copie a Vercel **regala Premium**;
+    falta Mercado Pago/Flow con webhook verificado, tabla `subscriptions`, precios en CLP con IVA/boleta
+    (hoy USD hardcodeado), portal de cancelación (5-8 d). **2)** Cupos FREE **saltables por RLS** (0,5 d).
+    **3)** Sin `error.tsx`/`404` propios (1 d). **4)** Sin Sentry/health-check — nadie se entera si cae (1 d).
+    **5)** `/lab` abierto a cualquier usuario con sesión (0,2 d). **6)** IA **sin techo de gasto** y cuota
+    **fail-open** (0,5 d). **7)** Proveedor IA gratis con datos reales (Gemini free) (0,2 d). **8)** La
+    sesión en curso **se hereda entre cuentas** en el mismo teléfono (0,2 d). **9)** Store persistido sin
+    versión/migración → pantalla blanca al cambiar shape (0,3 d). **10)** Bug vivo en beta: correo
+    pre-aprobado cae igual en sala de espera (`raw_user_meta_data` vs `app_metadata`) (0,2 d).
+  - 🟠 **Alto** (antes del lanzamiento): 11) sin service worker / offline (2 d); 12) Vercel despliega en
+    **Sídney** para mercado chileno (+250-300 ms) → una línea a `gru1`/`iad1` (0,1 d); y más.
+  - ⚠️ El **#1 = la decisión de pasarela** que Gustavo tiene abierta; la auditoría le da precio y forma.
 - 📱 **08-sep — FitBook VA A LAS TIENDAS** (hito grande, main 6b6113b6..0fc2fb06):
   - **iOS con Capacitor 8**: cascarón nativo que abre `fitbook.cl`, proyecto Xcode, icono/splash,
     **build en GitHub Actions** (IPA sin firmar siempre; firmada + TestFlight cuando haya secretos),
