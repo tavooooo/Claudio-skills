@@ -75,8 +75,43 @@ que tener a mano. Si no está en la lista, para él no existe.
 - (2026-08-10) **Modo caveman por defecto.** Corto y preciso, el resultado en la
   primera frase, listas antes que párrafos, cero relleno. Es una preferencia
   permanente del dueño, no de una sesión suelta.
+- (2026-09-16) **Al quitar una opción de la interfaz, buscar el TEXTO que la
+  promete; y cuando una regla cambia, el comentario viejo se BORRA.** En FitBook
+  el día vacío del calendario decía «registra una rutina o una sesión libre con
+  los botones de abajo» y el botón de sesión libre solo se pintaba HOY: alguien
+  cambió la regla dejando encima del código DOS comentarios seguidos con reglas
+  contrarias, y la pantalla se quedó con la vieja. Lo cazó el dueño («antes se
+  podía»). Reglas: (1) la decisión va en una función pura con su pareja probada
+  (`modoSesionLibre`), no en un `isToday &&` suelto; (2) la prueba de cableado
+  ATA el texto al botón (si el diccionario promete «sesión libre», el calendario
+  la ofrece), para que quitar uno sin el otro se ponga rojo; (3) un guardián que
+  revienta en el primer fallo (click sobre un botón que no existe → timeout)
+  enseña UN fallo en vez de todos — si no hay botón, devolver null y seguir.
 
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
+- (2026-09-07) **En un contenedor recién arrancado, la primera compilación de
+  Turbopack puede parecer colgada y no lo está.** El disco está frío (`next dev`
+  avisa «Slow filesystem detected»): `/lab/hoy` tardó 3,6 min y `/lab/calendario`
+  no contestó en DIEZ minutos con el proceso al 3% de CPU. Se mató, se relanzó y
+  volvió a colgarse igual. Lo que lo destrabó fue correr `npm run build` una vez
+  (lee `node_modules` entero y calienta la caché del sistema): después, el mismo
+  `next dev` compiló `/lab/hoy` en 7 s y `/lab/calendario` en 1,4 s. Regla: si el
+  contenedor lleva menos de media hora arriba y una ruta no compila, **no
+  investigues la ruta ni reinicies dos veces**: build primero, dev después. Y
+  ojo con la otra mitad: `next start` NO sirve para los bancos de `/lab`
+  —el proxy exige las variables de Supabase y las manda a `/login`—, así que
+  las capturas y los guardianes van siempre contra `next dev`.
+- (2026-09-07) **Next 16.3 REESCRIBE lo que haya entre `<!-- BEGIN:nextjs-agent-rules -->`
+  y `<!-- END:nextjs-agent-rules -->` en `AGENTS.md`/`CLAUDE.md`** cada vez que
+  `next dev` arranca con un agente detectado y su texto cambió
+  (`node_modules/next/dist/server/lib/generate-agent-files.js`). Sin aviso y sin
+  error. En FitBook el marcador de apertura estaba en la línea 1 y tres secciones
+  del dueño (102 líneas de reglas de seguridad) vivían dentro: el primer `next dev`
+  con 16.3.4 las borró del árbol. Se cazó porque `git status` enseñó un `AGENTS.md`
+  modificado que nadie había tocado. Reglas: nada propio entre los marcadores;
+  tras subir Next, `git status` ANTES del commit y leer el diff de `AGENTS.md`;
+  y un archivo que aparece modificado sin que lo hayas editado no se commitea a
+  ciegas ni se restaura a ciegas — primero se mira quién lo tocó.
 
 ## Convenciones de trabajo
 
