@@ -75,6 +75,18 @@ que tener a mano. Si no está en la lista, para él no existe.
 - (2026-08-10) **Modo caveman por defecto.** Corto y preciso, el resultado en la
   primera frase, listas antes que párrafos, cero relleno. Es una preferencia
   permanente del dueño, no de una sesión suelta.
+- (2026-09-16) **Al quitar una opción de la interfaz, buscar el TEXTO que la
+  promete; y cuando una regla cambia, el comentario viejo se BORRA.** En FitBook
+  el día vacío del calendario decía «registra una rutina o una sesión libre con
+  los botones de abajo» y el botón de sesión libre solo se pintaba HOY: alguien
+  cambió la regla dejando encima del código DOS comentarios seguidos con reglas
+  contrarias, y la pantalla se quedó con la vieja. Lo cazó el dueño («antes se
+  podía»). Reglas: (1) la decisión va en una función pura con su pareja probada
+  (`modoSesionLibre`), no en un `isToday &&` suelto; (2) la prueba de cableado
+  ATA el texto al botón (si el diccionario promete «sesión libre», el calendario
+  la ofrece), para que quitar uno sin el otro se ponga rojo; (3) un guardián que
+  revienta en el primer fallo (click sobre un botón que no existe → timeout)
+  enseña UN fallo en vez de todos — si no hay botón, devolver null y seguir.
 
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
 - (2026-09-07) **En un contenedor recién arrancado, la primera compilación de
