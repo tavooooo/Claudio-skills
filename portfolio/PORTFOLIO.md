@@ -1,6 +1,6 @@
 # 📊 Portfolio — Dashboard Maestro
 
-> Última actualización: **2026-09-21** · Actualizar en cada sesión de trabajo. · 5º día quieto seguido (sin cambios en main de ningún repo). Sigue en la mesa la **auditoría de venta de FitBook** (10 bloqueantes, #1 = cobro real / pasarela). Siguen abiertas 2 DECISIONES de Gustavo (pasarela + fecha lanzamiento). FitBook mantiene los builds de tienda (iOS/Android) en verde. Siguen abiertas 2 DECISIONES de Gustavo (fecha lanzamiento + pasarela) — ⚠️ ir a iOS mete la regla **Apple IAP (30%)** en la decisión de Stripe. Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
+> Última actualización: **2026-09-22** · Actualizar en cada sesión de trabajo. · 6º día quieto seguido (sin cambios en main de ningún repo). Sigue en la mesa la **auditoría de venta de FitBook** (10 bloqueantes, #1 = cobro real / pasarela). Siguen abiertas 2 DECISIONES de Gustavo (pasarela + fecha lanzamiento). FitBook mantiene los builds de tienda (iOS/Android) en verde. Siguen abiertas 2 DECISIONES de Gustavo (fecha lanzamiento + pasarela) — ⚠️ ir a iOS mete la regla **Apple IAP (30%)** en la decisión de Stripe. Siguen abiertas 2 DECISIONES de Gustavo: (1) nueva fecha de lanzamiento FitBook; (2) qué le frena de Stripe → 1er cobro de Kiwiano. 🚨 **Stripe sigue BLOQUEO ABIERTO (main 7d3e8b6)**
 
 ## Estado global
 
