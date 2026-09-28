@@ -14,8 +14,14 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-09-13 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-09-28 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🏋️ **24–28-sep — pulido post-auditoría** (main 4531a9b6→f8eacc39): **peso en kilos o libras (kg/lb)**
+  en sesión, calendario, progreso, rango y peso corporal → **cierra 1 de las 4 brechas competitivas** que
+  marcó la auditoría (libras, que tienen Hevy/Strong). Además: **Configuración** (tuerca del menú),
+  **resumen del mes** bajo el calendario (solo lo hecho, sin canceladas), filtrar el calendario por rutina
+  con el menú de iOS, la pantalla de logros al mismo ancho que las demás y fix de «Copiar a todas». La
+  rama `claude/cardio-reps-peso-fitbook` era el WIP de kg/lb, ya terminado en main.
 - 🔎 **13-sep — AUDITORÍA DE VENTA** (2 docs a main: `docs/auditoria-venta-2026-09-13.md` + plan por
   etapas `docs/superpowers/plans/2026-09-13-plan-venta.md`). Pedido del dueño: «qué falta para vender
   FitBook como producto terminado». Seis auditorías paralelas de solo lectura, cada hallazgo comprobado
