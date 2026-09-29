@@ -14,8 +14,12 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-09-28 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-09-29 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 📅 **29-sep — calendario deslizable** (main f8eacc39→1a4dc131, 2 commits): swipe entre meses, y también
+  entre la semana y el día; el botón «HOY» solo aparece cuando estás fuera del mes/semana presente, y el
+  **resumen del mes** pasa a verse como un dashboard. Pulido de navegación, sin tocar el núcleo. Nueva rama
+  WIP `claude/cardio-reps-peso-fitbook-2f68tf` (aún fuera de main).
 - 🏋️ **24–28-sep — pulido post-auditoría** (main 4531a9b6→f8eacc39): **peso en kilos o libras (kg/lb)**
   en sesión, calendario, progreso, rango y peso corporal → **cierra 1 de las 4 brechas competitivas** que
   marcó la auditoría (libras, que tienen Hevy/Strong). Además: **Configuración** (tuerca del menú),
