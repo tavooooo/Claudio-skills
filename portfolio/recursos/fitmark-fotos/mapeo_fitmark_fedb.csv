@@ -1,0 +1,153 @@
+fm_name,fm_slug,mg,eq,main,clase,score,fedb_id,fedb_name,img
+Aperturas con Mancuernas,aperturas-mancuernas,pecho,DUMBBELL,False,PROBABLE,0.8,One-Arm_Flat_Bench_Dumbbell_Flye,One-Arm Flat Bench Dumbbell Flye,One-Arm_Flat_Bench_Dumbbell_Flye/0.jpg
+Aperturas Inclinadas con Mancuernas,aperturas-inclinadas-mancuernas,pecho,DUMBBELL,False,DIRECTO,0.95,Hammer_Grip_Incline_DB_Bench_Press,Hammer Grip Incline DB Bench Press,Hammer_Grip_Incline_DB_Bench_Press/0.jpg
+Cruce de Poleas,cruce-poleas,pecho,CABLE,False,DIRECTO,1.3,Cable_Crossover,Cable Crossover,Cable_Crossover/0.jpg
+Flexiones de Brazos,flexiones-brazos,pecho,BODYWEIGHT,False,DIRECTO,1.3,Clock_Push-Up,Clock Push-Up,Clock_Push-Up/0.jpg
+Fondos en Paralelas (Pecho),fondos-pecho,pecho,BODYWEIGHT,False,PROBABLE,0.65,Parallel_Bar_Dip,Parallel Bar Dip,Parallel_Bar_Dip/0.jpg
+Pec Deck (Contractora),pec-deck-contractora,pecho,MACHINE,False,PROBABLE,0.8,Butterfly,Butterfly,Butterfly/0.jpg
+Press de Banca con Barra,press-banca-barra,pecho,BARBELL,True,DIRECTO,1.3,Barbell_Bench_Press_-_Medium_Grip,Barbell Bench Press - Medium Grip,Barbell_Bench_Press_-_Medium_Grip/0.jpg
+Press de Banca con Mancuernas,press-banca-mancuernas,pecho,DUMBBELL,False,DIRECTO,1.3,Decline_Dumbbell_Bench_Press,Decline Dumbbell Bench Press,Decline_Dumbbell_Bench_Press/0.jpg
+Press de Banca en Máquina Smith,press-banca-smith,pecho,SMITH_MACHINE,False,DIRECTO,1.3,Smith_Machine_Bench_Press,Smith Machine Bench Press,Smith_Machine_Bench_Press/0.jpg
+Press de Pecho en Máquina,press-pecho-maquina,pecho,MACHINE,False,DIRECTO,1.3,Leverage_Chest_Press,Leverage Chest Press,Leverage_Chest_Press/0.jpg
+Press de Banca Declinado con Barra,press-declinado-barra,pecho,BARBELL,False,DIRECTO,1.45,Decline_Barbell_Bench_Press,Decline Barbell Bench Press,Decline_Barbell_Bench_Press/0.jpg
+Press de Banca Declinado con Mancuernas,press-declinado-mancuernas,pecho,DUMBBELL,False,DIRECTO,1.45,Decline_Dumbbell_Bench_Press,Decline Dumbbell Bench Press,Decline_Dumbbell_Bench_Press/0.jpg
+Press de Banca Inclinado con Barra,press-inclinado-barra,pecho,BARBELL,False,DIRECTO,1.45,Barbell_Incline_Bench_Press_-_Medium_Grip,Barbell Incline Bench Press - Medium Grip,Barbell_Incline_Bench_Press_-_Medium_Grip/0.jpg
+Press de Banca Inclinado con Mancuernas,press-inclinado-mancuernas,pecho,DUMBBELL,False,DIRECTO,1.45,Hammer_Grip_Incline_DB_Bench_Press,Hammer Grip Incline DB Bench Press,Hammer_Grip_Incline_DB_Bench_Press/0.jpg
+Dominadas,dominadas,espalda,BODYWEIGHT,False,DIRECTO,0.97,Band_Assisted_Pull-Up,Band Assisted Pull-Up,Band_Assisted_Pull-Up/0.jpg
+Dominadas Supinas,dominadas-supinas,espalda,BODYWEIGHT,False,DIRECTO,1.3,Chin-Up,Chin-Up,Chin-Up/0.jpg
+Dominadas Tras Nuca,dominadas-tras-nuca,espalda,BODYWEIGHT,False,DIRECTO,1.3,Band_Assisted_Pull-Up,Band Assisted Pull-Up,Band_Assisted_Pull-Up/0.jpg
+Encogimientos con Barra,encogimientos-barra,espalda,BARBELL,False,DIRECTO,1.3,Barbell_Shrug,Barbell Shrug,Barbell_Shrug/0.jpg
+Encogimientos con Mancuernas,encogimientos-mancuernas,espalda,DUMBBELL,False,DIRECTO,1.3,Dumbbell_Shrug,Dumbbell Shrug,Dumbbell_Shrug/0.jpg
+Jalón al Pecho Agarre Supino,jalon-agarre-supino,espalda,CABLE,False,DIRECTO,1.3,Close-Grip_Front_Lat_Pulldown,Close-Grip Front Lat Pulldown,Close-Grip_Front_Lat_Pulldown/0.jpg
+Jalón al Pecho Agarre Ancho,jalon-pecho-agarre-ancho,espalda,CABLE,False,DIRECTO,1.45,Wide-Grip_Lat_Pulldown,Wide-Grip Lat Pulldown,Wide-Grip_Lat_Pulldown/0.jpg
+Jalón al Pecho Agarre Cerrado,jalon-pecho-agarre-cerrado,espalda,CABLE,False,DIRECTO,1.45,Close-Grip_Front_Lat_Pulldown,Close-Grip Front Lat Pulldown,Close-Grip_Front_Lat_Pulldown/0.jpg
+Jalón con Brazos Rectos,jalon-brazos-rectos,espalda,CABLE,False,DIRECTO,1.3,Rope_Straight-Arm_Pulldown,Rope Straight-Arm Pulldown,Rope_Straight-Arm_Pulldown/0.jpg
+Jalón al Pecho con Cuerda,jalon-con-cuerda,espalda,CABLE,False,DIRECTO,1.3,Close-Grip_Front_Lat_Pulldown,Close-Grip Front Lat Pulldown,Close-Grip_Front_Lat_Pulldown/0.jpg
+Jalón Tras Nuca,jalon-tras-nuca,espalda,CABLE,False,DIRECTO,1.3,Wide-Grip_Pulldown_Behind_The_Neck,Wide-Grip Pulldown Behind The Neck,Wide-Grip_Pulldown_Behind_The_Neck/0.jpg
+Peso Muerto con Barra Hexagonal,peso-muerto-barra-hexagonal,espalda,BARBELL,False,DIRECTO,1.3,Barbell_Deadlift,Barbell Deadlift,Barbell_Deadlift/0.jpg
+Peso Muerto con Mancuernas,peso-muerto-mancuernas,espalda,DUMBBELL,False,DIRECTO,0.95,Axle_Deadlift,Axle Deadlift,Axle_Deadlift/0.jpg
+Peso Muerto Convencional con Barra,peso-muerto-convencional,espalda,BARBELL,True,DIRECTO,1.3,Barbell_Deadlift,Barbell Deadlift,Barbell_Deadlift/0.jpg
+Peso Muerto Sumo con Barra,peso-muerto-sumo,espalda,BARBELL,False,PROBABLE,0.8,Barbell_Deadlift,Barbell Deadlift,Barbell_Deadlift/0.jpg
+Pullover con Barra,pullover-barra,espalda,BARBELL,False,DIRECTO,1.3,Bent-Arm_Barbell_Pullover,Bent-Arm Barbell Pullover,Bent-Arm_Barbell_Pullover/0.jpg
+Pullover con Mancuerna,pullover-mancuerna,espalda,DUMBBELL,False,DIRECTO,0.95,Bent-Arm_Barbell_Pullover,Bent-Arm Barbell Pullover,Bent-Arm_Barbell_Pullover/0.jpg
+Remo con Barra,remo-barra,espalda,BARBELL,False,DIRECTO,1.3,Bent_Over_Barbell_Row,Bent Over Barbell Row,Bent_Over_Barbell_Row/0.jpg
+Remo con Mancuerna a Una Mano,remo-mancuerna,espalda,DUMBBELL,False,DIRECTO,1.45,One-Arm_Dumbbell_Row,One-Arm Dumbbell Row,One-Arm_Dumbbell_Row/0.jpg
+Remo con Mancuernas a Dos Manos,remo-mancuernas-dos-manos,espalda,DUMBBELL,False,DIRECTO,1.3,Bent_Over_Two-Dumbbell_Row,Bent Over Two-Dumbbell Row,Bent_Over_Two-Dumbbell_Row/0.jpg
+Remo en T,remo-en-t,espalda,BARBELL,False,DIRECTO,0.97,Bent_Over_Barbell_Row,Bent Over Barbell Row,Bent_Over_Barbell_Row/0.jpg
+Remo Sentado en Polea,remo-sentado-polea,espalda,CABLE,False,DIRECTO,1.12,Seated_Cable_Rows,Seated Cable Rows,Seated_Cable_Rows/0.jpg
+Aperturas Posteriores en Polea Alta,aperturas-posteriores-polea-alta,hombros,CABLE,False,DIRECTO,0.97,Cable_Rear_Delt_Fly,Cable Rear Delt Fly,Cable_Rear_Delt_Fly/0.jpg
+Elevaciones Frontales Alternas con Mancuernas Agarre Neutro,elevacion-frontal-alterna-mancuernas-neutro,hombros,DUMBBELL,False,DIRECTO,1.45,Front_Dumbbell_Raise,Front Dumbbell Raise,Front_Dumbbell_Raise/0.jpg
+Elevaciones Frontales con Barra,elevacion-frontal-barra,hombros,BARBELL,False,DIRECTO,1.45,Standing_Front_Barbell_Raise_Over_Head,Standing Front Barbell Raise Over Head,Standing_Front_Barbell_Raise_Over_Head/0.jpg
+Elevaciones Frontales con Mancuernas,elevacion-frontal-mancuernas,hombros,DUMBBELL,False,DIRECTO,1.45,Front_Dumbbell_Raise,Front Dumbbell Raise,Front_Dumbbell_Raise/0.jpg
+Elevaciones Frontales con Mancuernas a Dos Manos,elevacion-frontal-mancuernas-dos-manos,hombros,DUMBBELL,False,DIRECTO,1.45,Front_Dumbbell_Raise,Front Dumbbell Raise,Front_Dumbbell_Raise/0.jpg
+Elevaciones Frontales en Polea Baja Unilateral Agarre Neutro,elevacion-frontal-unilateral-polea-baja-neutro,hombros,CABLE,False,DIRECTO,1.45,Front_Cable_Raise,Front Cable Raise,Front_Cable_Raise/0.jpg
+Elevaciones Laterales en Polea Unilateral,elevacion-lateral-unilateral-polea,hombros,CABLE,False,DIRECTO,0.97,Bent_Over_Low-Pulley_Side_Lateral,Bent Over Low-Pulley Side Lateral,Bent_Over_Low-Pulley_Side_Lateral/0.jpg
+Elevaciones Laterales con Mancuernas,elevaciones-laterales,hombros,DUMBBELL,False,DIRECTO,1.3,Seated_Side_Lateral_Raise,Seated Side Lateral Raise,Seated_Side_Lateral_Raise/0.jpg
+Pájaros con Mancuernas,pajaros-mancuernas,hombros,DUMBBELL,False,PROBABLE,0.8,Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench,Bent Over Dumbbell Rear Delt Raise With Head On Bench,Bent_Over_Dumbbell_Rear_Delt_Raise_With_Head_On_Bench/0.jpg
+Press de Hombros con Mancuernas,press-mancuernas-hombros,hombros,DUMBBELL,False,DIRECTO,1.3,Dumbbell_One-Arm_Shoulder_Press,Dumbbell One-Arm Shoulder Press,Dumbbell_One-Arm_Shoulder_Press/0.jpg
+Press de Hombros de Pie Tras Nuca con Barra,press-hombros-pie-tras-nuca-barra,hombros,BARBELL,False,DIRECTO,1.3,Barbell_Shoulder_Press,Barbell Shoulder Press,Barbell_Shoulder_Press/0.jpg
+Press de Hombros en Máquina Smith,press-hombros-smith,hombros,SMITH_MACHINE,False,DIRECTO,1.3,Smith_Machine_Overhead_Shoulder_Press,Smith Machine Overhead Shoulder Press,Smith_Machine_Overhead_Shoulder_Press/0.jpg
+Press de Hombros Sentado con Barra,press-hombros-sentado-barra,hombros,BARBELL,False,DIRECTO,1.3,Barbell_Shoulder_Press,Barbell Shoulder Press,Barbell_Shoulder_Press/0.jpg
+Press de Hombros Sentado Tras Nuca con Barra,press-hombros-sentado-tras-nuca-barra,hombros,BARBELL,False,DIRECTO,1.3,Barbell_Shoulder_Press,Barbell Shoulder Press,Barbell_Shoulder_Press/0.jpg
+Press Militar con Barra,press-militar-barra,hombros,BARBELL,False,DIRECTO,1.3,Seated_Barbell_Military_Press,Seated Barbell Military Press,Seated_Barbell_Military_Press/0.jpg
+Push Press con Barra,push-press-barra,hombros,BARBELL,False,DIRECTO,1.3,Push_Press,Push Press,Push_Press/0.jpg
+Push Press con Mancuernas,push-press-mancuernas,hombros,DUMBBELL,False,DIRECTO,0.95,Double_Kettlebell_Push_Press,Double Kettlebell Push Press,Double_Kettlebell_Push_Press/0.jpg
+Remo al Mentón con Barra,remo-menton-barra,hombros,BARBELL,False,DIRECTO,1.3,Upright_Barbell_Row,Upright Barbell Row,Upright_Barbell_Row/0.jpg
+Curl de Bíceps con Barra EZ,curl-barra-ez,biceps,BARBELL,False,DIRECTO,0.95,Incline_Inner_Biceps_Curl,Incline Inner Biceps Curl,Incline_Inner_Biceps_Curl/0.jpg
+Curl de Bíceps en Polea con Cuerda,curl-cuerda-polea,biceps,CABLE,False,DIRECTO,1.3,Standing_Biceps_Cable_Curl,Standing Biceps Cable Curl,Standing_Biceps_Cable_Curl/0.jpg
+Curl de Bíceps Concentrado con Mancuerna,curl-concentrado,biceps,DUMBBELL,False,DIRECTO,1.3,Standing_Concentration_Curl,Standing Concentration Curl,Standing_Concentration_Curl/0.jpg
+Curl de Bíceps con Barra,curl-biceps-barra,biceps,BARBELL,False,DIRECTO,0.95,Incline_Inner_Biceps_Curl,Incline Inner Biceps Curl,Incline_Inner_Biceps_Curl/0.jpg
+Curl de Bíceps con Mancuernas Alternado,curl-mancuernas-alternado,biceps,DUMBBELL,False,DIRECTO,1.3,Incline_Inner_Biceps_Curl,Incline Inner Biceps Curl,Incline_Inner_Biceps_Curl/0.jpg
+Curl de Muñeca con Barra Sentado,curl-muneca-barra-sentado,biceps,BARBELL,False,DIRECTO,1.45,Seated_Palm-Up_Barbell_Wrist_Curl,Seated Palm-Up Barbell Wrist Curl,Seated_Palm-Up_Barbell_Wrist_Curl/0.jpg
+Curl de Bíceps en Polea Alta de Pie,curl-polea-alta-pie,biceps,CABLE,False,DIRECTO,1.45,Standing_Biceps_Cable_Curl,Standing Biceps Cable Curl,Standing_Biceps_Cable_Curl/0.jpg
+Curl de Bíceps en Polea Baja con Barra Recta,curl-polea-baja-barra-recta,biceps,CABLE,False,DIRECTO,1.3,Standing_Biceps_Cable_Curl,Standing Biceps Cable Curl,Standing_Biceps_Cable_Curl/0.jpg
+Curl de Bíceps en Polea Baja Unilateral,curl-polea-baja-unilateral,biceps,CABLE,False,DIRECTO,1.3,Standing_Biceps_Cable_Curl,Standing Biceps Cable Curl,Standing_Biceps_Cable_Curl/0.jpg
+Curl de Bíceps Inclinado con Mancuernas,curl-inclinado-mancuernas,biceps,DUMBBELL,False,DIRECTO,1.45,Incline_Inner_Biceps_Curl,Incline Inner Biceps Curl,Incline_Inner_Biceps_Curl/0.jpg
+Curl Inverso con Barra,curl-inverso-barra,biceps,BARBELL,False,DIRECTO,1.3,Reverse_Barbell_Curl,Reverse Barbell Curl,Reverse_Barbell_Curl/0.jpg
+Curl Martillo con Mancuernas,curl-martillo,biceps,DUMBBELL,False,DIRECTO,1.3,Alternate_Hammer_Curl,Alternate Hammer Curl,Alternate_Hammer_Curl/0.jpg
+Curl de Bíceps Predicador con Barra EZ,curl-predicador-barra-ez,biceps,BARBELL,False,DIRECTO,1.3,Preacher_Curl,Preacher Curl,Preacher_Curl/0.jpg
+Extensiones de Muñeca con Barra Sentado,extension-muneca-barra-sentado,biceps,BARBELL,False,DIRECTO,0.95,Seated_Palm-Up_Barbell_Wrist_Curl,Seated Palm-Up Barbell Wrist Curl,Seated_Palm-Up_Barbell_Wrist_Curl/0.jpg
+Extensiones de Tríceps en Polea a Una Mano,extension-triceps-polea-una-mano,triceps,CABLE,False,DIRECTO,1.12,Standing_Low-Pulley_One-Arm_Triceps_Extension,Standing Low-Pulley One-Arm Triceps Extension,Standing_Low-Pulley_One-Arm_Triceps_Extension/0.jpg
+Extensiones de Tríceps en Polea a Una Mano Agarre Supino,extension-triceps-polea-una-mano-supino,triceps,CABLE,False,DIRECTO,1.12,Standing_Low-Pulley_One-Arm_Triceps_Extension,Standing Low-Pulley One-Arm Triceps Extension,Standing_Low-Pulley_One-Arm_Triceps_Extension/0.jpg
+Extensiones de Tríceps en Polea con Barra Agarre Invertido,extension-triceps-polea-invertido-barra,triceps,CABLE,False,DIRECTO,0.97,Cable_Incline_Triceps_Extension,Cable Incline Triceps Extension,Cable_Incline_Triceps_Extension/0.jpg
+Extensiones de Tríceps sobre la Cabeza con Mancuerna,extension-triceps-sobre-cabeza-mancuerna,triceps,DUMBBELL,False,DIRECTO,0.97,Decline_Dumbbell_Triceps_Extension,Decline Dumbbell Triceps Extension,Decline_Dumbbell_Triceps_Extension/0.jpg
+Extensiones de Tríceps Tras Nuca en Polea con Barra,extension-triceps-trasnuca-polea-barra,triceps,CABLE,False,DIRECTO,1.3,Cable_Rope_Overhead_Triceps_Extension,Cable Rope Overhead Triceps Extension,Cable_Rope_Overhead_Triceps_Extension/0.jpg
+Extensiones de Tríceps Tras Nuca en Polea con Cuerda,extension-triceps-trasnuca-polea-cuerda,triceps,CABLE,False,DIRECTO,1.3,Cable_Rope_Overhead_Triceps_Extension,Cable Rope Overhead Triceps Extension,Cable_Rope_Overhead_Triceps_Extension/0.jpg
+Extensiones de Tríceps Tumbado con Barra,extension-triceps-tumbado-barra,triceps,BARBELL,False,DIRECTO,1.45,Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head,Lying Close-Grip Barbell Triceps Extension Behind The Head,Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head/0.jpg
+Extensiones de Tríceps Tumbado con Mancuernas,extension-triceps-tumbado-mancuernas,triceps,DUMBBELL,False,DIRECTO,1.12,Lying_Dumbbell_Tricep_Extension,Lying Dumbbell Tricep Extension,Lying_Dumbbell_Tricep_Extension/0.jpg
+Extensiones de Tríceps en Polea,extensiones-triceps-polea,triceps,CABLE,False,DIRECTO,0.97,Cable_Incline_Triceps_Extension,Cable Incline Triceps Extension,Cable_Incline_Triceps_Extension/0.jpg
+Fondos en Banco,fondos-banco,triceps,BODYWEIGHT,False,DIRECTO,1.3,Weighted_Bench_Dip,Weighted Bench Dip,Weighted_Bench_Dip/0.jpg
+Fondos en Paralelas (Tríceps),fondos-triceps,triceps,BODYWEIGHT,False,DIRECTO,1.3,Parallel_Bar_Dip,Parallel Bar Dip,Parallel_Bar_Dip/0.jpg
+Patadas de Tríceps con Mancuerna,patada-triceps-mancuerna,triceps,DUMBBELL,False,PROBABLE,0.8,Decline_Dumbbell_Triceps_Extension,Decline Dumbbell Triceps Extension,Decline_Dumbbell_Triceps_Extension/0.jpg
+Press Cerrado con Barra,press-cerrado-barra,triceps,BARBELL,False,DIRECTO,1.3,Close-Grip_Barbell_Bench_Press,Close-Grip Barbell Bench Press,Close-Grip_Barbell_Bench_Press/0.jpg
+Press Francés con Barra EZ,press-frances,triceps,BARBELL,False,PROBABLE,0.7,Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head,Lying Close-Grip Barbell Triceps Extension Behind The Head,Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head/0.jpg
+Press Francés Sentado con Barra,press-frances-sentado-barra,triceps,BARBELL,False,PROBABLE,0.7,Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head,Lying Close-Grip Barbell Triceps Extension Behind The Head,Lying_Close-Grip_Barbell_Triceps_Extension_Behind_The_Head/0.jpg
+Extensiones de Tríceps en Polea con Cuerda,triceps-polea-cuerda,triceps,CABLE,False,DIRECTO,0.97,Cable_Incline_Triceps_Extension,Cable Incline Triceps Extension,Cable_Incline_Triceps_Extension/0.jpg
+Crunch Abdominal,crunch-abdominal,core,BODYWEIGHT,False,DIRECTO,1.3,Cross-Body_Crunch,Cross-Body Crunch,Cross-Body_Crunch/0.jpg
+Crunch con Brazos Extendidos,crunch-brazos-extendidos,core,BODYWEIGHT,False,DIRECTO,1.3,Cross-Body_Crunch,Cross-Body Crunch,Cross-Body_Crunch/0.jpg
+Crunch en Máquina,crunch-maquina,core,MACHINE,False,DIRECTO,1.3,Ab_Crunch_Machine,Ab Crunch Machine,Ab_Crunch_Machine/0.jpg
+Crunch en Polea,crunch-cable,core,CABLE,False,DIRECTO,1.3,Bosu_Ball_Cable_Crunch_With_Side_Bends,Bosu Ball Cable Crunch With Side Bends,Bosu_Ball_Cable_Crunch_With_Side_Bends/0.jpg
+Crunch Inverso con Rodillas Flexionadas,crunch-inverso-rodillas-flexionadas,core,BODYWEIGHT,False,DIRECTO,1.3,Decline_Reverse_Crunch,Decline Reverse Crunch,Decline_Reverse_Crunch/0.jpg
+Crunch Oblicuo,crunch-oblicuo,core,BODYWEIGHT,False,DIRECTO,1.3,Decline_Oblique_Crunch,Decline Oblique Crunch,Decline_Oblique_Crunch/0.jpg
+Dead Bug,dead-bug,core,BODYWEIGHT,False,DIRECTO,1.3,Dead_Bug,Dead Bug,Dead_Bug/0.jpg
+Elevaciones de Piernas en Barra,elevacion-piernas-barra,core,BODYWEIGHT,False,DIRECTO,1.3,Flat_Bench_Lying_Leg_Raise,Flat Bench Lying Leg Raise,Flat_Bench_Lying_Leg_Raise/0.jpg
+Hollow Hold,hollow-hold,core,BODYWEIGHT,False,HUERFANO,0,,,
+Pallof Press,pallof-press,core,CABLE,False,DIRECTO,1.3,Pallof_Press,Pallof Press,Pallof_Press/0.jpg
+Plancha Abdominal,plancha,core,BODYWEIGHT,False,DIRECTO,1.3,Plank,Plank,Plank/0.jpg
+Plancha con Subidas,plancha-subidas,core,BODYWEIGHT,False,DIRECTO,1.3,Plank,Plank,Plank/0.jpg
+Rueda Abdominal (Ab Wheel),rueda-abdominales,core,BODYWEIGHT,False,DIRECTO,0.97,Ab_Roller,Ab Roller,Ab_Roller/0.jpg
+Russian Twist,russian-twist,core,BODYWEIGHT,False,DIRECTO,1.3,Russian_Twist,Russian Twist,Russian_Twist/0.jpg
+Burpees,burpees,cuadriceps,BODYWEIGHT,False,HUERFANO,0,,,
+Caminata del Pato,caminata-del-pato,cuadriceps,BODYWEIGHT,False,PROBABLE,0.8,Yoke_Walk,Yoke Walk,Yoke_Walk/0.jpg
+Extensiones de Cuádriceps en Máquina,extension-cuadriceps,cuadriceps,MACHINE,False,DIRECTO,1.3,Single-Leg_Leg_Extension,Single-Leg Leg Extension,Single-Leg_Leg_Extension/0.jpg
+Extensiones de Cuádriceps en Máquina a Una Pierna,extension-cuadriceps-una-pierna,cuadriceps,MACHINE,False,DIRECTO,1.45,Single-Leg_Leg_Extension,Single-Leg Leg Extension,Single-Leg_Leg_Extension/0.jpg
+Prensa de Piernas,prensa-piernas,cuadriceps,MACHINE,False,DIRECTO,1.3,Leg_Press,Leg Press,Leg_Press/0.jpg
+Saltos con Rodillas al Pecho,salto-rodillas-al-pecho,cuadriceps,BODYWEIGHT,False,PROBABLE,0.65,Knee_Tuck_Jump,Knee Tuck Jump,Knee_Tuck_Jump/0.jpg
+Sentadillas 1.5 con Peso Corporal,sentadilla-1-5-peso-corporal,cuadriceps,BODYWEIGHT,False,DIRECTO,1.3,Bodyweight_Squat,Bodyweight Squat,Bodyweight_Squat/0.jpg
+Sentadillas Búlgaras con Barra,sentadilla-bulgara-barra,cuadriceps,BARBELL,False,DIRECTO,0.97,Barbell_Side_Split_Squat,Barbell Side Split Squat,Barbell_Side_Split_Squat/0.jpg
+Sentadillas Búlgaras con Peso Corporal,sentadilla-bulgara-peso-corporal,cuadriceps,BODYWEIGHT,False,DIRECTO,0.97,Suspended_Split_Squat,Suspended Split Squat,Suspended_Split_Squat/0.jpg
+Sentadillas con Balón Medicinal,sentadilla-balon-medicinal,cuadriceps,BODYWEIGHT,False,DIRECTO,1.3,Bodyweight_Squat,Bodyweight Squat,Bodyweight_Squat/0.jpg
+Sentadillas con Barra Alta,sentadilla-barra-alta,cuadriceps,BARBELL,True,DIRECTO,1.3,Barbell_Full_Squat,Barbell Full Squat,Barbell_Full_Squat/0.jpg
+Sentadillas con Barra Baja,sentadilla-barra-baja,cuadriceps,BARBELL,False,DIRECTO,1.3,Barbell_Full_Squat,Barbell Full Squat,Barbell_Full_Squat/0.jpg
+Sentadillas con Mini-Banda,sentadilla-mini-banda,cuadriceps,"RESISTANCE_BAND,BODYWEIGHT",False,DIRECTO,1.3,Bodyweight_Squat,Bodyweight Squat,Bodyweight_Squat/0.jpg
+Sentadillas con Peso Corporal,sentadilla-peso-corporal,cuadriceps,BODYWEIGHT,False,DIRECTO,1.3,Bodyweight_Squat,Bodyweight Squat,Bodyweight_Squat/0.jpg
+Sentadillas con Salto,sentadilla-con-salto,cuadriceps,BODYWEIGHT,False,DIRECTO,1.3,Freehand_Jump_Squat,Freehand Jump Squat,Freehand_Jump_Squat/0.jpg
+Sentadillas Frontales con Barra,sentadilla-frontal,cuadriceps,BARBELL,False,DIRECTO,1.45,Front_Barbell_Squat,Front Barbell Squat,Front_Barbell_Squat/0.jpg
+Sentadillas Goblet con Mancuerna,sentadilla-goblet,cuadriceps,DUMBBELL,False,DIRECTO,0.95,Goblet_Squat,Goblet Squat,Goblet_Squat/0.jpg
+Sentadillas Hack en Máquina,sentadilla-hack,cuadriceps,MACHINE,False,DIRECTO,1.3,Hack_Squat,Hack Squat,Hack_Squat/0.jpg
+Sentadillas Isométricas en Pared,sentadilla-isometrica-pared,cuadriceps,BODYWEIGHT,False,HUERFANO,0.5,,,
+Subidas al Cajón con Mancuernas,subida-cajon-mancuernas,cuadriceps,DUMBBELL,False,PROBABLE,0.63,Dumbbell_Seated_Box_Jump,Dumbbell Seated Box Jump,Dumbbell_Seated_Box_Jump/0.jpg
+Zancadas con Peso Corporal,zancada,cuadriceps,BODYWEIGHT,False,DIRECTO,1.0,Bodyweight_Walking_Lunge,Bodyweight Walking Lunge,Bodyweight_Walking_Lunge/0.jpg
+Buenos Días (Good Morning),buenos-dias-good-morning,femoral,BARBELL,False,DIRECTO,1.3,Good_Morning,Good Morning,Good_Morning/0.jpg
+Curl Femoral Sentado en Máquina,curl-femoral-sentado,femoral,MACHINE,False,DIRECTO,1.45,Seated_Leg_Curl,Seated Leg Curl,Seated_Leg_Curl/0.jpg
+Curl Femoral Tumbado en Máquina,curl-femoral-tumbado,femoral,MACHINE,False,DIRECTO,1.3,Seated_Leg_Curl,Seated Leg Curl,Seated_Leg_Curl/0.jpg
+Elevaciones Glúteo-Femorales,elevacion-gluteo-femoral,femoral,BODYWEIGHT,False,DIRECTO,1.3,Natural_Glute_Ham_Raise,Natural Glute Ham Raise,Natural_Glute_Ham_Raise/0.jpg
+Nordic Curl (Curl Nórdico),nordic-curl,femoral,BODYWEIGHT,False,PROBABLE,0.8,90_90_Hamstring,90/90 Hamstring,90_90_Hamstring/0.jpg
+Peso Muerto Piernas Rígidas con Barra,peso-muerto-piernas-rigidas-barra,femoral,BARBELL,False,DIRECTO,0.97,Stiff-Legged_Barbell_Deadlift,Stiff-Legged Barbell Deadlift,Stiff-Legged_Barbell_Deadlift/0.jpg
+Peso Muerto Piernas Rígidas con Mancuernas,peso-muerto-piernas-rigidas-mancuernas,femoral,DUMBBELL,False,DIRECTO,0.97,Stiff-Legged_Dumbbell_Deadlift,Stiff-Legged Dumbbell Deadlift,Stiff-Legged_Dumbbell_Deadlift/0.jpg
+Peso Muerto Rumano con Barra,peso-muerto-rumano,femoral,BARBELL,False,DIRECTO,1.3,Romanian_Deadlift,Romanian Deadlift,Romanian_Deadlift/0.jpg
+Swing con Kettlebell,swing-kettlebell,femoral,KETTLEBELL,False,PROBABLE,0.8,Double_Kettlebell_Alternating_Hang_Clean,Double Kettlebell Alternating Hang Clean,Double_Kettlebell_Alternating_Hang_Clean/0.jpg
+Abducciones de Cadera en Polea de Pie,abduccion-cadera-pie-polea,gluteos,CABLE,False,HUERFANO,0.45,,,
+Abducciones de Cadera en Máquina,abduccion-cadera-maquina,gluteos,MACHINE,False,PROBABLE,0.8,Thigh_Abductor,Thigh Abductor,Thigh_Abductor/0.jpg
+Abducciones de Cadera Sentado con Banda,abduccion-cadera-sentado-banda,gluteos,RESISTANCE_BAND,False,PROBABLE,0.55,Band_Hip_Adductions,Band Hip Adductions,Band_Hip_Adductions/0.jpg
+Almeja con Banda,almeja-banda,gluteos,RESISTANCE_BAND,False,HUERFANO,0,,,
+Bird Dog,bird-dog,gluteos,BODYWEIGHT,False,HUERFANO,0,,,
+Caminata Lateral con Mini-Banda,caminata-lateral-mini-banda,gluteos,RESISTANCE_BAND,False,DIRECTO,0.97,Monster_Walk,Monster Walk,Monster_Walk/0.jpg
+Elevaciones de Cadera Tumbado de Lado,elevacion-cadera-tumbado-lado,gluteos,BODYWEIGHT,False,PROBABLE,0.63,Hip_Circles_prone,Hip Circles (prone),Hip_Circles_prone/0.jpg
+Elevaciones Laterales de Pierna Tumbado,elevacion-lateral-pierna-tumbado,gluteos,BODYWEIGHT,False,PROBABLE,0.63,Lateral_Bound,Lateral Bound,Lateral_Bound/0.jpg
+Frog Pump,frog-pump,gluteos,BODYWEIGHT,False,PROBABLE,0.65,Frog_Sit-Ups,Frog Sit-Ups,Frog_Sit-Ups/0.jpg
+Frog Pump en Máquina Smith,frog-pump-smith,gluteos,SMITH_MACHINE,False,HUERFANO,0.35,,,
+Hidrante,hidrante,gluteos,BODYWEIGHT,False,HUERFANO,0,,,
+Hip Thrust con Barra,hip-thrust,gluteos,BARBELL,False,DIRECTO,1.3,Barbell_Hip_Thrust,Barbell Hip Thrust,Barbell_Hip_Thrust/0.jpg
+Hip Thrust en Máquina Smith,hip-thrust-smith,gluteos,SMITH_MACHINE,False,DIRECTO,0.95,Barbell_Hip_Thrust,Barbell Hip Thrust,Barbell_Hip_Thrust/0.jpg
+Patadas de Burro,patada-burro,gluteos,BODYWEIGHT,False,HUERFANO,0.47,,,
+Patadas de Glúteo en Polea,patada-gluteo-polea,gluteos,CABLE,False,DIRECTO,0.97,One-Legged_Cable_Kickback,One-Legged Cable Kickback,One-Legged_Cable_Kickback/0.jpg
+Peso Muerto a Una Pierna con Peso Corporal,peso-muerto-una-pierna-sin-peso,gluteos,BODYWEIGHT,False,DIRECTO,1.12,Single_Leg_Glute_Bridge,Single Leg Glute Bridge,Single_Leg_Glute_Bridge/0.jpg
+Peso Muerto con Balón Medicinal,peso-muerto-balon-medicinal,gluteos,BODYWEIGHT,False,PROBABLE,0.65,Axle_Deadlift,Axle Deadlift,Axle_Deadlift/0.jpg
+Peso Muerto Sumo con Kettlebell,peso-muerto-sumo-kettlebell,gluteos,KETTLEBELL,False,HUERFANO,0.47,,,
+Puente de Glúteos,puente-gluteos,gluteos,BODYWEIGHT,False,DIRECTO,1.3,Single_Leg_Glute_Bridge,Single Leg Glute Bridge,Single_Leg_Glute_Bridge/0.jpg
+Puente de Glúteos a Una Pierna,puente-gluteos-una-pierna,gluteos,BODYWEIGHT,False,DIRECTO,1.45,Single_Leg_Glute_Bridge,Single Leg Glute Bridge,Single_Leg_Glute_Bridge/0.jpg
+Puente de Glúteos con Banda,puente-gluteos-banda,gluteos,RESISTANCE_BAND,False,DIRECTO,0.95,Barbell_Glute_Bridge,Barbell Glute Bridge,Barbell_Glute_Bridge/0.jpg
+Zancadas con Mancuernas,zancadas-mancuernas,gluteos,DUMBBELL,False,PROBABLE,0.65,Dumbbell_Rear_Lunge,Dumbbell Rear Lunge,Dumbbell_Rear_Lunge/0.jpg
+Elevaciones de Pantorrillas de Pie,elevaciones-pantorrillas-pie,pantorrillas,BODYWEIGHT,False,DIRECTO,1.1,Rocking_Standing_Calf_Raise,Rocking Standing Calf Raise,Rocking_Standing_Calf_Raise/0.jpg
+Elevaciones de Pantorrillas Sentado en Máquina,elevaciones-pantorrillas-sentado,pantorrillas,MACHINE,False,DIRECTO,1.45,Seated_Calf_Raise,Seated Calf Raise,Seated_Calf_Raise/0.jpg
