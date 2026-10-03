@@ -14,8 +14,23 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-09-30 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-10-03 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🏋️ **30-sep→03-oct — GRAN ARCO: el sistema COACH / planes** (main 2f5ba788→3d0f9cb1, ~54 commits,
+  migraciones 065 y 066). Es la **funcionalidad coach/gym** del plan de reconstrucción (ex `features-review`)
+  aterrizando en main, en dos etapas:
+  - **Etapa 1 (30-sep noche → 01-oct):** el coach **asigna planes a sus alumnos y mide el cumplimiento**
+    (a tiempo / otro día / atrasada / fallada) con una regla pura probada; **panel de alumnos** con alertas
+    (fallas seguidas, plan bajo, plan que termina); **ficha del alumno** (asignar/editar días, duración, nota);
+    **calendario del coach en la zona horaria del alumno**; vista «**Mi coach**» para el alumno; CRUD +
+    **versionamiento** de asignaciones; migración 065.
+  - **Etapa 1b (03-oct):** el coach **limpia el historial de un plan** y **borra planes** (hoy / desde una
+    fecha / todo); el **corte del vínculo** se fija por aceptación o historial limpiado (el mayor); migración
+    066; paquete de **correcciones de zona horaria** (el inicio del día local, también en cambios de hora y en
+    UTC+13/+14).
+  - ⚠️ No mueve los **10 bloqueantes de venta** (#1 = pasarela): suma superficie, no readiness comercial.
+  - La rama WIP `claude/cardio-reps-peso-fitbook-2f68tf` es solo respaldo (merge de main), 12 commits sin
+    aterrizar en main.
 - 📅 **29-sep (tarde) — pulido del calendario** (main 1a4dc131→2f5ba788, 1 commit): la fecha del día usa
   la primera línea entera y los botones «Ir a hoy»/«HOY» bajan junto al día de la semana. Continuación del
   calendario deslizable. (Visto en el loop del 30-sep; 30-sep sin commits nuevos.)
