@@ -14,8 +14,13 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-10-03 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-10-05 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🍽️ **04-oct(tarde)→05-oct — Coach etapa 2 + comidas** (main 3d0f9cb1→7cdf6610, 6 commits): el coach
+  ahora ve las **comidas y metas del alumno** (meta diaria + calendario de comidas en solo lectura, permisos
+  aparte, banco + guardián, panel sin cifras con error). Y arranca un **registro de comidas** propio:
+  «**Comidas fijas (fase 1)**» (el día se arma con las comidas prendidas) y «**Añadir solo kcal**» (añadido
+  rápido estilo apps pro). Suma superficie de nutrición; no mueve los 10 bloqueantes de venta.
 - 🏋️ **30-sep→03-oct — GRAN ARCO: el sistema COACH / planes** (main 2f5ba788→3d0f9cb1, ~54 commits,
   migraciones 065 y 066). Es la **funcionalidad coach/gym** del plan de reconstrucción (ex `features-review`)
   aterrizando en main, en dos etapas:
