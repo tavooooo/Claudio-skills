@@ -14,8 +14,15 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-10-05 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-10-06 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🏠 **05-oct(tarde)→06-oct — rediseño de la pantalla «Hoy» (tracker)** (main 7cdf6610→d73c5587, ~11
+  commits de contenido): el home **al estilo de apps pro** — el día primero, pestañas **Entreno | Comidas**
+  arriba, tarjeta del día + «tu semana» + tarjetas nuevas, «**¿Entrenamos?**» (Rutina o Libre), botón central
+  **Sesión libre** con play celeste, «Mi coach» ampliado, link «Ajustar meta». En comidas: **total de macros
+  por comida** (día del usuario y del coach), el total del día cuadra con su desglose, y «Hoy» muestra el mismo
+  IFF y peldaño que Progreso, en vivo. (La rama de respaldo del WIP se fundió en main, sin contenido
+  divergente.) No mueve los 10 bloqueantes de venta.
 - 🍽️ **04-oct(tarde)→05-oct — Coach etapa 2 + comidas** (main 3d0f9cb1→7cdf6610, 6 commits): el coach
   ahora ve las **comidas y metas del alumno** (meta diaria + calendario de comidas en solo lectura, permisos
   aparte, banco + guardián, panel sin cifras con error). Y arranca un **registro de comidas** propio:
