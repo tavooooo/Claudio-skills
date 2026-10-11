@@ -14,8 +14,12 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-10-06 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-10-11 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 😴 **07→11-oct — 5 días quietos**: sin commits nuevos en main (contenedor del tracker inactivo esos días).
+- 🏅 **06-oct (noche) — rework visual de Logros** (main d73c5587→6a61788a, 3 commits): medallones con su
+  anillo, medallas de metal y **ficha de cada logro**; el anillo del Catálogo pinta su parte (no el aro
+  entero); `getLogros` deja de mandar la condición de los Ocultos sin conseguir. Pulido visual.
 - 🏠 **05-oct(tarde)→06-oct — rediseño de la pantalla «Hoy» (tracker)** (main 7cdf6610→d73c5587, ~11
   commits de contenido): el home **al estilo de apps pro** — el día primero, pestañas **Entreno | Comidas**
   arriba, tarjeta del día + «tu semana» + tarjetas nuevas, «**¿Entrenamos?**» (Rutina o Libre), botón central
