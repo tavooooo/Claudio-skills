@@ -14,8 +14,12 @@ calendario. Y **Wallace**, coach IA (Claude API). En español + inglés. Deploy:
 **Stack**: Next.js 16.2 · React 19 · Tailwind 4 · Zustand + Zod · GSAP/three.js/recharts
 · Supabase (Postgres + Auth con Google OAuth, RLS verificada) · Prisma · Vitest (32 tests) + Playwright.
 
-## Estado (actualizado 2026-10-11 por el loop, desde git main — ~98%, EN BETA CERRADA)
+## Estado (actualizado 2026-10-12 por el loop, desde git main — ~98%, EN BETA CERRADA)
 
+- 🌓 **12-oct — tema claro del escáner** (main 6a61788a→3b089b74, 7 commits): versión clara del **escáner
+  semanal** y de las barras de carga (estilo iOS); el **avatar del mapa muscular** se ve igual en claro que en
+  oscuro en toda la app; banco de la miniatura en vista mes (`verify-miniatura` vuelve a medir); limpieza de
+  capturas coladas en la raíz. Cola del 07-oct: **compartir un logro** conseguido con su imagen. Pulido visual.
 - 😴 **07→11-oct — 5 días quietos**: sin commits nuevos en main (contenedor del tracker inactivo esos días).
 - 🏅 **06-oct (noche) — rework visual de Logros** (main d73c5587→6a61788a, 3 commits): medallones con su
   anillo, medallas de metal y **ficha de cada logro**; el anillo del Catálogo pinta su parte (no el aro
