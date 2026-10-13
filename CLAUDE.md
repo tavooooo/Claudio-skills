@@ -94,6 +94,11 @@ que tener a mano. Si no está en la lista, para él no existe.
   valor por defecto que DESCARTA lo que el usuario hizo es peor que uno que lo
   conserva con un supuesto razonable y corregible.
 
+- (2026-10-13) **Las preferencias son de la PERSONA, no del dispositivo.**
+  «Todo es del usuario, incluso el tema: se debe recordar cuál tiene
+  seleccionado aunque inicie sesión en un dispositivo que tenía el otro»
+  (dueño). Una preferencia que vive solo en el teléfono se hereda entre
+  cuentas y no viaja a otro aparato: va en la cuenta, y lo local es copia.
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
 - (2026-09-07) **En un contenedor recién arrancado, la primera compilación de
   Turbopack puede parecer colgada y no lo está.** El disco está frío (`next dev`
