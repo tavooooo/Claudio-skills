@@ -88,6 +88,12 @@ que tener a mano. Si no está en la lista, para él no existe.
   revienta en el primer fallo (click sobre un botón que no existe → timeout)
   enseña UN fallo en vez de todos — si no hay botón, devolver null y seguir.
 
+- (2026-10-13) **Ante la duda, guardar el dato y no perderlo.** «Es más barato
+  borrarlo o editarlo si estaba mal que perderlo» (dueño, sobre el interruptor
+  de peso corporal que nacía apagado y borraba ejercicios al guardar). Un
+  valor por defecto que DESCARTA lo que el usuario hizo es peor que uno que lo
+  conserva con un supuesto razonable y corregible.
+
 - (2026-08-03) **Los contenedores de trabajo remotos son efímeros**: se suspenden al quedar inactiva la sesión y vuelven sin nada corriendo (se reconoce con `uptime` = "up 1 min"). No es un fallo que investigar. Corolario: commitear y pushear seguido, porque lo que no está subido se pierde.
 - (2026-09-07) **En un contenedor recién arrancado, la primera compilación de
   Turbopack puede parecer colgada y no lo está.** El disco está frío (`next dev`
